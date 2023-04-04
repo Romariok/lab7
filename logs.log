@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-04-04T10:39:17.234278700Z</date>
+  <millis>1680604757234</millis>
+  <nanos>278700</nanos>
+  <sequence>0</sequence>
+  <logger>server.Log</logger>
+  <level>INFO</level>
+  <class>Command.CommandExecutor</class>
+  <method>execute</method>
+  <thread>1</thread>
+  <message>Received command Command.Commands.Info@4411d970from /192.168.1.49:57924</message>
+</record>
+<record>
+  <date>2023-04-04T10:39:17.251371700Z</date>
+  <millis>1680604757251</millis>
+  <nanos>371700</nanos>
+  <sequence>1</sequence>
+  <logger>server.Log</logger>
+  <level>WARNING</level>
+  <class>server.Connections.SelectorManager</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>java.lang.NullPointerException: Cannot invoke "DataStructure.CollectionManager.getCollection()" because the return value of "Command.Commands.Info.getCollectionManager()" is null</message>
+</record>
+</log>
