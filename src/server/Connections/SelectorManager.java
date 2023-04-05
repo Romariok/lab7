@@ -20,10 +20,8 @@ import static server.Connections.Connection.BUFFER_SIZE;
 
 public class SelectorManager {
     private static final Selector selector = Connection.getSelector();
-
-
     public static void run() throws IOException {
-        Map<InetSocketAddress, ByteArrayOutputStream> byteStreams = new HashMap<>();
+        Map<InetSocketAddress, ByteArrayOutputStream> Streams = new HashMap<>();
         while (true) {
             selector.select();
             Iterator<SelectionKey> keys = selector.selectedKeys().iterator();
@@ -39,10 +37,10 @@ public class SelectorManager {
                     ByteBuffer buffer = ByteBuffer.allocate(BUFFER_SIZE);
                     InetSocketAddress inetSocketAddress = (InetSocketAddress) keyChannel.receive(buffer);
 
-                    ByteArrayOutputStream byteStream = byteStreams.get(inetSocketAddress);
+                    ByteArrayOutputStream byteStream = Streams.get(inetSocketAddress);
                     if (byteStream == null) {
                         byteStream = new ByteArrayOutputStream();
-                        byteStreams.put(inetSocketAddress, byteStream);
+                        Streams.put(inetSocketAddress, byteStream);
                     }
                     boolean hasNext = buffer.array()[buffer.limit() - 1] == 1;
                     byteStream.write(buffer.array(), 0, buffer.limit() - 1);
@@ -50,10 +48,10 @@ public class SelectorManager {
                         try {
                             execute(inetSocketAddress, byteStream.toByteArray());
                         } catch (Exception e) {
-//                            keyChannel.send(ByteBuffer.wrap("ERROR: Something went wrong...".getBytes()), inetSocketAddress);
+                            keyChannel.send(ByteBuffer.wrap("ERROR: Oompa Loompa".getBytes()), inetSocketAddress);
                             Log.getLogger().warning(e.toString());
                         }
-                        byteStreams.remove(inetSocketAddress);
+                        Streams.remove(inetSocketAddress);
                     }
                 }
             }

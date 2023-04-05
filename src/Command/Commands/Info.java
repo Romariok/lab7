@@ -30,6 +30,6 @@ public class Info extends Command_abstract implements CommandResponse {
 
     @Override
     public Response getResponse(){
-        return new Response("info", getArgs(), output);
+        return new Response("info", output);
     }
 }

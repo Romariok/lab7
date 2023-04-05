@@ -32,6 +32,6 @@ public class Filter_starts_with_soundtrack_name extends Command_abstract impleme
 
     @Override
     public Response getResponse() {
-        return new Response("filter_starts_with_soundtrack_name", getArgs(), output);
+        return new Response("filter_starts_with_soundtrack_name", output);
     }
 }

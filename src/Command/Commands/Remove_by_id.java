@@ -29,10 +29,9 @@ public class Remove_by_id extends Command_abstract implements CommandResponse {
             ex.getStackTrace();
         }
         output = index + "-й элемент успешно удалён!";
-//        silent_save();
     }
     @Override
     public Response getResponse(){
-        return new Response("remove by id", getArgs(), output);
+        return new Response("remove by id", output);
     }
 }

@@ -30,6 +30,6 @@ public class Sum_of_impact_speed extends Command_abstract implements CommandResp
 
     @Override
     public Response getResponse(){
-        return new Response("sum of impact speed", getArgs(), output);
+        return new Response("sum of impact speed", output);
     }
 }

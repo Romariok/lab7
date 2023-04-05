@@ -1,23 +1,17 @@
 package client.setVariables;
 
+import java.io.InputStream;
 import java.util.Scanner;
 
 /**
  * Class for initializing field Coordinates
  *
  * @author Roman Kobelev
- * @see Coordinates
  */
 public class setCoordinates {
-    public static Long setCoordinateY() {
+    public static Long setCoordinateY(Scanner scanner) {
         String line;
-//        if (Linkedlist.count != 0){
-//            line = Linkedlist.getScript_input()[Linkedlist.count].trim();
-//            Linkedlist.count++;
-//        }
-//        else{
         System.out.println("Введите координату y: ");
-        Scanner scanner = new Scanner(System.in);
         line = scanner.nextLine();
 //        }
         if (line != "\n" && line != "" && line != null) {
@@ -26,27 +20,22 @@ public class setCoordinates {
                     return Long.parseLong(line);
                 } else {
                     System.out.println("Введено некорректное значение для координаты y! Введите координату ещё раз!");
-                    return setCoordinateY();
+                    return setCoordinateY(scanner);
                 }
             } catch (NumberFormatException ex) {
                 System.out.println("То, что вы ввели не является числом");
-                return setCoordinateY();
+                return setCoordinateY(scanner);
             }
         } else {
             System.out.println("Введено некорректное значение для координаты y! Введите координату ещё раз!");
-            return setCoordinateY();
+            return setCoordinateY(scanner);
         }
 
     }
 
-    public static int setCoordinateX() {
+    public static int setCoordinateX(Scanner scanner) {
         String line;
-//        if (Linkedlist.count != 0) {
-//            line = Linkedlist.getScript_input()[Linkedlist.count].trim();
-//            Linkedlist.count++;
-//        } else {
         System.out.println("Введите координату x: ");
-        Scanner scanner = new Scanner(System.in);
         line = scanner.nextLine();
 //        }
         if (line != "\n" && line != null && line != "") {
@@ -54,10 +43,9 @@ public class setCoordinates {
                 return Integer.parseInt(line.trim());
             } catch (NumberFormatException ex) {
                 System.out.println("То, что вы ввели не является числом");
-                return setCoordinateX();
+                return setCoordinateX(scanner);
             }
         } else return 0;
 
     }
 }
-//TODO

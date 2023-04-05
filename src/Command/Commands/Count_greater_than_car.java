@@ -36,6 +36,6 @@ public class Count_greater_than_car extends Command_abstract implements CommandR
 
     @Override
     public Response getResponse(){
-        return new Response("count greater than car", getArgs(), output);
+        return new Response("count greater than car", output);
     }
 }

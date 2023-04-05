@@ -1,10 +1,12 @@
 package Data;
 
+import java.io.Serializable;
+
 /**
  * Used to manage with coordinates
  * @author Roman Kobelev
  */
-public class Coordinates {
+public class Coordinates implements Serializable {
     /**
      * Coordinate x of human being
      * @see HumanBeing

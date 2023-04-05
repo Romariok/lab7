@@ -1,10 +1,9 @@
 package client;
 
-import Command.Command;
+import Command.CommandResponse;
 import Command.CommandFactory;
-import DataStructure.Response;
 
-import java.io.IOException;
+
 import java.net.InetAddress;
 import java.util.Arrays;
 import java.util.List;
@@ -33,19 +32,19 @@ public class ClientBase implements Runnable {
             commandName = input.get(0);
             commandArgs = input.subList(1, input.size()).toArray(new String[0]);
 
-            if (commandName == "exit") {
+            if (commandName.equals("exit")) {
                 System.out.println("Bye!");
                 System.exit(1);
             }
-            Command command = commandFactory.getCommand(commandName, commandArgs);
+            CommandResponse command = commandFactory.getCommand(commandName, commandArgs, scanner);
             if (command != null){
                 try{
                     connection.send(serialize(command));
                     String response = connection.recieve();
                     if (!response.isEmpty()) System.out.println(response);
                 }
-                catch (IOException ex){
-                    System.err.println();
+                catch (Exception ex){
+                    System.err.println(ex.getMessage());
                 }
 
             } else {

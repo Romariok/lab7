@@ -1,0 +1,15 @@
+info
+show
+remove_lower 500
+add
+Ryan
+13
+15
+Да
+Да
+14
+пип
+Shotgun
+Frenzy
+Нет
+info

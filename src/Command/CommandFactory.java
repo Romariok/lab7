@@ -1,15 +1,17 @@
 package Command;
 
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Scanner;
 
 import Command.Commands.*;
 import Data.HumanBeing;
 import client.setVariables.readHumanBeingFromConsole;
 
 public class CommandFactory {
-    private Map<String, Command> commands = new HashMap<>();
+    private Map<String, CommandResponse> commands = new HashMap<>();
     private HashSet<String> commandsWithObject = new HashSet<>();
     private HashSet<String> commandsWithArgs = new HashSet<>();
 
@@ -39,15 +41,21 @@ public class CommandFactory {
         commandsWithArgs.add("remove_lower");
     }
 
-    public Command getCommand(String commandName, String[] commandArgs) {
+    public CommandResponse getCommand(String commandName, String[] commandArgs, Scanner scanner) {
         if (commands.containsKey(commandName)) {
-            Command command = commands.get(commandName);
+            CommandResponse command = commands.get(commandName);
             if (commandsWithObject.contains(commandName)) {
                 HumanBeing humanBeing = new HumanBeing();
-                readHumanBeingFromConsole.initializeHumanBeing(humanBeing);
+                readHumanBeingFromConsole.initializeHumanBeing(humanBeing, scanner);
                 command.setValue(humanBeing);
             } else if (commandsWithArgs.contains(commandName)) {
-                command.setArgs(commandArgs);
+                if (commandArgs.length == 0){
+                    return null;
+                }
+                else{
+                    command.setArgs(commandArgs);
+                }
+
             }
             return command;
         } else {

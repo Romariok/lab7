@@ -1,5 +1,6 @@
 package Data;
 
+import java.io.Serializable;
 import java.time.ZonedDateTime;
 import java.util.Objects;
 
@@ -10,7 +11,7 @@ import java.util.Objects;
  * @author Roman Kobelev
  */
 
-public class HumanBeing implements Comparable<HumanBeing>{
+public class HumanBeing implements Comparable<HumanBeing>, Serializable {
     /**
      * Id of human being
      * Generates automatically, can't be null, greater than zero
@@ -103,7 +104,7 @@ public class HumanBeing implements Comparable<HumanBeing>{
      * Constructor of {@code HumanBeing} class without parameters
      */
     public HumanBeing(){
-        this.id = (int) (Math.random() * 1000);
+        this.id = (int) (Math.random() * 10000);
     }
 
     /**

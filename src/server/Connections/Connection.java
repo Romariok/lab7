@@ -7,6 +7,7 @@ import java.nio.channels.DatagramChannel;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.util.LinkedList;
+import java.util.logging.Level;
 
 import Data.HumanBeing;
 import DataStructure.CollectionManager;
@@ -20,9 +21,11 @@ public class Connection {
     private static DatagramSocket serverSocket = null;
     private DatagramChannel datagramChannel;
     public static LinkedList<HumanBeing> collection;
+    public static CollectionManager manager;
 
     public Connection(int port, CollectionManager manager) {
         this.PORT = port;
+        Connection.manager = manager;
         Connection.collection = manager.getCollection();
     }
 
@@ -35,7 +38,7 @@ public class Connection {
             selector = Selector.open();
 
             datagramChannel.register(selector, SelectionKey.OP_READ);
-
+            Log.getLogger().log(Level.INFO, "Server started datagram channel: " + datagramChannel.toString());
             SelectorManager.run();
         } catch (IOException ex) {
             Log.getLogger().warning(ex.getMessage());

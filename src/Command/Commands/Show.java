@@ -11,7 +11,7 @@ import java.util.LinkedList;
  * Class for the show command. Printing information about elements in collection
  */
 public class Show extends Command_abstract implements CommandResponse {
-    private String output;
+    private String output = "";
 
     public Show(CollectionManager collectionManager) {
         super(collectionManager);
@@ -29,6 +29,6 @@ public class Show extends Command_abstract implements CommandResponse {
 
     @Override
     public Response getResponse(){
-        return new Response("show", getArgs(), output);
+        return new Response("show", output);
     }
 }

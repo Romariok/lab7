@@ -1,5 +1,6 @@
 package client.setVariables;
 
+import java.io.InputStream;
 import java.util.Scanner;
 
 /**
@@ -8,27 +9,20 @@ import java.util.Scanner;
  * @author Roman Kobelev
  */
 public class SetName {
-    public static String initializeName() {
+    public static String initializeName(Scanner scanner) {
         String line;
-//        if (Linkedlist.count != 0){
-//            line = Linkedlist.getScript_input()[Linkedlist.count].trim();
-//            Linkedlist.count++;
-//        }
-//        else{
         System.out.println("Введите имя человека: ");
-        Scanner scanner = new Scanner(System.in);
         line = scanner.nextLine();
-//        }
         if (line != "\n") {
             if (line != null && line != "") {
                 return line;
             } else {
                 System.out.println("Введено некорректное имя! Введите имя ещё раз!");
-                return initializeName();
+                return initializeName(scanner);
             }
         } else {
             System.out.println("Введено некорректное имя! Введите имя ещё раз!");
-            return initializeName();
+            return initializeName(scanner);
         }
 
     }

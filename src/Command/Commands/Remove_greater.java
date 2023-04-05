@@ -34,6 +34,6 @@ public class Remove_greater extends Command_abstract implements CommandResponse 
 
     @Override
     public Response getResponse(){
-        return new Response("remove greater", getArgs(), output);
+        return new Response("remove greater", output);
     }
 }

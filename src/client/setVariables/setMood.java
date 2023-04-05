@@ -2,6 +2,7 @@ package client.setVariables;
 
 import Data.Mood;
 
+import java.io.InputStream;
 import java.util.Scanner;
 
 /**
@@ -11,17 +12,10 @@ import java.util.Scanner;
  * @see Mood
  */
 public class setMood {
-    public static Mood initializeMood() {
+    public static Mood initializeMood(Scanner scanner) {
         String line;
-//        if (Linkedlist.count != 0){
-//            line = Linkedlist.getScript_input()[Linkedlist.count].trim();
-//            Linkedlist.count++;
-//        }
-//        else{
         System.out.println("Введите настроение (Longing, Gloom, Frenzy): ");
-        Scanner scanner = new Scanner(System.in);
         line = scanner.nextLine();
-//        }
         switch (line) {
             case "Longing":
                 return Mood.LONGING;
@@ -31,7 +25,7 @@ public class setMood {
                 return Mood.FRENZY;
             default:
                 System.out.println("Введён некорректный тип оружия! Введите тип ещё раз!");
-                return initializeMood();
+                return initializeMood(scanner);
         }
     }
 }

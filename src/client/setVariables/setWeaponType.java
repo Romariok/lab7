@@ -1,6 +1,8 @@
 package client.setVariables;
 
 import Data.WeaponType;
+
+import java.io.InputStream;
 import java.util.Scanner;
 
 /**
@@ -10,17 +12,10 @@ import java.util.Scanner;
  * @see WeaponType
  */
 public class setWeaponType {
-    public static WeaponType initializeWeaponType() {
+    public static WeaponType initializeWeaponType(Scanner scanner) {
         String line;
-//        if (Linkedlist.count != 0){
-//            line = Linkedlist.getScript_input()[Linkedlist.count].trim();
-//            Linkedlist.count++;
-//        }
-//        else{
         System.out.println("Введите тип оружия (Shotgun, Rifle, Machine gun, Knife): ");
-        Scanner scanner = new Scanner(System.in);
         line = scanner.nextLine();
-//        }
         switch (line) {
             case "Shotgun":
                 return WeaponType.SHOTGUN;
@@ -32,7 +27,7 @@ public class setWeaponType {
                 return WeaponType.RIFLE;
             default:
                 System.out.println("Введён некорректный тип оружия! Введите тип ещё раз!");
-                return initializeWeaponType();
+                return initializeWeaponType(scanner);
         }
     }
 }

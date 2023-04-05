@@ -2,22 +2,27 @@ package client.setVariables;
 
 import Data.*;
 
+import java.util.Scanner;
+
 public class readHumanBeingFromConsole {
-    public static void initializeHumanBeing(HumanBeing humanBeing){
+    public static void initializeHumanBeing(HumanBeing humanBeing, Scanner input){
         humanBeing.setCreationDate();
-        humanBeing.setName(SetName.initializeName());
+        humanBeing.setName(SetName.initializeName(input));
         Coordinates coordinates = new Coordinates();
-        coordinates.setX(setCoordinates.setCoordinateX());
-        coordinates.setY(setCoordinates.setCoordinateY());
+        coordinates.setX(setCoordinates.setCoordinateX(input));
+        coordinates.setY(setCoordinates.setCoordinateY(input));
         humanBeing.setCoordinates(coordinates);
-        humanBeing.setRealHero(setRealHero.initializeRealHero());
-        humanBeing.setHasToothpick(setHasToothpick.initializeHasToothpick());
-        humanBeing.setImpactSpeed(setImpactSpeed.initializeImpactSpeed());
-        humanBeing.setSoundtrackName(setSoundtrackName.initializeSoundtrackName());
-        humanBeing.setWeaponType(setWeaponType.initializeWeaponType());
-        humanBeing.setMood(setMood.initializeMood());
+        humanBeing.setRealHero(setRealHero.initializeRealHero(input));
+        humanBeing.setHasToothpick(setHasToothpick.initializeHasToothpick(input));
+        humanBeing.setImpactSpeed(setImpactSpeed.initializeImpactSpeed(input));
+        humanBeing.setSoundtrackName(setSoundtrackName.initializeSoundtrackName(input));
+        humanBeing.setWeaponType(setWeaponType.initializeWeaponType(input));
+        humanBeing.setMood(setMood.initializeMood(input));
         Car car = new Car();
-        car.setCool(setCar.initializeCar());
+        car.setCool(setCar.initializeCar(input));
         humanBeing.setCar(car);
     }
+
+
+
 }

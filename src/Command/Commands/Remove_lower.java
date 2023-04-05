@@ -34,6 +34,6 @@ public class Remove_lower extends Command_abstract implements CommandResponse {
 
     @Override
     public Response getResponse(){
-        return new Response("remove lower", getArgs(), output);
+        return new Response("remove lower", output);
     }
 }

@@ -2,27 +2,87 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2023-04-04T10:39:17.234278700Z</date>
-  <millis>1680604757234</millis>
-  <nanos>278700</nanos>
+  <date>2023-04-05T11:57:36.020390100Z</date>
+  <millis>1680695856020</millis>
+  <nanos>390100</nanos>
   <sequence>0</sequence>
+  <logger>server.Log</logger>
+  <level>INFO</level>
+  <class>server.Connections.Connection</class>
+  <method>start</method>
+  <thread>1</thread>
+  <message>Server started datagram channel: sun.nio.ch.DatagramChannelImpl@1134affc</message>
+</record>
+<record>
+  <date>2023-04-05T11:57:53.510510300Z</date>
+  <millis>1680695873510</millis>
+  <nanos>510300</nanos>
+  <sequence>1</sequence>
   <logger>server.Log</logger>
   <level>INFO</level>
   <class>Command.CommandExecutor</class>
   <method>execute</method>
   <thread>1</thread>
-  <message>Received command Command.Commands.Info@4411d970from /192.168.1.49:57924</message>
+  <message>Received command Command.Commands.Execute_script@32e6e9c3from /192.168.1.49:50385</message>
 </record>
 <record>
-  <date>2023-04-04T10:39:17.251371700Z</date>
-  <millis>1680604757251</millis>
-  <nanos>371700</nanos>
-  <sequence>1</sequence>
+  <date>2023-04-05T11:57:54.702445300Z</date>
+  <millis>1680695874702</millis>
+  <nanos>445300</nanos>
+  <sequence>2</sequence>
   <logger>server.Log</logger>
-  <level>WARNING</level>
-  <class>server.Connections.SelectorManager</class>
-  <method>run</method>
+  <level>INFO</level>
+  <class>Command.CommandExecutor</class>
+  <method>execute</method>
   <thread>1</thread>
-  <message>java.lang.NullPointerException: Cannot invoke "DataStructure.CollectionManager.getCollection()" because the return value of "Command.Commands.Info.getCollectionManager()" is null</message>
+  <message>Sending 118 chunks to /192.168.1.49:50385</message>
+</record>
+<record>
+  <date>2023-04-05T12:00:05.759581700Z</date>
+  <millis>1680696005759</millis>
+  <nanos>581700</nanos>
+  <sequence>3</sequence>
+  <logger>server.Log</logger>
+  <level>INFO</level>
+  <class>Command.CommandExecutor</class>
+  <method>execute</method>
+  <thread>1</thread>
+  <message>Received command Command.Commands.Info@59fa1d9bfrom /192.168.1.49:50385</message>
+</record>
+<record>
+  <date>2023-04-05T12:00:05.765977200Z</date>
+  <millis>1680696005765</millis>
+  <nanos>977200</nanos>
+  <sequence>4</sequence>
+  <logger>server.Log</logger>
+  <level>INFO</level>
+  <class>Command.CommandExecutor</class>
+  <method>execute</method>
+  <thread>1</thread>
+  <message>Sending 1 chunks to /192.168.1.49:50385</message>
+</record>
+<record>
+  <date>2023-04-05T12:00:10.974287400Z</date>
+  <millis>1680696010974</millis>
+  <nanos>287400</nanos>
+  <sequence>5</sequence>
+  <logger>server.Log</logger>
+  <level>INFO</level>
+  <class>Command.CommandExecutor</class>
+  <method>execute</method>
+  <thread>1</thread>
+  <message>Received command Command.Commands.Clear@27efef64from /192.168.1.49:50385</message>
+</record>
+<record>
+  <date>2023-04-05T12:00:10.975273Z</date>
+  <millis>1680696010975</millis>
+  <nanos>273000</nanos>
+  <sequence>6</sequence>
+  <logger>server.Log</logger>
+  <level>INFO</level>
+  <class>Command.CommandExecutor</class>
+  <method>execute</method>
+  <thread>1</thread>
+  <message>Sending 1 chunks to /192.168.1.49:50385</message>
 </record>
 </log>

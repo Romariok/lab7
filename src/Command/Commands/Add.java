@@ -30,6 +30,6 @@ public class Add extends Command_abstract implements CommandResponse{
     }
     @Override
     public Response getResponse(){
-        return new Response("add", getArgs(), "Command Add had executed");
+        return new Response("add", "Command Add had executed");
     }
 }

@@ -37,6 +37,6 @@ public class Insert_at extends Command_abstract implements CommandResponse {
 
     @Override
     public Response getResponse(){
-        return new Response("insert at", getArgs(), output);
+        return new Response("insert at", output);
     }
 }

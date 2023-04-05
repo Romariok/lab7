@@ -17,7 +17,7 @@ public class Help extends Command_abstract implements CommandResponse {
     }
     @Override
     public void execute() {
-        output = "\"info : вывести в стандартный поток вывода информацию о коллекции (тип, дата инициализации, количество элементов и т.д.)\n" +
+        output = "info : вывести в стандартный поток вывода информацию о коллекции (тип, дата инициализации, количество элементов и т.д.)\n" +
                 "show : вывести в стандартный поток вывода все элементы коллекции в строковом представлении\n"+
                 "add {element} : добавить новый элемент в коллекцию\n" +
                 "update id {element} : обновить значение элемента коллекции, id которого равен заданному\n" +
@@ -35,6 +35,6 @@ public class Help extends Command_abstract implements CommandResponse {
     }
     @Override
     public Response getResponse() {
-        return new Response("help", getArgs(), output);
+        return new Response("help", output);
     }
 }

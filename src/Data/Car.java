@@ -1,10 +1,12 @@
 package Data;
 
+import java.io.Serializable;
+
 /**
  * Used to manage with car
  * @author Roman Kobelev
  */
-public class Car implements Comparable<Car>{
+public class Car implements Comparable<Car>, Serializable {
     /**
      * Status of car of human being
      * @see HumanBeing

@@ -6,7 +6,7 @@ import java.net.UnknownHostException;
 
 public class ClientMain {
     private static final InetAddress address;
-    private static final int PORT = 7777;
+    private static final int PORT = 9174;
 
     static{
         try{

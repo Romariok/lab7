@@ -1,5 +1,6 @@
 package client.setVariables;
 
+import java.io.InputStream;
 import java.util.Scanner;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Scanner;
  * @author Roman Kobelev
  */
 public class setRealHero {
-    public static boolean initializeRealHero() {
+    public static boolean initializeRealHero(Scanner scanner) {
         String line;
 //        if (Linkedlist.count != 0){
 //            line = Linkedlist.getScript_input()[Linkedlist.count].trim();
@@ -16,7 +17,6 @@ public class setRealHero {
 //        }
 //        else{
         System.out.println("Является ли человек настоящим героем? (Да/Нет): ");
-        Scanner scanner = new Scanner(System.in);
         line = scanner.nextLine();
 //        }
         switch (line) {
@@ -26,7 +26,7 @@ public class setRealHero {
                 return false;
             default:
                 System.out.println("Введено некорректное значение! Введите значение ещё раз!");
-                return initializeRealHero();
+                return initializeRealHero(scanner);
 
         }
     }

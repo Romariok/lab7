@@ -1,10 +1,12 @@
 package Data;
 
+import java.io.Serializable;
+
 /**
  * Enum {@code WeaponType} lists all the possible weapon types
  * @author Roman Kobelev
  */
-public enum WeaponType {
+public enum WeaponType implements Serializable {
     SHOTGUN("Shotgun"),
     RIFLE("Rifle"),
     KNIFE("Knife"),

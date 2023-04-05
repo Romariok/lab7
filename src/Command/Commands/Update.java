@@ -33,11 +33,11 @@ public class Update extends Command_abstract implements CommandResponse {
 //            humans.re
             output = "Ваш элемент успешно обновлён!";
         } else {
-            output = "Объекта по вашему id не существует в коллекции!";
+            output = "Объекта по id - " +id + " не существует в коллекции!";
         }
     }
     @Override
     public Response getResponse(){
-        return new Response("update", getArgs(), output);
+        return new Response("update", output);
     }
 }

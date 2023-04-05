@@ -1,10 +1,13 @@
 package Data;
 
+import java.io.Serial;
+import java.io.Serializable;
+
 /**
  * Enum {@code Mood} lists all the possible moods
  * @author Roman Kobelev
  */
-public enum Mood {
+public enum Mood  implements Serializable {
     LONGING("Longing"),
     GLOOM("Gloom"),
     FRENZY("Frenzy");

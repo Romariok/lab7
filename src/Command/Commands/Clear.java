@@ -25,6 +25,6 @@ public class Clear extends Command_abstract implements CommandResponse{
     }
     @Override
     public Response getResponse(){
-        return new Response("clear", getArgs(), output);
+        return new Response("clear", output);
     }
 }

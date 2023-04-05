@@ -1,14 +1,8 @@
 package client;
 
-import DataStructure.Request;
-import server.Log;
-
 
 import java.io.*;
 import java.net.*;
-import java.nio.ByteBuffer;
-import java.nio.channels.DatagramChannel;
-import java.util.logging.Level;
 
 public class Connection {
     private int chunkSize;
@@ -25,22 +19,19 @@ public class Connection {
         datagramSocket.setSendBufferSize(8192*8192);
         this.chunkSize = 1024;
         datagramSocket.setSoTimeout(5000);
-        System.out.println("===== Client started! Server on " + address + ":" + port + " =====");
+        System.out.println("--------- Client started! Server on " + address + ":" + port + " ---------");
     }
-    public void send(String str) throws IOException {
+    public void send(String str) throws Exception {
         this.send(str.getBytes());
     }
 
-    public void send(byte[] bytes) throws IOException {
+    public void send(byte[] bytes) throws Exception {
         int chunkNum = (int) Math.ceil((double) bytes.length / chunkSize);
-        if (chunkNum == 0) {
-            chunkNum = 1;
-        }
         for (int i = 0; i < chunkNum; i++) {
             int startOfChunk = i * chunkSize;
             int len = Math.min(bytes.length - startOfChunk, chunkSize);
             byte[] chunk = new byte[len + 1];
-            if (chunkNum == i + 1) {
+            if (chunkNum == 1 || i + 1 == chunkNum ) {
                 chunk[len] = (byte) 0;
             } else {
                 chunk[len] = (byte) 1;
@@ -51,7 +42,7 @@ public class Connection {
         }
 
 
-        System.out.print("Client send to server "+ chunkNum+" chunks!");
+        System.out.print("Client send to server "+ chunkNum+" chunks!\n");
     }
 
     public String recieve() throws IOException {
@@ -59,11 +50,11 @@ public class Connection {
         byte[] buf = new byte [chunkSize+1];
         DatagramPacket packet = new DatagramPacket(buf, buf.length);
         datagramSocket.receive(packet);
-        boolean hasNext = (packet.getData()[packet.getLength() - 1]) == 1;
+        boolean hasNext = (packet.getData()[packet.getLength() - 1] & 0xFF) == 1;
         baos.write(packet.getData(), 0, packet.getLength() - 1);
         while (hasNext){
             datagramSocket.receive(packet);
-            hasNext = (packet.getData()[packet.getLength() - 1]) == 1;
+            hasNext = (packet.getData()[packet.getLength() - 1] & 0xFF) == 1;
             baos.write(packet.getData(), 0, packet.getLength() - 1);
         }
         return baos.toString();
