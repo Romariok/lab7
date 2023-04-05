@@ -13,9 +13,6 @@ import java.util.LinkedList;
 public class Filter_starts_with_soundtrack_name extends Command_abstract implements CommandResponse {
     private String output;
 
-    public Filter_starts_with_soundtrack_name(CollectionManager collectionManager) {
-        super(collectionManager);
-    }
     public Filter_starts_with_soundtrack_name(){
     }
     @Override

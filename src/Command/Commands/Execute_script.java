@@ -27,6 +27,7 @@ public class Execute_script extends Command_abstract implements CommandResponse 
             command.execute();
             sb.append(command.getResponse().getOutput());
         });
+        sb.append("\n");
         output = sb.toString();
     }
 

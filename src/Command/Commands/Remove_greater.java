@@ -13,9 +13,6 @@ import java.util.LinkedList;
 public class Remove_greater extends Command_abstract implements CommandResponse {
     private String output;
 
-    public Remove_greater(CollectionManager collectionManager) {
-        super(collectionManager);
-    }
     public Remove_greater(){
     }
     @Override
@@ -29,7 +26,7 @@ public class Remove_greater extends Command_abstract implements CommandResponse 
                 humans.remove(i);
             }
         }
-        output = "Удалено " + counting + " элементов, id которых был больше " + id + "!";
+        output = "Удалено " + counting + " элементов, id которых был больше " + id + "!\n";
     }
 
     @Override

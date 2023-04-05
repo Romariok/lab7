@@ -13,9 +13,6 @@ import java.util.LinkedList;
 public class Remove_lower extends Command_abstract implements CommandResponse {
     private String output;
 
-    public Remove_lower(CollectionManager collectionManager) {
-        super(collectionManager);
-    }
     public Remove_lower(){
     }
     @Override
@@ -29,7 +26,7 @@ public class Remove_lower extends Command_abstract implements CommandResponse {
                 humans.remove(i);
             }
         }
-        output = "Удалено " + counting + " элементов, id которых был меньше " + id + "!";
+        output = "Удалено " + counting + " элементов, id которых был меньше " + id + "!\n";
     }
 
     @Override

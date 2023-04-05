@@ -10,9 +10,6 @@ import DataStructure.Response;
 public class Help extends Command_abstract implements CommandResponse {
     private String output;
 
-    public Help(CollectionManager collectionManager) {
-        super(collectionManager);
-    }
     public Help(){
     }
     @Override

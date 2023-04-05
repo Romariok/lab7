@@ -14,9 +14,6 @@ import java.util.LinkedList;
 public class Count_greater_than_car extends Command_abstract implements CommandResponse {
     private String output;
 
-    public Count_greater_than_car(CollectionManager collectionManager){
-        super(collectionManager);
-    }
     public Count_greater_than_car(){
     }
     @Override
@@ -31,7 +28,7 @@ public class Count_greater_than_car extends Command_abstract implements CommandR
                 }
             }
         }
-        output = "Количество элементов, значение поля car которых больше " + cool + " : " + counting;
+        output = "Количество элементов, значение поля car которых больше " + cool + " : " + counting+"\n";
     }
 
     @Override

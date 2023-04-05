@@ -13,9 +13,6 @@ import java.util.LinkedList;
 public class Update extends Command_abstract implements CommandResponse {
     private String output;
 
-    public Update(CollectionManager collectionManager) {
-        super(collectionManager);
-    }
     public Update(){
     }
     @Override
@@ -31,9 +28,9 @@ public class Update extends Command_abstract implements CommandResponse {
         }
         if (humanBeing != null) {
 //            humans.re
-            output = "Ваш элемент успешно обновлён!";
+            output = "Ваш элемент успешно обновлён!\n";
         } else {
-            output = "Объекта по id - " +id + " не существует в коллекции!";
+            output = "Объекта по id - " +id + " не существует в коллекции!\n";
         }
     }
     @Override

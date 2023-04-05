@@ -14,9 +14,6 @@ import java.util.LinkedList;
 public class Insert_at extends Command_abstract implements CommandResponse {
     private String output;
 
-    public Insert_at(CollectionManager collectionManager){
-        super(collectionManager);
-    }
     public Insert_at(){
     }
     @Override
@@ -29,10 +26,10 @@ public class Insert_at extends Command_abstract implements CommandResponse {
             humans.add(index, humanBeing);
         } catch (Exception ex) {
             ex.getStackTrace();
-            output = "Возникла ошибка при добавлении элемента на " + index + "-ю позицию!";
+            output = "Возникла ошибка при добавлении элемента на " + index + "-ю позицию!\n";
         }
         humans.sort(comparator);
-        output = "Ваш элемент успешно добавлен в коллекцию на " + index + " позицию!";
+        output = "Ваш элемент успешно добавлен в коллекцию на " + index + " позицию!\n";
     }
 
     @Override

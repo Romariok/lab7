@@ -13,9 +13,6 @@ import java.util.LinkedList;
 public class Remove_by_id extends Command_abstract implements CommandResponse {
     private String output;
 
-    public Remove_by_id(CollectionManager collectionManager){
-        super(collectionManager);
-    }
     public Remove_by_id(){
     }
     @Override
@@ -25,10 +22,10 @@ public class Remove_by_id extends Command_abstract implements CommandResponse {
         try {
             humans.remove(index);
         } catch (Exception ex) {
-            output = "Возникла непредвиденная ошибка! Элемент не удалён!";
+            output = "Возникла непредвиденная ошибка! Элемент не удалён!\n";
             ex.getStackTrace();
         }
-        output = index + "-й элемент успешно удалён!";
+        output = index + "-й элемент успешно удалён!\n";
     }
     @Override
     public Response getResponse(){

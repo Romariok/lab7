@@ -9,9 +9,7 @@ public class ServerMain {
     public static String clientsDataPath;
     public static void main(String[] args) {
         int port = 9174;
-
         clientsDataPath = args[0];
-
         CollectionManager manager = new CollectionManager(clientsDataPath);
         Connection connection = new Connection(port, manager);
         connection.start();

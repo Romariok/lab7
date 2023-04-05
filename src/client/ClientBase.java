@@ -7,8 +7,10 @@ import Command.CommandFactory;
 import java.net.InetAddress;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
+import static client.ClientMain.arg;
 import static Command.Serializer.serialize;
 public class ClientBase implements Runnable {
     private final Connection connection;
@@ -26,6 +28,20 @@ public class ClientBase implements Runnable {
         String[] commandArgs;
         Scanner scanner = new Scanner(System.in);
         CommandFactory commandFactory = new CommandFactory();
+        if (arg.length >= 2){
+            if (Objects.equals(arg[0], "-exec")){
+                CommandResponse execute_script = commandFactory.getCommand("execute_script", new String[]{arg[1]}, scanner);
+                try{
+                    connection.send(serialize(execute_script));
+                    String response = connection.recieve();
+                    if (!response.isEmpty()) System.out.println(response);
+                }
+                catch (Exception ex){
+                    System.err.println(ex.getMessage());
+                }
+            }
+        }
+
 
         while (true) {
             List<String> input = Arrays.stream(scanner.nextLine().split(" ")).toList();

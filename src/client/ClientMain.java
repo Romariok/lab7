@@ -7,6 +7,7 @@ import java.net.UnknownHostException;
 public class ClientMain {
     private static final InetAddress address;
     private static final int PORT = 9174;
+    public static String[] arg;
 
     static{
         try{
@@ -19,7 +20,7 @@ public class ClientMain {
     }
 
     public static void main(String[] args) {
-
+        arg = args;
         ClientBase base = new ClientBase(address, PORT);
 
         base.run();

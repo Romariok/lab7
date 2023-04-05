@@ -16,7 +16,7 @@ public class HumanBeing implements Comparable<HumanBeing>, Serializable {
      * Id of human being
      * Generates automatically, can't be null, greater than zero
      */
-    private int id;
+    private static int id = 1;
     /**
      * Name of human being
      * can't be null, string can't be empty
@@ -88,7 +88,7 @@ public class HumanBeing implements Comparable<HumanBeing>, Serializable {
      * @see Car
      */
     public HumanBeing(String name, Coordinates coordinates, boolean realHero, Boolean hasToothpick, long impactSpeed, String soundtrackName, WeaponType weaponType, Mood mood, Car car){
-        this.id = (int) (Math.random() * 1000);
+        id++;
         this.name = name;
         this.coordinates = coordinates;
         this.realHero = realHero;
@@ -292,7 +292,7 @@ public class HumanBeing implements Comparable<HumanBeing>, Serializable {
      */
     @Override
     public String toString(){
-        return "-id: "+this.id+"\n"+"   -name: "+this.name+"\n"+"   -coordinates: "+this.coordinates+
+        return "-id: "+ id+"\n"+"   -name: "+this.name+"\n"+"   -coordinates: "+this.coordinates+
                 "\n"+"   -Creation date: "+this.creationDate+"\n"
                 +"   -realHero: "+this.realHero+"\n"+"   -hasToothpick: "+this.hasToothpick+"\n"+
                 "   -impact speed: "+this.impactSpeed+"\n"+"   -soundtrack name: "+this.soundtrackName+"\n"+

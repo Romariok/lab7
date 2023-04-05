@@ -10,9 +10,6 @@ import java.util.LinkedList;
 public class Clear extends Command_abstract implements CommandResponse{
     String output;
 
-    public Clear(CollectionManager collectionManager){
-        super(collectionManager);
-    }
     public Clear(){
     }
 
@@ -20,8 +17,8 @@ public class Clear extends Command_abstract implements CommandResponse{
     public void execute(){
         LinkedList<HumanBeing> humans = getCollectionManager().getCollection();
         humans.clear();
-        output = "Collection successfully cleared!";
-//        silent_save();
+        output = "Collection successfully cleared!\n";
+
     }
     @Override
     public Response getResponse(){

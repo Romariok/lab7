@@ -13,10 +13,6 @@ import java.util.LinkedList;
  * Class for tha add command. Add an element.
  */
 public class Add extends Command_abstract implements CommandResponse{
-
-    public Add(CollectionManager collectionManager){
-        super(collectionManager);
-    }
     public Add(){
     }
 
@@ -30,6 +26,6 @@ public class Add extends Command_abstract implements CommandResponse{
     }
     @Override
     public Response getResponse(){
-        return new Response("add", "Command Add had executed");
+        return new Response("add", "Command Add had executed\n");
     }
 }

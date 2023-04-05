@@ -13,9 +13,6 @@ import java.util.LinkedList;
 public class Show extends Command_abstract implements CommandResponse {
     private String output = "";
 
-    public Show(CollectionManager collectionManager) {
-        super(collectionManager);
-    }
     public Show(){
     }
     @Override
@@ -24,7 +21,7 @@ public class Show extends Command_abstract implements CommandResponse {
         if (humans.size() != 0) humans.forEach(humanBeing -> {
             output += humanBeing.toString();
         });
-        else output = "Collection is empty";
+        else output = "Collection is empty\n";
     }
 
     @Override

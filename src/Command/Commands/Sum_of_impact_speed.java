@@ -13,9 +13,6 @@ import java.util.LinkedList;
 public class Sum_of_impact_speed extends Command_abstract implements CommandResponse {
     private String output;
 
-    public Sum_of_impact_speed(CollectionManager collectionManager){
-        super(collectionManager);
-    }
     public Sum_of_impact_speed(){
     }
     @Override
@@ -25,7 +22,7 @@ public class Sum_of_impact_speed extends Command_abstract implements CommandResp
         for (int i = 0; i < humans.size(); i++) {
             sum += humans.get(i).getImpactSpeed();
         }
-        output = "Сумма значений поля impactSpeed для всех элементов коллекции: " + sum;
+        output = "Сумма значений поля impactSpeed для всех элементов коллекции: " + sum+"\n";
     }
 
     @Override
