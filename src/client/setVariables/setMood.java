@@ -12,9 +12,12 @@ import java.util.Scanner;
  * @see Mood
  */
 public class setMood {
-    public static Mood initializeMood(Scanner scanner) {
+    public static Mood initializeMood(Scanner scanner, boolean bool) {
         String line;
-        System.out.println("Введите настроение (Longing, Gloom, Frenzy): ");
+        if (!bool) {
+            System.out.println("Введите настроение (Longing, Gloom, Frenzy): ");
+        }
+
         line = scanner.nextLine();
         switch (line) {
             case "Longing":
@@ -24,8 +27,11 @@ public class setMood {
             case "Frenzy":
                 return Mood.FRENZY;
             default:
-                System.out.println("Введён некорректный тип оружия! Введите тип ещё раз!");
-                return initializeMood(scanner);
+                if (!bool) {
+                    System.out.println("Введён некорректный тип оружия! Введите тип ещё раз!");
+                }
+
+                return initializeMood(scanner, bool);
         }
     }
 }

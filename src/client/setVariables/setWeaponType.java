@@ -12,9 +12,12 @@ import java.util.Scanner;
  * @see WeaponType
  */
 public class setWeaponType {
-    public static WeaponType initializeWeaponType(Scanner scanner) {
+    public static WeaponType initializeWeaponType(Scanner scanner, boolean bool) {
         String line;
-        System.out.println("Введите тип оружия (Shotgun, Rifle, Machine gun, Knife): ");
+        if (!bool) {
+            System.out.println("Введите тип оружия (Shotgun, Rifle, Machine gun, Knife): ");
+        }
+
         line = scanner.nextLine();
         switch (line) {
             case "Shotgun":
@@ -26,8 +29,11 @@ public class setWeaponType {
             case "Rifle":
                 return WeaponType.RIFLE;
             default:
-                System.out.println("Введён некорректный тип оружия! Введите тип ещё раз!");
-                return initializeWeaponType(scanner);
+                if (!bool) {
+                    System.out.println("Введён некорректный тип оружия! Введите тип ещё раз!");
+                }
+
+                return initializeWeaponType(scanner, bool);
         }
     }
 }

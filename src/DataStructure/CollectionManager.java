@@ -26,7 +26,7 @@ public class CollectionManager {
      */
     private final ZonedDateTime indate;
     /**
-     * ParserXML used for read and write data to file
+     * ParserXML used for execute and write data to file
      *
      * @see ParserXML
      */

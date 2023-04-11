@@ -28,7 +28,7 @@ public class CommandExecutor {
         ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(bytes));
         CommandResponse command = (CommandResponse) ois.readObject();
         command.setCollectionManager(manager);
-        Log.getLogger().log(Level.INFO, "Received command "+ command + "from "+ client);
+        Log.getLogger().log(Level.INFO, "Received command "+ command + " from "+ client);
 
         command.execute();
         byte[] output = command.getResponse().getOutput().getBytes();

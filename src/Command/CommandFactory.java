@@ -31,6 +31,7 @@ public class CommandFactory {
         commands.put("sum_of_impact_speed", new Sum_of_impact_speed());
         commands.put("update", new Update());
         commandsWithObject.add("add");
+        commandsWithArgs.add("update");
         commandsWithObject.add("update");
         commandsWithObject.add("insert_at");
         commandsWithArgs.add("count_greater_than_car");
@@ -41,14 +42,14 @@ public class CommandFactory {
         commandsWithArgs.add("remove_lower");
     }
 
-    public CommandResponse getCommand(String commandName, String[] commandArgs, Scanner scanner) {
+    public CommandResponse getCommand(String commandName, String[] commandArgs, Scanner scanner, boolean bool) {
         if (commands.containsKey(commandName)) {
             CommandResponse command = commands.get(commandName);
             if (commandsWithObject.contains(commandName)) {
                 HumanBeing humanBeing = new HumanBeing();
-                readHumanBeingFromConsole.initializeHumanBeing(humanBeing, scanner);
+                readHumanBeingFromConsole.initializeHumanBeing(humanBeing, scanner, bool);
                 command.setValue(humanBeing);
-            } else if (commandsWithArgs.contains(commandName)) {
+            }  if (commandsWithArgs.contains(commandName)) {
                 if (commandArgs.length == 0){
                     return null;
                 }

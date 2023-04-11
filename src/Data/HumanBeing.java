@@ -12,11 +12,12 @@ import java.util.Objects;
  */
 
 public class HumanBeing implements Comparable<HumanBeing>, Serializable {
+    private static Long nextId = 1L;
     /**
-     * Id of human being
+     * id of human being
      * Generates automatically, can't be null, greater than zero
      */
-    private static int id = 1;
+    private Long id;
     /**
      * Name of human being
      * can't be null, string can't be empty
@@ -88,7 +89,7 @@ public class HumanBeing implements Comparable<HumanBeing>, Serializable {
      * @see Car
      */
     public HumanBeing(String name, Coordinates coordinates, boolean realHero, Boolean hasToothpick, long impactSpeed, String soundtrackName, WeaponType weaponType, Mood mood, Car car){
-        id++;
+        this.id = nextId++;
         this.name = name;
         this.coordinates = coordinates;
         this.realHero = realHero;
@@ -104,7 +105,7 @@ public class HumanBeing implements Comparable<HumanBeing>, Serializable {
      * Constructor of {@code HumanBeing} class without parameters
      */
     public HumanBeing(){
-        this.id = (int) (Math.random() * 10000);
+        this.id = nextId++;
     }
 
     /**
@@ -132,7 +133,7 @@ public class HumanBeing implements Comparable<HumanBeing>, Serializable {
     /**
      * @return id of human being
      */
-    public int getId(){
+    public Long getId(){
         return this.id;
     }
 
@@ -140,7 +141,7 @@ public class HumanBeing implements Comparable<HumanBeing>, Serializable {
      * Set id for human being
      * @param id
      */
-    public void setId(int id){
+    public void setId(Long id){
         this.id = id;
     }
 

@@ -10,10 +10,12 @@ import java.util.Scanner;
  * @author Roman Kobelev
  */
 public class setHasToothpick {
-    public static Boolean initializeHasToothpick(Scanner scanner) {
+    public static Boolean initializeHasToothpick(Scanner scanner, boolean bool) {
         String line;
+        if (!bool) {
+            System.out.println("Имеется ли у человека зубочистка во рту? (Да/Нет): ");
+        }
 
-        System.out.println("Имеется ли у человека зубочистка во рту? (Да/Нет): ");
         line = scanner.nextLine();
         switch (line) {
             case "Да":
@@ -21,8 +23,11 @@ public class setHasToothpick {
             case "Нет":
                 return false;
             default:
-                System.out.println("Введено некорректное значение! Введите значение ещё раз!");
-                return initializeHasToothpick(scanner);
+                if (!bool) {
+                    System.out.println("Введено некорректное значение! Введите значение ещё раз!");
+                }
+
+                return initializeHasToothpick(scanner, bool);
 
         }
     }

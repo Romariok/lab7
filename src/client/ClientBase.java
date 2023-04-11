@@ -28,9 +28,9 @@ public class ClientBase implements Runnable {
         String[] commandArgs;
         Scanner scanner = new Scanner(System.in);
         CommandFactory commandFactory = new CommandFactory();
-        if (arg.length >= 2){
-            if (Objects.equals(arg[0], "-exec")){
-                CommandResponse execute_script = commandFactory.getCommand("execute_script", new String[]{arg[1]}, scanner);
+        if (arg.length >= 3){
+            if (Objects.equals(arg[1], "-exec")){
+                CommandResponse execute_script = commandFactory.getCommand("execute_script", new String[]{arg[2]}, scanner, false);
                 try{
                     connection.send(serialize(execute_script));
                     String response = connection.recieve();
@@ -52,7 +52,7 @@ public class ClientBase implements Runnable {
                 System.out.println("Bye!");
                 System.exit(1);
             }
-            CommandResponse command = commandFactory.getCommand(commandName, commandArgs, scanner);
+            CommandResponse command = commandFactory.getCommand(commandName, commandArgs, scanner, false);
             if (command != null){
                 try{
                     connection.send(serialize(command));

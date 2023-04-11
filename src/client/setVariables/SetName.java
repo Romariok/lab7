@@ -9,20 +9,29 @@ import java.util.Scanner;
  * @author Roman Kobelev
  */
 public class SetName {
-    public static String initializeName(Scanner scanner) {
+    public static String initializeName(Scanner scanner, boolean bool) {
         String line;
-        System.out.println("Введите имя человека: ");
+        if (!bool) {
+            System.out.println("Введите имя человека: ");
+        }
+
         line = scanner.nextLine();
         if (line != "\n") {
             if (line != null && line != "") {
                 return line;
             } else {
-                System.out.println("Введено некорректное имя! Введите имя ещё раз!");
-                return initializeName(scanner);
+                if (!bool) {
+                    System.out.println("Введено некорректное имя! Введите имя ещё раз!");
+                }
+
+                return initializeName(scanner, bool);
             }
         } else {
-            System.out.println("Введено некорректное имя! Введите имя ещё раз!");
-            return initializeName(scanner);
+            if (!bool) {
+                System.out.println("Введено некорректное имя! Введите имя ещё раз!");
+            }
+
+            return initializeName(scanner, bool);
         }
 
     }

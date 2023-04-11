@@ -23,7 +23,7 @@ public class ParserXML {
      */
     private Document d;
     /**
-     * The file in which the data will be stored and read
+     * The file in which the data will be stored and execute
      */
     private File f;
     /**
@@ -91,7 +91,7 @@ public class ParserXML {
                     switch (item.getNodeName()){
                         case "id":
                             try {
-                                int id = Integer.parseInt(item.getTextContent());
+                                Long id = Long.parseLong(item.getTextContent());
                                 hb.setId(id);
                             } catch (Exception e) {
                                 throw new ParseException("Incorrect XML format", 1);

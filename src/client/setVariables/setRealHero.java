@@ -9,24 +9,23 @@ import java.util.Scanner;
  * @author Roman Kobelev
  */
 public class setRealHero {
-    public static boolean initializeRealHero(Scanner scanner) {
+    public static boolean initializeRealHero(Scanner scanner, boolean bool) {
         String line;
-//        if (Linkedlist.count != 0){
-//            line = Linkedlist.getScript_input()[Linkedlist.count].trim();
-//            Linkedlist.count++;
-//        }
-//        else{
-        System.out.println("Является ли человек настоящим героем? (Да/Нет): ");
+        if (!bool) {
+            System.out.println("Является ли человек настоящим героем? (Да/Нет): ");
+        }
+
         line = scanner.nextLine();
-//        }
         switch (line) {
             case "Да":
                 return true;
             case "Нет":
                 return false;
             default:
-                System.out.println("Введено некорректное значение! Введите значение ещё раз!");
-                return initializeRealHero(scanner);
+                if (!bool) {
+                    System.out.println("Введено некорректное значение! Введите значение ещё раз!");
+                }
+                return initializeRealHero(scanner, bool);
 
         }
     }

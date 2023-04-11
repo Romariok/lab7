@@ -6,9 +6,12 @@ import java.util.Scanner;
 
 
 public class setCar {
-    public static boolean initializeCar(Scanner scanner) {
+    public static boolean initializeCar(Scanner scanner, boolean bool) {
         String line;
-        System.out.println("Крутая ли у человека машина? (Да/Нет): ");
+        if (!bool){
+            System.out.println("Крутая ли у человека машина? (Да/Нет): ");
+        }
+
         line = scanner.nextLine();
         switch (line) {
             case "Да":
@@ -16,8 +19,10 @@ public class setCar {
             case "Нет":
                 return false;
             default:
-                System.out.println("Введено некорректное значение! Введите значение ещё раз!");
-                return initializeCar(scanner);
+                if (!bool){
+                    System.out.println("Введено некорректное значение! Введите значение ещё раз!");
+                }
+                return initializeCar(scanner, bool);
 
         }
     }

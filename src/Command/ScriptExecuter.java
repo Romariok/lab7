@@ -3,11 +3,7 @@ package Command;
 import server.Log;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
 import java.util.*;
 
 import static server.Connections.Connection.manager;
@@ -17,6 +13,7 @@ public class ScriptExecuter {
     private final ArrayList<CommandResponse> commandlist = new ArrayList<>();
     private final ArrayDeque<File> scriptsDeque = new ArrayDeque<>();
     private File script;
+    private StringBuilder output = new StringBuilder();
 
     public ScriptExecuter(File script) {
         this.script = script;
@@ -25,8 +22,10 @@ public class ScriptExecuter {
     public ArrayList<CommandResponse> getCommandlist() {
         return this.commandlist;
     }
-
-    public void read() {
+    public StringBuilder getOutput(){
+        return output;
+    }
+    public void execute() {
         String commandName;
         String[] commandArgs;
         CommandFactory commandFactory = new CommandFactory();
@@ -40,10 +39,12 @@ public class ScriptExecuter {
                     commandName = input.get(0);
                     commandArgs = input.subList(1, input.size()).toArray(new String[0]);
                     CommandResponse command;
-                    command = commandFactory.getCommand(commandName, commandArgs, scanner);
-                    command.setCollectionManager(manager);
+                    command = commandFactory.getCommand(commandName, commandArgs, scanner, true);
                     if (command != null) {
                         commandlist.add(command);
+                        command.setCollectionManager(manager);
+                        command.execute();
+                        output.append(command.getResponse().getOutput());
                     }
                 }
                 scriptsDeque.pop();
@@ -53,7 +54,6 @@ public class ScriptExecuter {
         } catch (FileNotFoundException ex) {
             Log.getLogger().warning(ex.getMessage());
         }
-
 
     }
 
