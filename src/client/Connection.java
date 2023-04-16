@@ -18,7 +18,7 @@ public class Connection {
         datagramSocket.setReceiveBufferSize(8192*8192);
         datagramSocket.setSendBufferSize(8192*8192);
         this.chunkSize = 1024;
-        datagramSocket.setSoTimeout(5000);
+        datagramSocket.setSoTimeout(10000);
         System.out.println("--------- Client started! Server on " + address + ":" + port + " ---------");
     }
     public void send(String str) throws Exception {

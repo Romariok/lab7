@@ -1,12 +1,11 @@
 package Command;
 
-import java.io.InputStream;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Scanner;
-
 import Command.Commands.*;
+
 import Data.HumanBeing;
 import client.setVariables.readHumanBeingFromConsole;
 

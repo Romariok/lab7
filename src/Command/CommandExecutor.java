@@ -1,7 +1,6 @@
 package Command;
 
 
-import server.Connections.Connection;
 import server.FileManagment.ParserXML;
 import server.Log;
 

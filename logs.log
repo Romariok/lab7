@@ -2,111 +2,39 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2023-04-11T13:15:49.376080Z</date>
-  <millis>1681218949376</millis>
-  <nanos>80000</nanos>
+  <date>2023-04-13T13:02:57.773587800Z</date>
+  <millis>1681390977773</millis>
+  <nanos>587800</nanos>
   <sequence>0</sequence>
   <logger>server.Log</logger>
   <level>INFO</level>
   <class>server.Connections.Connection</class>
   <method>start</method>
   <thread>1</thread>
-  <message>Server started datagram channel: sun.nio.ch.DatagramChannelImpl@56cbfb61</message>
+  <message>Server started datagram channel: sun.nio.ch.DatagramChannelImpl@6ad5c04e</message>
 </record>
 <record>
-  <date>2023-04-11T13:15:50.473050700Z</date>
-  <millis>1681218950473</millis>
-  <nanos>50700</nanos>
+  <date>2023-04-13T13:03:09.550717600Z</date>
+  <millis>1681390989550</millis>
+  <nanos>717600</nanos>
   <sequence>1</sequence>
   <logger>server.Log</logger>
   <level>INFO</level>
   <class>Command.CommandExecutor</class>
   <method>execute</method>
   <thread>1</thread>
-  <message>Received command Command.Commands.Execute_script@4590c9c3 from /172.28.25.184:49933</message>
+  <message>Received command Command.Commands.Info@6615435c from /172.28.25.184:55030</message>
 </record>
 <record>
-  <date>2023-04-11T13:15:51.193314300Z</date>
-  <millis>1681218951193</millis>
-  <nanos>314300</nanos>
+  <date>2023-04-13T13:03:09.557706500Z</date>
+  <millis>1681390989557</millis>
+  <nanos>706500</nanos>
   <sequence>2</sequence>
   <logger>server.Log</logger>
   <level>INFO</level>
   <class>Command.CommandExecutor</class>
   <method>execute</method>
   <thread>1</thread>
-  <message>Sending 123 chunks to /172.28.25.184:49933</message>
-</record>
-<record>
-  <date>2023-04-11T13:15:54.741973400Z</date>
-  <millis>1681218954741</millis>
-  <nanos>973400</nanos>
-  <sequence>3</sequence>
-  <logger>server.Log</logger>
-  <level>INFO</level>
-  <class>Command.CommandExecutor</class>
-  <method>execute</method>
-  <thread>1</thread>
-  <message>Received command Command.Commands.Info@46d56d67 from /172.28.25.184:49933</message>
-</record>
-<record>
-  <date>2023-04-11T13:15:54.746696900Z</date>
-  <millis>1681218954746</millis>
-  <nanos>696900</nanos>
-  <sequence>4</sequence>
-  <logger>server.Log</logger>
-  <level>INFO</level>
-  <class>Command.CommandExecutor</class>
-  <method>execute</method>
-  <thread>1</thread>
-  <message>Sending 1 chunks to /172.28.25.184:49933</message>
-</record>
-<record>
-  <date>2023-04-11T13:15:57.118638800Z</date>
-  <millis>1681218957118</millis>
-  <nanos>638800</nanos>
-  <sequence>5</sequence>
-  <logger>server.Log</logger>
-  <level>INFO</level>
-  <class>Command.CommandExecutor</class>
-  <method>execute</method>
-  <thread>1</thread>
-  <message>Received command Command.Commands.Show@ae45eb6 from /172.28.25.184:49933</message>
-</record>
-<record>
-  <date>2023-04-11T13:15:58.068858700Z</date>
-  <millis>1681218958068</millis>
-  <nanos>858700</nanos>
-  <sequence>6</sequence>
-  <logger>server.Log</logger>
-  <level>INFO</level>
-  <class>Command.CommandExecutor</class>
-  <method>execute</method>
-  <thread>1</thread>
-  <message>Sending 1332 chunks to /172.28.25.184:49933</message>
-</record>
-<record>
-  <date>2023-04-11T13:16:19.062310200Z</date>
-  <millis>1681218979062</millis>
-  <nanos>310200</nanos>
-  <sequence>7</sequence>
-  <logger>server.Log</logger>
-  <level>INFO</level>
-  <class>Command.CommandExecutor</class>
-  <method>execute</method>
-  <thread>1</thread>
-  <message>Received command Command.Commands.Clear@e25b2fe from /172.28.25.184:49933</message>
-</record>
-<record>
-  <date>2023-04-11T13:16:19.062310200Z</date>
-  <millis>1681218979062</millis>
-  <nanos>310200</nanos>
-  <sequence>8</sequence>
-  <logger>server.Log</logger>
-  <level>INFO</level>
-  <class>Command.CommandExecutor</class>
-  <method>execute</method>
-  <thread>1</thread>
-  <message>Sending 1 chunks to /172.28.25.184:49933</message>
+  <message>Sending 1 chunks to /172.28.25.184:55030</message>
 </record>
 </log>

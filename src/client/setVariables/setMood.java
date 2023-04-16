@@ -2,7 +2,6 @@ package client.setVariables;
 
 import Data.Mood;
 
-import java.io.InputStream;
 import java.util.Scanner;
 
 /**

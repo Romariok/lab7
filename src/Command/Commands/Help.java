@@ -1,7 +1,6 @@
 package Command.Commands;
 
 import Command.*;
-import DataStructure.CollectionManager;
 import DataStructure.Response;
 
 /**

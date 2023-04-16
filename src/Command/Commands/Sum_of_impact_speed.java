@@ -1,8 +1,8 @@
 package Command.Commands;
 
-import Command.*;
+import Command.CommandResponse;
+import Command.Command_abstract;
 import Data.HumanBeing;
-import DataStructure.CollectionManager;
 import DataStructure.Response;
 
 import java.util.LinkedList;
