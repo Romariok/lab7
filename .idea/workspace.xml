@@ -1,41 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0cdf9b99-84a4-488e-864d-9276249adc7d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/client.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/server.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/client.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/server.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proga_6.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/CommandExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/CommandExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/CommandFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Add.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Clear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Count_greater_than_car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Count_greater_than_car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Filter_starts_with_soundtrack_name.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Filter_starts_with_soundtrack_name.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Help.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Insert_at.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Insert_at.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Remove_by_id.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Remove_by_id.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Remove_greater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Remove_greater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Remove_lower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Remove_lower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Show.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Sum_of_impact_speed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Sum_of_impact_speed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataStructure/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataStructure/CollectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Connection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/setVariables/setCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/setVariables/setCar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/setVariables/setCoordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/setVariables/setCoordinates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/setVariables/setMood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/setVariables/setMood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/setVariables/setWeaponType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/setVariables/setWeaponType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/files/file.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/files/file.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/Connections/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Connections/Connection.java" afterDir="false" />
-    </list>
+    <list default="true" id="0cdf9b99-84a4-488e-864d-9276249adc7d" name="Changes" comment="old lab6" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,6 +23,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/ronya/Programming/lab5",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
@@ -89,8 +56,16 @@
       <option name="presentableId" value="Default" />
       <updated>1681391159147</updated>
       <workItem from="1681391162804" duration="442000" />
-      <workItem from="1681664700100" duration="203000" />
+      <workItem from="1681664700100" duration="546000" />
     </task>
+    <task id="LOCAL-00001" summary="old lab6">
+      <created>1681664952291</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681664952291</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,7 +82,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
@@ -123,5 +98,7 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+    <MESSAGE value="old lab6" />
+    <option name="LAST_COMMIT_MESSAGE" value="old lab6" />
   </component>
 </project>
