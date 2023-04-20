@@ -11,6 +11,9 @@ public class Response implements Serializable {
         this.command = command;
         this.output = output;
     }
+    public Response(String output) {
+        this.output = output;
+    }
 
     public String getCommand() {
         return command;

@@ -1,11 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="client" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cdf9b99-84a4-488e-864d-9276249adc7d" name="Changes" comment="old lab6" />
+    <list default="true" id="0cdf9b99-84a4-488e-864d-9276249adc7d" name="Changes" comment="tmp">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ChunkManager/ChunkCreating.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ChunkManager/ChunkReceiving.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/server/Connections/ServerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/CommandExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/CommandExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/Serializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Serializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataStructure/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataStructure/CollectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataStructure/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataStructure/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/ClientBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ClientBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Connection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/files/file.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/files/file.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/Connections/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Connections/Connection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/Connections/SelectorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Connections/SelectorManager.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -21,16 +50,21 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/ronya/Programming/lab5",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.ServerMain">
     <configuration name="ServerMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="server.ServerMain" />
       <module name="lab7" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;C:\Users\ronya\lab7\src\files\file.xml&quot; 7111" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="server.*" />
@@ -41,6 +75,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="client.ClientMain" />
+      <module name="lab7" />
+      <option name="PROGRAM_PARAMETERS" value="7111" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Unnamed" />
+      <item itemvalue="Application.ServerMain" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.ServerMain" />
@@ -56,7 +102,13 @@
       <option name="presentableId" value="Default" />
       <updated>1681391159147</updated>
       <workItem from="1681391162804" duration="442000" />
-      <workItem from="1681664700100" duration="546000" />
+      <workItem from="1681664700100" duration="924000" />
+      <workItem from="1681734311553" duration="12851000" />
+      <workItem from="1681754648496" duration="879000" />
+      <workItem from="1681844808293" duration="4154000" />
+      <workItem from="1681894298946" duration="7121000" />
+      <workItem from="1681911808755" duration="4353000" />
+      <workItem from="1682022960047" duration="820000" />
     </task>
     <task id="LOCAL-00001" summary="old lab6">
       <created>1681664952291</created>
@@ -65,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681664952291</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="tmp">
+      <created>1681665394101</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1681665394101</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -76,19 +135,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="master" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -99,6 +146,7 @@
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
     <MESSAGE value="old lab6" />
-    <option name="LAST_COMMIT_MESSAGE" value="old lab6" />
+    <MESSAGE value="tmp" />
+    <option name="LAST_COMMIT_MESSAGE" value="tmp" />
   </component>
 </project>

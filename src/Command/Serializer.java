@@ -1,9 +1,8 @@
 package Command;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import server.Log;
+
+import java.io.*;
 
 public class Serializer {
 
@@ -28,5 +27,17 @@ public class Serializer {
             System.err.println("Unable to close ObjectOutputStream");
         }
         return byteArrayOutputStream.toByteArray();
+    }
+    public static Object deserialize(byte[] data) {
+        try{
+            ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(data);
+            ObjectInputStream ois = new ObjectInputStream(byteArrayInputStream);
+            return ois.readObject();
+        }
+        catch (IOException | ClassNotFoundException ex){
+            Log.getLogger().warning(ex.getMessage());
+            return null;
+        }
+
     }
 }

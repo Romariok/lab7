@@ -1,3 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <HumanBeing>
+	<humanbeing>
+		<id>1</id>
+		<name>11</name>
+		<coordinates>
+			<x>11</x>
+			<y>11</y>
+		</coordinates>
+		<creationDate>2023-04-20T23:44:43.991192300+03:00[Europe/Moscow]</creationDate>
+		<realHero>true</realHero>
+		<hasToothpick>true</hasToothpick>
+		<impactSpeed>11</impactSpeed>
+		<soundtrackName>11</soundtrackName>
+		<weaponType>Shotgun</weaponType>
+		<mood>Longing</mood>
+		<car>true</car>
+	</humanbeing>
 </HumanBeing>

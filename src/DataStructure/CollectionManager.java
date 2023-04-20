@@ -10,16 +10,12 @@ import java.io.*;
 import java.time.ZonedDateTime;
 import java.util.*;
 
-
 public class CollectionManager {
     /**
      * LinkedList collection that contains HumanBeing objects
      */
-    private LinkedList<HumanBeing> humans = new LinkedList<HumanBeing>();
-    /**
-     * Counter for lines in script
-     */
-    public static int count = 0;
+    private LinkedList<HumanBeing> humans = new LinkedList<>();
+
     /**
      * Value for initialized time
      */

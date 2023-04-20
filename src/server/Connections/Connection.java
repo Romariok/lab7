@@ -6,6 +6,9 @@ import java.nio.channels.DatagramChannel;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.util.LinkedList;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.logging.Level;
 
 import Data.HumanBeing;
@@ -16,7 +19,7 @@ public class Connection {
 
     private final int PORT;
     private static Selector selector;
-    public static final int BUFFER_SIZE = 1024;
+    public static final int BUFFER_SIZE = 1032;
     private static DatagramSocket serverSocket = null;
     private DatagramChannel datagramChannel;
     public static LinkedList<HumanBeing> collection;
@@ -39,6 +42,7 @@ public class Connection {
             datagramChannel.register(selector, SelectionKey.OP_READ);
             Log.getLogger().log(Level.INFO, "Server started datagram channel: " + datagramChannel.toString());
             SelectorManager.run();
+
         } catch (IOException ex) {
             Log.getLogger().warning(ex.getMessage());
         } finally {
