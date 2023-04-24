@@ -8,6 +8,7 @@ import Database.ServerConnection;
 
 import java.util.Comparator;
 import java.util.LinkedList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 
 /**
@@ -19,9 +20,9 @@ public class Add extends Command_abstract implements CommandResponse{
 
     @Override
     public void execute(){
-        LinkedList<HumanBeing> humans = getCollectionManager().getCollection();
+        CopyOnWriteArrayList<HumanBeing> humans = getCollectionManager().getConcurrentCollection();
         HumanBeing humanBeing = (HumanBeing) getValue();
-        setSuccess(getCollectionManager().getDBManager().insertCommand(CollectionManager.bdColumns,));
+//        setSuccess(getCollectionManager().getDBManager().insertCommand(CollectionManager.bdColumns,));
         Comparator<HumanBeing> comparator = getCollectionManager().getComparator();
         humans.sort(comparator);
     }

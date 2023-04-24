@@ -5,6 +5,7 @@ import Data.HumanBeing;
 import DataStructure.Response;
 
 import java.util.LinkedList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Class for the remove_by_id command. Removing element by id
@@ -16,7 +17,7 @@ public class Remove_by_id extends Command_abstract implements CommandResponse {
     }
     @Override
     public void execute(){
-        LinkedList<HumanBeing> humans = getCollectionManager().getCollection();
+        CopyOnWriteArrayList<HumanBeing> humans = getCollectionManager().getConcurrentCollection();
         int index = Integer.parseInt(getArgs()[0]);
         try {
             humans.remove(index);

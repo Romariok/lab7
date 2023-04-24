@@ -6,6 +6,7 @@ import java.nio.charset.StandardCharsets;
 import java.text.ParseException;
 import java.time.ZonedDateTime;
 import java.util.LinkedList;
+import java.util.concurrent.CopyOnWriteArrayList;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import Data.*;
@@ -79,7 +80,7 @@ public class ParserXML {
      * @param ls Collection
      * @throws ParseException
      */
-    public void parseData(LinkedList<HumanBeing> ls) throws ParseException{
+    public void parseData(CopyOnWriteArrayList<HumanBeing> ls) throws ParseException{
         readData();
         NodeList object = d.getElementsByTagName("humanbeing");
         for (int i = 0; i < object.getLength();i++){
@@ -206,7 +207,7 @@ public class ParserXML {
      * Used for parsing collection to XML
      * @param ls Collection
      */
-    public void writeData(LinkedList<HumanBeing> ls){
+    public void writeData(CopyOnWriteArrayList<HumanBeing> ls){
         checkRights();
         try(PrintWriter printWriter = new PrintWriter(new FileWriter(f))){
             printWriter.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<HumanBeing>\n");

@@ -6,6 +6,7 @@ import DataStructure.Response;
 
 import java.util.Comparator;
 import java.util.LinkedList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Class for the update command. Updating element by his index
@@ -17,7 +18,7 @@ public class Update extends Command_abstract implements CommandResponse {
     }
     @Override
     public void execute() {
-        LinkedList<HumanBeing> humans = getCollectionManager().getCollection();
+        CopyOnWriteArrayList<HumanBeing> humans = getCollectionManager().getConcurrentCollection();
         HumanBeing humanBeing = null;
         Long id = Long.parseLong(getArgs()[0]);
         int in = 0;

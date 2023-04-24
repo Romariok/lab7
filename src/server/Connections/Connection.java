@@ -6,6 +6,7 @@ import java.nio.channels.DatagramChannel;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.util.LinkedList;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -22,13 +23,13 @@ public class Connection {
     public static final int BUFFER_SIZE = 1032;
     private static DatagramSocket serverSocket = null;
     private DatagramChannel datagramChannel;
-    public static LinkedList<HumanBeing> collection;
+    public static CopyOnWriteArrayList<HumanBeing> collection;
     public static CollectionManager manager;
 
     public Connection(int port, CollectionManager manager) {
         this.PORT = port;
         Connection.manager = manager;
-        Connection.collection = manager.getCollection();
+        Connection.collection = manager.getConcurrentCollection();
     }
 
     public void start() {

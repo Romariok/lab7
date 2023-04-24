@@ -10,6 +10,7 @@ import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.util.LinkedList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ParserXMLtoBD extends ParserXML {
     private CollectionManager collectionManager;
@@ -19,7 +20,7 @@ public class ParserXMLtoBD extends ParserXML {
         this.collectionManager = collectionManager;
     }
 
-    public void parseData(LinkedList<HumanBeing> ls) {
+    public void parseData(CopyOnWriteArrayList<HumanBeing> ls) {
         String rows = collectionManager.getDBManager().selectAllCommand();
         for (String row : rows.split("\n")) {
             try {

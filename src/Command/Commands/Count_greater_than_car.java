@@ -6,6 +6,7 @@ import Data.HumanBeing;
 import DataStructure.Response;
 
 import java.util.LinkedList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Class for the count_greater_than_car command. Remove elements in collection whose status of car greater than specified
@@ -17,7 +18,7 @@ public class Count_greater_than_car extends Command_abstract implements CommandR
     }
     @Override
     public void execute(){
-        LinkedList<HumanBeing> humans = getCollectionManager().getCollection();
+        CopyOnWriteArrayList<HumanBeing> humans = getCollectionManager().getConcurrentCollection();
         int counting = 0;
         boolean cool=  Boolean.parseBoolean(getArgs()[0]);
         if (!cool) {

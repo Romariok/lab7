@@ -5,6 +5,7 @@ import Data.HumanBeing;
 import DataStructure.Response;
 
 import java.util.LinkedList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Class for the remove_greater command. Removing elements in collection whose id is greater than specified
@@ -17,7 +18,7 @@ public class Remove_greater extends Command_abstract implements CommandResponse 
     @Override
     public void execute() {
         Integer id = Integer.parseInt(getArgs()[0]);
-        LinkedList<HumanBeing> humans = getCollectionManager().getCollection();
+        CopyOnWriteArrayList<HumanBeing> humans = getCollectionManager().getConcurrentCollection();
         int counting = 0;
         for (int i = 0; i < humans.size(); i++) {
             if (humans.get(i).getId() > id) {

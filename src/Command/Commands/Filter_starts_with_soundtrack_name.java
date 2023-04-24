@@ -6,6 +6,7 @@ import Data.HumanBeing;
 import DataStructure.Response;
 
 import java.util.LinkedList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Class for the filter_starts_with_soundtrack_name. Print items whose soundtrackName field value starts with the specified substring
@@ -17,7 +18,7 @@ public class Filter_starts_with_soundtrack_name extends Command_abstract impleme
     }
     @Override
     public void execute() {
-        LinkedList<HumanBeing> humans = getCollectionManager().getCollection();
+        CopyOnWriteArrayList<HumanBeing> humans = getCollectionManager().getConcurrentCollection();
         String soundtrackName = getArgs()[0];
         humans.forEach((humanBeing -> {
             if (humanBeing.getSoundtrackName().contains(soundtrackName)) {

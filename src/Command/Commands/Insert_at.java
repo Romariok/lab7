@@ -6,6 +6,7 @@ import DataStructure.Response;
 
 import java.util.Comparator;
 import java.util.LinkedList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Class for the insert_at command. Insert element in collection by index
@@ -19,7 +20,7 @@ public class Insert_at extends Command_abstract implements CommandResponse {
     public void execute(){
         int index = Integer.parseInt(getArgs()[0]);
         HumanBeing humanBeing = (HumanBeing) getValue();
-        LinkedList<HumanBeing> humans = getCollectionManager().getCollection();
+        CopyOnWriteArrayList<HumanBeing> humans = getCollectionManager().getConcurrentCollection();
         Comparator<HumanBeing> comparator = getCollectionManager().getComparator();
         try {
             humans.add(index, humanBeing);

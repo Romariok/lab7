@@ -6,6 +6,7 @@ import Data.HumanBeing;
 import DataStructure.Response;
 
 import java.util.LinkedList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 
 /**
@@ -19,7 +20,7 @@ public class Info extends Command_abstract implements CommandResponse {
     }
     @Override
     public void execute(){
-        LinkedList<HumanBeing> humans = getCollectionManager().getCollection();
+        CopyOnWriteArrayList<HumanBeing> humans = getCollectionManager().getConcurrentCollection();
         output = "Тип коллекции: " + humans.getClass() + "\n"
                 + "Дата инициализации: " + getCollectionManager().getIndate() + "\n"
                 + "Размер коллекции: " + humans.size() + "\n";

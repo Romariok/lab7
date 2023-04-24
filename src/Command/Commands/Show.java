@@ -6,6 +6,7 @@ import Data.HumanBeing;
 import DataStructure.Response;
 
 import java.util.LinkedList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Class for the show command. Printing information about elements in collection
@@ -17,7 +18,7 @@ public class Show extends Command_abstract implements CommandResponse {
     }
     @Override
     public void execute() {
-        LinkedList<HumanBeing> humans = getCollectionManager().getCollection();
+        CopyOnWriteArrayList<HumanBeing> humans = getCollectionManager().getConcurrentCollection();
         if (humans.size() != 0) humans.forEach(humanBeing -> {
             output += humanBeing.toString();
         });

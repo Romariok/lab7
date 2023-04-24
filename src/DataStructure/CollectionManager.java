@@ -11,12 +11,14 @@ import java.io.*;
 
 import java.time.ZonedDateTime;
 import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class CollectionManager {
     /**
      * LinkedList collection that contains HumanBeing objects
      */
     private LinkedList<HumanBeing> humans = new LinkedList<>();
+    private CopyOnWriteArrayList<HumanBeing> concurrentHumans = new CopyOnWriteArrayList<>();
 
     /**
      * Value for initialized time
@@ -70,17 +72,18 @@ public class CollectionManager {
     public LinkedList<HumanBeing> getCollection(){
         return humans;
     }
+    public CopyOnWriteArrayList<HumanBeing> getConcurrentCollection(){return concurrentHumans;}
     public void setCollection(LinkedList<HumanBeing> linkedList){
         this.humans = linkedList;
     }
-
+    public void setConcurrentCollection(CopyOnWriteArrayList<HumanBeing> ls){this.concurrentHumans = ls;}
 
     /**
      * Used to load data from file to collection
      */
     private void load() {
         try {
-            parserXMLtoBD.parseData(humans);
+            parserXMLtoBD.parseData(concurrentHumans);
         } catch (Exception ex) {
             System.err.println("Возникла непредвиденная ошибка! Файл не загрузился!");
             System.exit(1);

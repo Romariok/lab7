@@ -6,6 +6,7 @@ import Data.HumanBeing;
 import DataStructure.Response;
 
 import java.util.LinkedList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Class for the sum_of_impact_speed. Printing sum of impact speed of elements in collection
@@ -18,7 +19,7 @@ public class Sum_of_impact_speed extends Command_abstract implements CommandResp
     @Override
     public void execute(){
         int sum = 0;
-        LinkedList<HumanBeing> humans = getCollectionManager().getCollection();
+        CopyOnWriteArrayList<HumanBeing> humans = getCollectionManager().getConcurrentCollection();
         for (int i = 0; i < humans.size(); i++) {
             sum += humans.get(i).getImpactSpeed();
         }
