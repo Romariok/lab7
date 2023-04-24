@@ -2,7 +2,9 @@ package Command.Commands;
 
 import Command.*;
 import Data.HumanBeing;
+import DataStructure.CollectionManager;
 import DataStructure.Response;
+import Database.ServerConnection;
 
 import java.util.Comparator;
 import java.util.LinkedList;
@@ -19,8 +21,8 @@ public class Add extends Command_abstract implements CommandResponse{
     public void execute(){
         LinkedList<HumanBeing> humans = getCollectionManager().getCollection();
         HumanBeing humanBeing = (HumanBeing) getValue();
+        setSuccess(getCollectionManager().getDBManager().insertCommand(CollectionManager.bdColumns,));
         Comparator<HumanBeing> comparator = getCollectionManager().getComparator();
-        humans.add(humanBeing);
         humans.sort(comparator);
     }
     @Override

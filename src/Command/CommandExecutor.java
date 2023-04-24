@@ -45,7 +45,8 @@ public class CommandExecutor {
         while(keys.hasNext()){
             datagramChannel.send(ByteBuffer.wrap(keys.next()), client);
         }
-
-        new ParserXML(clientsDataPath).writeData(collection);
+        if(command.isSuccess()) {
+            new ParserXML(clientsDataPath).writeData(collection);
+        }
     }
 }

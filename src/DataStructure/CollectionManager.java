@@ -1,8 +1,10 @@
 package DataStructure;
 
 
+import Database.TableManager;
 import server.FileManagment.ParserXML;
 import Data.*;
+import server.FileManagment.ParserXMLtoBD;
 
 
 import java.io.*;
@@ -23,9 +25,9 @@ public class CollectionManager {
     /**
      * ParserXML used for execute and write data to file
      *
-     * @see ParserXML
+     * @see ParserXMLtoBD
      */
-    private ParserXML parserXML;
+    private ParserXMLtoBD parserXMLtoBD;
     /**
      * Initialize {@code Comparator}
      */
@@ -36,8 +38,12 @@ public class CollectionManager {
      * Also checking file and loading data from xml file
      *
      * @param path path to the file
-     * @see ParserXML
+     * @see ParserXMLtoBD
      */
+
+    private TableManager hbManager = new TableManager("humanbeing");
+
+    public static String bdColumns = "(name, x, y, realHero, hasToothpick, impactSpeed, soundtrackName, weaponType, mood, carCool)";
     public CollectionManager(String path) {
         try {
             if (path == null) throw new FileNotFoundException();
@@ -48,7 +54,7 @@ public class CollectionManager {
         indate = ZonedDateTime.now();
 
 
-        parserXML = new ParserXML(path);
+        parserXMLtoBD = new ParserXMLtoBD(path,this);
         load();
     }
 
@@ -74,12 +80,15 @@ public class CollectionManager {
      */
     private void load() {
         try {
-            parserXML.parseData(humans);
-
+            parserXMLtoBD.parseData(humans);
         } catch (Exception ex) {
             System.err.println("Возникла непредвиденная ошибка! Файл не загрузился!");
             System.exit(1);
         }
         System.out.println("Файл успешно загружен в коллекцию!");
+    }
+
+    public TableManager getDBManager(){
+        return this.hbManager;
     }
 }

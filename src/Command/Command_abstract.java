@@ -6,12 +6,15 @@ import java.io.Serializable;
 
 public abstract class Command_abstract implements Command, Serializable {
     private CollectionManager collectionManager;
+    private boolean success;
 
     public Command_abstract(CollectionManager collectionManager) {
         this.collectionManager = collectionManager;
+        this.success = true;
     }
 
     public Command_abstract() {
+        this.success = true;
     }
 
     public CollectionManager getCollectionManager() {
@@ -43,5 +46,11 @@ public abstract class Command_abstract implements Command, Serializable {
 
     public abstract void execute();
 
+    public boolean isSuccess() {
+        return success;
+    }
 
+    public void setSuccess(boolean success) {
+        this.success = success;
+    }
 }

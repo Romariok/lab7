@@ -2,6 +2,7 @@ package server;
 
 
 import DataStructure.CollectionManager;
+import Database.ServerConnection;
 import server.Connections.Connection;
 
 

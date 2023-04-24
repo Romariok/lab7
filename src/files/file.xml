@@ -2,18 +2,18 @@
 <HumanBeing>
 	<humanbeing>
 		<id>1</id>
-		<name>11</name>
+		<name>Gosling</name>
 		<coordinates>
-			<x>11</x>
-			<y>11</y>
+			<x>23213</x>
+			<y>123871248</y>
 		</coordinates>
-		<creationDate>2023-04-20T23:44:43.991192300+03:00[Europe/Moscow]</creationDate>
-		<realHero>true</realHero>
-		<hasToothpick>true</hasToothpick>
-		<impactSpeed>11</impactSpeed>
-		<soundtrackName>11</soundtrackName>
-		<weaponType>Shotgun</weaponType>
-		<mood>Longing</mood>
-		<car>true</car>
+		<creationDate>2023-04-24T06:49:12.868199+03:00[GMT+03:00]</creationDate>
+		<realHero>false</realHero>
+		<hasToothpick>false</hasToothpick>
+		<impactSpeed>219874</impactSpeed>
+		<soundtrackName>phonk</soundtrackName>
+		<weaponType>null</weaponType>
+		<mood>null</mood>
+		<car>false</car>
 	</humanbeing>
 </HumanBeing>
