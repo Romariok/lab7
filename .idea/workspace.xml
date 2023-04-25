@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="713d5a2c-e91c-4c39-bb38-6de54a17e15e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/postgresql.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/postgresql.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serverSettings.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Database/ServerConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Database/TableManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/server/FileManagment/ParserXMLtoBD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/client.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lab7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/server.xml" beforeDir="false" />
+    <list default="true" id="0f595fa6-6ad4-4abc-9f4b-2114c5eb2820" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab7.iml" beforeDir="false" afterPath="$PROJECT_DIR$/lab7.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/client/client.jar" beforeDir="false" />
@@ -70,13 +60,26 @@
       <change beforePath="$PROJECT_DIR$/out/production/Proga_6/server/FileManagment/ParserXML.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Proga_6/server/Log.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Proga_6/server/ServerMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverSettings.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/serverSettings.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Command.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/CommandExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/CommandExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/CommandFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Command_abstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Command_abstract.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Clear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Help.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Insert_at.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Insert_at.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Remove_by_id.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Remove_by_id.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Remove_greater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Remove_greater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Remove_lower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Remove_lower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Update.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/HumanBeing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/HumanBeing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataStructure/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataStructure/CollectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Database/ServerConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/ServerConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Database/TableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/TableManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/files/file.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/files/file.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ServerMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/FileManagment/ParserXML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/FileManagment/ParserXML.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/FileManagment/ParserXMLtoBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/FileManagment/ParserXMLtoBD.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,40 +92,26 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2Or0wCT7NWVqR7QF7Vx2KqnVmLo" />
+  <component name="ProjectId" id="2OuCYDtSgaMHcCQTgk25dKD2Api" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/git/JavaLearning/lab7/postgresql.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "F:/git/JavaLearning/lab7/postgresql.jar",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "advanced.settings"
   }
-}</component>
-  <component name="RunManager" selected="Compound.Unnamed">
-    <configuration name="ServerMain" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="server.ServerMain" />
-      <module name="lab7" />
-      <option name="PROGRAM_PARAMETERS" value="./src/files/file.xml 1234" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="server.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+}]]></component>
+  <component name="RunManager" selected="Compound.both">
     <configuration name="client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="client.ClientMain" />
       <module name="lab7" />
@@ -131,28 +120,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Unnamed" type="CompoundRunConfigurationType">
-      <toRun name="ServerMain" type="Application" />
+    <configuration name="server" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="server.ServerMain" />
+      <module name="lab7" />
+      <option name="PROGRAM_PARAMETERS" value="./src/files/file.xml 1234" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="both" type="CompoundRunConfigurationType">
       <toRun name="client" type="Application" />
+      <toRun name="server" type="Application" />
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.server" />
       <item itemvalue="Application.client" />
-      <item itemvalue="Application.ServerMain" />
-      <item itemvalue="Compound.Unnamed" />
+      <item itemvalue="Compound.both" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="713d5a2c-e91c-4c39-bb38-6de54a17e15e" name="Changes" comment="" />
-      <created>1682303631449</created>
+      <changelist id="0f595fa6-6ad4-4abc-9f4b-2114c5eb2820" name="Changes" comment="" />
+      <created>1682401126986</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1682303631449</updated>
-      <workItem from="1682303633150" duration="113000" />
-      <workItem from="1682303747755" duration="5046000" />
-      <workItem from="1682308849954" duration="68000" />
+      <updated>1682401126986</updated>
+      <workItem from="1682401128735" duration="17719000" />
     </task>
     <servers />
   </component>
@@ -169,20 +164,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.time.format.DateTimeParseException" package="java.time.format" />
-          <option name="timeStamp" value="5" />
-        </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/server/FileManagment/ParserXMLtoBD.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
