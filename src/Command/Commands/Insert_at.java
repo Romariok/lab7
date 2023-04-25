@@ -2,6 +2,7 @@ package Command.Commands;
 
 import Command.*;
 import Data.HumanBeing;
+import DataStructure.CollectionManager;
 import DataStructure.Response;
 
 import java.util.Comparator;
@@ -18,18 +19,15 @@ public class Insert_at extends Command_abstract implements CommandResponse {
     }
     @Override
     public void execute(){
-        int index = Integer.parseInt(getArgs()[0]);
+        long index = Long.parseLong(getArgs()[0]);
         HumanBeing humanBeing = (HumanBeing) getValue();
-        CopyOnWriteArrayList<HumanBeing> humans = getCollectionManager().getConcurrentCollection();
-        Comparator<HumanBeing> comparator = getCollectionManager().getComparator();
-        try {
-            humans.add(index, humanBeing);
-        } catch (Exception ex) {
-            ex.getStackTrace();
-            output = "Возникла ошибка при добавлении элемента на " + index + "-ю позицию!\n";
-        }
-        humans.sort(comparator);
         output = "Ваш элемент успешно добавлен в коллекцию на " + index + " позицию!\n";
+        humanBeing.setId(index);
+        setSuccess(getCollectionManager().getDBManager().insertCommand(CollectionManager.bdColumns,getCollectionManager().getValues(humanBeing,true,false)));
+        setBd(true);
+        if(!isSuccess()) {
+            output = "Возникла ошибка при добавлении элемента на " + index + "-ю позицию!\n"+getCollectionManager().getDBManager().getLastE()+"\n";
+        }
     }
 
     @Override

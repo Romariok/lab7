@@ -17,4 +17,6 @@ public interface Command extends Serializable {
     CollectionManager getCollectionManager();
     void setSuccess(boolean s);
     boolean isSuccess();
+    void setBd(boolean bd);
+    boolean isBd();
 }

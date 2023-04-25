@@ -3,6 +3,7 @@ package Command.Commands;
 import Command.*;
 import Data.HumanBeing;
 import DataStructure.Response;
+import Database.ServerConnection;
 
 import java.util.LinkedList;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -15,10 +16,14 @@ public class Clear extends Command_abstract implements CommandResponse{
 
     @Override
     public void execute(){
-        CopyOnWriteArrayList<HumanBeing> humans = getCollectionManager().getConcurrentCollection();
-        humans.clear();
-        output = "Collection successfully cleared!\n";
-
+        setSuccess(getCollectionManager().getDBManager().deleteCommand(""));
+        setBd(true);
+        if(isSuccess()) {
+            output = "Collection successfully cleared!\n";
+        }
+        else{
+            output = getCollectionManager().getDBManager().getLastE();
+        }
     }
     @Override
     public Response getResponse(){

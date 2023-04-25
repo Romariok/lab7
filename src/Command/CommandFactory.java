@@ -39,6 +39,7 @@ public class CommandFactory {
         commandsWithArgs.add("remove_by_id");
         commandsWithArgs.add("remove_greater");
         commandsWithArgs.add("remove_lower");
+        commandsWithArgs.add("insert_at");
     }
 
     public CommandResponse getCommand(String commandName, String[] commandArgs, Scanner scanner, boolean bool) {

@@ -5,6 +5,7 @@ import server.Log;
 import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Properties;
 
 public class ServerConnection {
@@ -25,7 +26,7 @@ public class ServerConnection {
         }
     }
 
-    public static Connection getINSTANCE() {
+    public static Connection getINSTANCE(){
         if(INSTANCE == null){
             synchronized (ServerConnection.class){
                 if (INSTANCE == null){
@@ -33,6 +34,15 @@ public class ServerConnection {
                 }
             }
         }
+        try {
+            if (!connection.isClosed()) {
+                return connection;
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        INSTANCE = new ServerConnection();
         return connection;
     }
 

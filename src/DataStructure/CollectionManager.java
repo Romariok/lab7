@@ -45,7 +45,9 @@ public class CollectionManager {
 
     private TableManager hbManager = new TableManager("humanbeing");
 
-    public static String bdColumns = "(name, x, y, realHero, hasToothpick, impactSpeed, soundtrackName, weaponType, mood, carCool)";
+    public static String bdColumns = "(id, name, x, y, realHero, hasToothpick, impactSpeed, soundtrackName, weaponType, mood, carCool)";
+    public static String bdSetColumns = "(name, x, y, realHero, hasToothpick, impactSpeed, soundtrackName, weaponType, mood, carCool)";
+
     public CollectionManager(String path) {
         try {
             if (path == null) throw new FileNotFoundException();
@@ -56,11 +58,11 @@ public class CollectionManager {
         indate = ZonedDateTime.now();
 
 
-        parserXMLtoBD = new ParserXMLtoBD(path,this);
+        parserXMLtoBD = new ParserXMLtoBD(path, this);
         load();
     }
 
-    public ZonedDateTime getIndate(){
+    public ZonedDateTime getIndate() {
         return indate;
     }
 
@@ -69,21 +71,28 @@ public class CollectionManager {
     }
 
 
-    public LinkedList<HumanBeing> getCollection(){
+    public LinkedList<HumanBeing> getCollection() {
         return humans;
     }
-    public CopyOnWriteArrayList<HumanBeing> getConcurrentCollection(){return concurrentHumans;}
-    public void setCollection(LinkedList<HumanBeing> linkedList){
+
+    public CopyOnWriteArrayList<HumanBeing> getConcurrentCollection() {
+        return concurrentHumans;
+    }
+
+    public void setCollection(LinkedList<HumanBeing> linkedList) {
         this.humans = linkedList;
     }
-    public void setConcurrentCollection(CopyOnWriteArrayList<HumanBeing> ls){this.concurrentHumans = ls;}
+
+    public void setConcurrentCollection(CopyOnWriteArrayList<HumanBeing> ls) {
+        this.concurrentHumans = ls;
+    }
 
     /**
      * Used to load data from file to collection
      */
     private void load() {
         try {
-            parserXMLtoBD.parseData(concurrentHumans);
+            parserXMLtoBD.parseData();
         } catch (Exception ex) {
             System.err.println("Возникла непредвиденная ошибка! Файл не загрузился!");
             System.exit(1);
@@ -91,7 +100,22 @@ public class CollectionManager {
         System.out.println("Файл успешно загружен в коллекцию!");
     }
 
-    public TableManager getDBManager(){
+    public TableManager getDBManager() {
         return this.hbManager;
+    }
+
+    public String getValues(HumanBeing h, boolean id, boolean set) {
+        StringBuilder result = new StringBuilder("(");
+        if (!set) {
+            if (id) {
+                result.append(h.getId()).append(",'");
+            } else {
+                result.append("default,'");
+            }
+        }
+        result.append(h.getName()).append("',").append(h.getCoordinates().getX()).append(",").append(h.getCoordinates().getY()).append(",");
+        result.append(h.isRealHero()).append(",").append(h.getHasToothpick()).append(",").append(h.getImpactSpeed()).append(",'");
+        result.append(h.getSoundtrackName()).append("','").append(h.getWeaponType()).append("','").append(h.getMood()).append("',").append(h.getCar().toString()).append(")");
+        return result.toString();
     }
 }

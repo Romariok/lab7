@@ -82,6 +82,7 @@ public class ParserXML {
      */
     public void parseData(CopyOnWriteArrayList<HumanBeing> ls) throws ParseException{
         readData();
+        ls.clear();
         NodeList object = d.getElementsByTagName("humanbeing");
         for (int i = 0; i < object.getLength();i++){
             NodeList tags = object.item(i).getChildNodes();

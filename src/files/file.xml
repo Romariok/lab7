@@ -4,16 +4,64 @@
 		<id>1</id>
 		<name>Gosling</name>
 		<coordinates>
-			<x>23213</x>
+			<x>2323</x>
 			<y>123871248</y>
 		</coordinates>
-		<creationDate>2023-04-24T06:49:12.868199+03:00[GMT+03:00]</creationDate>
+		<creationDate>2023-04-25T14:17:44.874060+03:00[GMT+03:00]</creationDate>
 		<realHero>false</realHero>
 		<hasToothpick>false</hasToothpick>
 		<impactSpeed>219874</impactSpeed>
 		<soundtrackName>phonk</soundtrackName>
-		<weaponType>null</weaponType>
-		<mood>null</mood>
+		<weaponType>Rifle</weaponType>
+		<mood>Gloom</mood>
+		<car>false</car>
+	</humanbeing>
+	<humanbeing>
+		<id>12</id>
+		<name>Hz</name>
+		<coordinates>
+			<x>2323</x>
+			<y>123848</y>
+		</coordinates>
+		<creationDate>2023-04-25T14:17:44.874060+03:00[GMT+03:00]</creationDate>
+		<realHero>false</realHero>
+		<hasToothpick>false</hasToothpick>
+		<impactSpeed>4</impactSpeed>
+		<soundtrackName>kizaru</soundtrackName>
+		<weaponType>Shotgun</weaponType>
+		<mood>Frenzy</mood>
+		<car>false</car>
+	</humanbeing>
+	<humanbeing>
+		<id>8</id>
+		<name>Hz</name>
+		<coordinates>
+			<x>2323</x>
+			<y>123848</y>
+		</coordinates>
+		<creationDate>2023-04-25T14:17:44.874060+03:00[GMT+03:00]</creationDate>
+		<realHero>false</realHero>
+		<hasToothpick>false</hasToothpick>
+		<impactSpeed>4</impactSpeed>
+		<soundtrackName>kizaru</soundtrackName>
+		<weaponType>Shotgun</weaponType>
+		<mood>Frenzy</mood>
+		<car>false</car>
+	</humanbeing>
+	<humanbeing>
+		<id>2</id>
+		<name>debil</name>
+		<coordinates>
+			<x>213</x>
+			<y>41</y>
+		</coordinates>
+		<creationDate>2023-04-25T14:59:53.673796+03:00[GMT+03:00]</creationDate>
+		<realHero>false</realHero>
+		<hasToothpick>false</hasToothpick>
+		<impactSpeed>0</impactSpeed>
+		<soundtrackName>0</soundtrackName>
+		<weaponType>Knife</weaponType>
+		<mood>Gloom</mood>
 		<car>false</car>
 	</humanbeing>
 </HumanBeing>

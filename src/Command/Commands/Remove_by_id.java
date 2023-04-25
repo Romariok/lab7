@@ -2,6 +2,7 @@ package Command.Commands;
 
 import Command.*;
 import Data.HumanBeing;
+import DataStructure.CollectionManager;
 import DataStructure.Response;
 
 import java.util.LinkedList;
@@ -17,15 +18,14 @@ public class Remove_by_id extends Command_abstract implements CommandResponse {
     }
     @Override
     public void execute(){
-        CopyOnWriteArrayList<HumanBeing> humans = getCollectionManager().getConcurrentCollection();
-        int index = Integer.parseInt(getArgs()[0]);
-        try {
-            humans.remove(index);
-        } catch (Exception ex) {
-            output = "Возникла непредвиденная ошибка! Элемент не удалён!\n";
-            ex.getStackTrace();
-        }
+        Long index = Long.parseLong(getArgs()[0]);
         output = index + "-й элемент успешно удалён!\n";
+        setBd(true);
+        CollectionManager manager = getCollectionManager();
+        setSuccess(manager.getDBManager().deleteCommand("WHERE id="+index));
+        if(!isSuccess()) {
+            output = "Возникла непредвиденная ошибка! Элемент не удалён!\n"+getCollectionManager().getDBManager().getLastE()+"\n";
+        }
     }
     @Override
     public Response getResponse(){

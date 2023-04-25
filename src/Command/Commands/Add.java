@@ -21,13 +21,16 @@ public class Add extends Command_abstract implements CommandResponse{
     @Override
     public void execute(){
         CopyOnWriteArrayList<HumanBeing> humans = getCollectionManager().getConcurrentCollection();
-        HumanBeing humanBeing = (HumanBeing) getValue();
-//        setSuccess(getCollectionManager().getDBManager().insertCommand(CollectionManager.bdColumns,));
+        setBd(true);
+        setSuccess(getCollectionManager().getDBManager().insertCommand(CollectionManager.bdColumns,getCollectionManager().getValues((HumanBeing) getValue(),false,false)));
         Comparator<HumanBeing> comparator = getCollectionManager().getComparator();
         humans.sort(comparator);
     }
     @Override
     public Response getResponse(){
-        return new Response("add", "Command Add had executed\n");
+        if (isSuccess()) {
+            return new Response("add", "Command Add had executed\n");
+        }
+        return new Response("add", getCollectionManager().getDBManager().getLastE());
     }
 }

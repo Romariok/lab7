@@ -4,3 +4,6 @@
 *.class
 *.MF
 *..idea
+*.txt
+out/production/lab7/files/file.xml
+out/artifacts/lab7_jar/lab7.jar
