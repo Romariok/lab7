@@ -34,7 +34,7 @@ public class Update extends Command_abstract implements CommandResponse {
         }
         if (humanBeing != null) {
             HumanBeing humanBeingNew = (HumanBeing) getValue();
-            setSuccess(getCollectionManager().getDBManager().updateCommand(CollectionManager.bdSetColumns,getCollectionManager().getValues(humanBeingNew,false,true),"where id = "+id));
+            setSuccess(getCollectionManager().getDBManager().updateCommand(CollectionManager.bdSetColumns,getCollectionManager().getValues(humanBeingNew,false,true),"id = "+id));
             if(isSuccess()) {
                 output = "Ваш элемент успешно обновлён!\n";
             }

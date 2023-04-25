@@ -113,6 +113,9 @@ public class CollectionManager {
                 result.append("default,'");
             }
         }
+        else{
+            result.append("'");
+        }
         result.append(h.getName()).append("',").append(h.getCoordinates().getX()).append(",").append(h.getCoordinates().getY()).append(",");
         result.append(h.isRealHero()).append(",").append(h.getHasToothpick()).append(",").append(h.getImpactSpeed()).append(",'");
         result.append(h.getSoundtrackName()).append("','").append(h.getWeaponType()).append("','").append(h.getMood()).append("',").append(h.getCar().toString()).append(")");

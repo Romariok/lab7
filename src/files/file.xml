@@ -50,16 +50,16 @@
 	</humanbeing>
 	<humanbeing>
 		<id>2</id>
-		<name>debil</name>
+		<name>debil k</name>
 		<coordinates>
-			<x>213</x>
-			<y>41</y>
+			<x>1</x>
+			<y>1</y>
 		</coordinates>
 		<creationDate>2023-04-25T14:59:53.673796+03:00[GMT+03:00]</creationDate>
 		<realHero>false</realHero>
 		<hasToothpick>false</hasToothpick>
-		<impactSpeed>0</impactSpeed>
-		<soundtrackName>0</soundtrackName>
+		<impactSpeed>12</impactSpeed>
+		<soundtrackName>se</soundtrackName>
 		<weaponType>Knife</weaponType>
 		<mood>Gloom</mood>
 		<car>false</car>
