@@ -17,7 +17,7 @@ public class ParserXMLtoBD extends ParserXML {
 
     public void parseData() {
         try {
-            String rows = collectionManager.getDBManager().selectCommand("*");
+            String rows = collectionManager.getDBManager().selectCommand("*","");
             collectionManager.getConcurrentCollection().clear();
             for (String row : rows.split("\n\n")) {
                 try {

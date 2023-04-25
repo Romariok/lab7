@@ -29,6 +29,7 @@ public class CommandFactory {
         commands.put("show", new Show());
         commands.put("sum_of_impact_speed", new Sum_of_impact_speed());
         commands.put("update", new Update());
+        commands.put("auth", new Auth());
         commandsWithObject.add("add");
         commandsWithArgs.add("update");
         commandsWithObject.add("update");
@@ -40,6 +41,7 @@ public class CommandFactory {
         commandsWithArgs.add("remove_greater");
         commandsWithArgs.add("remove_lower");
         commandsWithArgs.add("insert_at");
+        commandsWithArgs.add("auth");
     }
 
     public CommandResponse getCommand(String commandName, String[] commandArgs, Scanner scanner, boolean bool) {
@@ -56,14 +58,10 @@ public class CommandFactory {
                 else{
                     command.setArgs(commandArgs);
                 }
-
             }
             return command;
         } else {
             return null;
         }
-
     }
-
-
 }

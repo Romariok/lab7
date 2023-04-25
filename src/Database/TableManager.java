@@ -27,9 +27,9 @@ public class TableManager {
     }
 
     // Method to execute a select query
-    public String selectCommand(String columns) throws Exception {
+    public String selectCommand(String columns, String condition) throws Exception {
         StringBuilder result = new StringBuilder();
-        String sql = new StringBuilder().append("SELECT ").append(columns).append(" FROM ").append(table).toString();
+        String sql = new StringBuilder().append("SELECT ").append(columns).append(" FROM ").append(table).append(" ").append(condition).toString();
         Connection connection = ServerConnection.getINSTANCE();
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         ResultSet resultSet = preparedStatement.executeQuery();

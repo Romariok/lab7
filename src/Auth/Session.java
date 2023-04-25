@@ -1,4 +1,10 @@
 package Auth;
 
-public class Session {
+import java.io.Serializable;
+
+public class Session implements Serializable {
+    private String user;
+    public Session(String user){
+        this.user = user;
+    }
 }

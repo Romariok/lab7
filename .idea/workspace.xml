@@ -1,90 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0f595fa6-6ad4-4abc-9f4b-2114c5eb2820" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+    <list default="true" id="1506b208-d542-4310-8bb0-9e88704996e7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/lab7.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Auth/Sol.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Command/Commands/Auth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lab7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/postgresql.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/postgresql.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab7.iml" beforeDir="false" afterPath="$PROJECT_DIR$/lab7.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/client/client.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/server/server.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/Command/Command.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/Command/CommandExecutor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/Command/CommandFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/Command/CommandResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/Command/Command_abstract.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/Command/Commands/Add.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/Command/Commands/Clear.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/Command/Commands/Count_greater_than_car.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/Command/Commands/Execute_script.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/Command/Commands/Filter_starts_with_soundtrack_name.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/Command/Commands/Help.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/Command/Commands/Info.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/Command/Commands/Insert_at.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/Command/Commands/Remove_by_id.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/Command/Commands/Remove_greater.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/Command/Commands/Remove_lower.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/Command/Commands/Show.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/Command/Commands/Sum_of_impact_speed.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/Command/Commands/Update.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/Command/ScriptExecuter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/Command/Serializer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/Data/Car.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/Data/Coordinates.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/Data/HumanBeing.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/Data/Mood.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/Data/WeaponType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/DataStructure/CollectionManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/DataStructure/Response.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/client/ClientBase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/client/ClientMain.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/client/Connection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/client/setVariables/SetName.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/client/setVariables/readHumanBeingFromConsole.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/client/setVariables/setCar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/client/setVariables/setCoordinates.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/client/setVariables/setHasToothpick.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/client/setVariables/setImpactSpeed.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/client/setVariables/setMood.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/client/setVariables/setRealHero.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/client/setVariables/setSoundtrackName.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/client/setVariables/setWeaponType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/files/file.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/files/script.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/files/script2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/server/Connections/Connection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/server/Connections/SelectorManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/server/FileManagment/ParserXML.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/server/Log.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/server/ServerMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs.log.lck" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/serverSettings.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/serverSettings.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Auth/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Auth/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChunkManager/ChunkCreating.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChunkManager/ChunkCreating.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChunkManager/ChunkReceiving.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChunkManager/ChunkReceiving.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Command.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/CommandExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/CommandExecutor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/CommandFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/CommandResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/CommandResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Command_abstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Command_abstract.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Add.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Commands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Clear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Count_greater_than_car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Count_greater_than_car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Execute_script.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Execute_script.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Filter_starts_with_soundtrack_name.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Filter_starts_with_soundtrack_name.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Commands/Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Help.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Commands/Insert_at.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Insert_at.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Commands/Remove_by_id.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Remove_by_id.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Commands/Remove_greater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Remove_greater.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Commands/Remove_lower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Remove_lower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Show.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Sum_of_impact_speed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Sum_of_impact_speed.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Commands/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Update.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/ScriptExecuter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/ScriptExecuter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/Serializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Serializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Coordinates.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Data/HumanBeing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/HumanBeing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/Mood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Mood.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/WeaponType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/WeaponType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataStructure/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataStructure/CollectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataStructure/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataStructure/Response.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Database/ServerConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/ServerConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Database/TableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/TableManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/ClientBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ClientBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/ClientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ClientMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Connection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/setVariables/SetName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/setVariables/SetName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/setVariables/readHumanBeingFromConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/setVariables/readHumanBeingFromConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/setVariables/setCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/setVariables/setCar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/setVariables/setCoordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/setVariables/setCoordinates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/setVariables/setHasToothpick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/setVariables/setHasToothpick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/setVariables/setImpactSpeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/setVariables/setImpactSpeed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/setVariables/setMood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/setVariables/setMood.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/setVariables/setRealHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/setVariables/setRealHero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/setVariables/setSoundtrackName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/setVariables/setSoundtrackName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/setVariables/setWeaponType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/setVariables/setWeaponType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/files/file.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/files/file.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/files/script.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/files/script.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/files/script2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/files/script2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/Connections/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Connections/Connection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/Connections/SelectorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Connections/SelectorManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/Connections/ServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Connections/ServerHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/FileManagment/ParserXML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/FileManagment/ParserXML.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/FileManagment/ParserXMLtoBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/FileManagment/ParserXMLtoBD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Log.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ServerMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -92,27 +93,31 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2OuCYDtSgaMHcCQTgk25dKD2Api" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectId" id="2OvRtOjaOeJfV5jFpMaiE1wa5MH" />
   <component name="ProjectViewState">
+    <option name="flattenModules" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "F:/git/JavaLearning/lab7/postgresql.jar",
+    "last_opened_file_path": "D:/coding/lab7",
     "project.structure.last.edited": "Problems",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "advanced.settings"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
-  <component name="RunManager" selected="Compound.both">
-    <configuration name="client" type="Application" factoryName="Application">
+  <component name="RunManager" selected="Compound.Unnamed">
+    <configuration name="Client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="client.ClientMain" />
       <module name="lab7" />
       <option name="PROGRAM_PARAMETERS" value="1234" />
@@ -120,7 +125,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="server" type="Application" factoryName="Application">
+    <configuration name="Server" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="server.ServerMain" />
       <module name="lab7" />
       <option name="PROGRAM_PARAMETERS" value="./src/files/file.xml 1234" />
@@ -128,26 +133,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="both" type="CompoundRunConfigurationType">
-      <toRun name="client" type="Application" />
-      <toRun name="server" type="Application" />
+    <configuration name="Unnamed" type="CompoundRunConfigurationType">
+      <toRun name="Client" type="Application" />
+      <toRun name="Server" type="Application" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.server" />
-      <item itemvalue="Application.client" />
-      <item itemvalue="Compound.both" />
+      <item itemvalue="Application.Server" />
+      <item itemvalue="Application.Client" />
+      <item itemvalue="Compound.Unnamed" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0f595fa6-6ad4-4abc-9f4b-2114c5eb2820" name="Changes" comment="" />
-      <created>1682401126986</created>
+      <changelist id="1506b208-d542-4310-8bb0-9e88704996e7" name="Changes" comment="" />
+      <created>1682439283137</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1682401126986</updated>
-      <workItem from="1682401128735" duration="17719000" />
+      <updated>1682439283137</updated>
+      <workItem from="1682439286051" duration="5656000" />
     </task>
     <servers />
   </component>
