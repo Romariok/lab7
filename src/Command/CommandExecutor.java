@@ -2,6 +2,7 @@ package Command;
 
 
 import ChunkManager.ChunkCreating;
+import Command.Commands.Auth;
 import DataStructure.Response;
 import server.FileManagment.ParserXML;
 import server.FileManagment.ParserXMLtoBD;
@@ -32,14 +33,15 @@ public class CommandExecutor {
         CommandResponse command = (CommandResponse) inputObject;
         assert command != null;
         command.setCollectionManager(manager);
-//        TODO Сделать проверку на авторизованность пользователя
         Log.getLogger().log(Level.INFO, "Received command "+ command + " from "+ client);
-
-        command.execute();
-        byte[] output = command.getResponse().getOutput().getBytes();
-
-
-        ChunkCreating chunkCreating = new ChunkCreating(output);
+        byte[] output;
+        if(command.getSession()!=null || command instanceof Auth) {
+            command.execute();
+        }
+        else{
+            command.setOutput("You can`t execute commands without logging in!");
+        }
+        ChunkCreating chunkCreating = new ChunkCreating(command.getBytes());
 
         Log.getLogger().log(Level.INFO, "Sending " + chunkCreating.getCounting() + " chunks to "+ client);
 

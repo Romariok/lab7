@@ -7,6 +7,7 @@ import Auth.*;
 
 public class Auth extends Command_abstract implements CommandResponse {
     private String user;
+    private String output;
     private boolean authorized;
     private String pass;
     private Session session = null;
@@ -16,6 +17,7 @@ public class Auth extends Command_abstract implements CommandResponse {
 
     @Override
     public Response getResponse() {
+        return new Response("auth",output);
     }
 
     @Override
@@ -23,6 +25,15 @@ public class Auth extends Command_abstract implements CommandResponse {
         setBd(true);
         user = getArgs()[0];
         pass = getArgs()[1];
-        session = S
+        try {
+            session = Sol.getAuthorized(user, pass);
+        }
+        catch (Exception e){
+            output = e.getMessage();
+        }
+    }
+
+    public Session getSession() {
+        return session;
     }
 }

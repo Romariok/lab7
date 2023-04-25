@@ -7,4 +7,8 @@ public class Session implements Serializable {
     public Session(String user){
         this.user = user;
     }
+
+    public String getLogin() {
+        return this.user;
+    }
 }

@@ -7,7 +7,7 @@
 			<x>2323</x>
 			<y>123871248</y>
 		</coordinates>
-		<creationDate>2023-04-25T14:17:44.874060+03:00[GMT+03:00]</creationDate>
+		<creationDate>2023-04-25T23:19:15.720599+03:00[GMT+03:00]</creationDate>
 		<realHero>false</realHero>
 		<hasToothpick>false</hasToothpick>
 		<impactSpeed>219874</impactSpeed>
@@ -23,7 +23,7 @@
 			<x>2323</x>
 			<y>123848</y>
 		</coordinates>
-		<creationDate>2023-04-25T14:17:44.874060+03:00[GMT+03:00]</creationDate>
+		<creationDate>2023-04-25T23:19:15.720599+03:00[GMT+03:00]</creationDate>
 		<realHero>false</realHero>
 		<hasToothpick>false</hasToothpick>
 		<impactSpeed>4</impactSpeed>
@@ -39,29 +39,13 @@
 			<x>2323</x>
 			<y>123848</y>
 		</coordinates>
-		<creationDate>2023-04-25T14:17:44.874060+03:00[GMT+03:00]</creationDate>
+		<creationDate>2023-04-25T23:19:15.720599+03:00[GMT+03:00]</creationDate>
 		<realHero>false</realHero>
 		<hasToothpick>false</hasToothpick>
 		<impactSpeed>4</impactSpeed>
 		<soundtrackName>kizaru</soundtrackName>
 		<weaponType>Shotgun</weaponType>
 		<mood>Frenzy</mood>
-		<car>false</car>
-	</humanbeing>
-	<humanbeing>
-		<id>2</id>
-		<name>debil k</name>
-		<coordinates>
-			<x>1</x>
-			<y>1</y>
-		</coordinates>
-		<creationDate>2023-04-25T14:59:53.673796+03:00[GMT+03:00]</creationDate>
-		<realHero>false</realHero>
-		<hasToothpick>false</hasToothpick>
-		<impactSpeed>12</impactSpeed>
-		<soundtrackName>se</soundtrackName>
-		<weaponType>Knife</weaponType>
-		<mood>Gloom</mood>
 		<car>false</car>
 	</humanbeing>
 </HumanBeing>
