@@ -7,7 +7,7 @@ import DataStructure.Response;
  * Class for the help command. Print list of commands
  */
 public class Help extends Command_abstract implements CommandResponse {
-    private String output;
+    private String output="";
 
     public Help(){
     }
@@ -27,6 +27,7 @@ public class Help extends Command_abstract implements CommandResponse {
                 "sum_of_impact_speed` : вывести сумму значений поля impactSpeed для всех элементов коллекции\n" +
                 "count_greater_than_car car : вывести количество элементов, значение поля car которых больше заданного\n" +
                 "filter_starts_with_soundtrack_name soundtrackName : вывести элементы, значение поля soundtrackName которых начинается с заданной подстроки\n";
+
     }
     @Override
     public Response getResponse() {

@@ -9,7 +9,7 @@ import java.io.Serializable;
  */
 public interface Command extends Serializable {
     void execute();
-    String[] getArgs();
+    String[]  getArgs();
     void setArgs(String[] args);
     Object getValue();
     void setValue(Object object);
@@ -18,7 +18,6 @@ public interface Command extends Serializable {
     void setSuccess(boolean s);
     boolean isSuccess();
     void setBd(boolean bd);
-    boolean isBd();
     void setOutput(String s);
     String getOutput();
 }

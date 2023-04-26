@@ -16,7 +16,7 @@ public class Clear extends Command_abstract implements CommandResponse{
 
     @Override
     public void execute(){
-        setSuccess(getCollectionManager().getDBManager().deleteCommand(" where user = '"+getSession().getUser()+"'"));
+        setSuccess(getCollectionManager().getDBManager().deleteCommand(" where login = '"+getSession().getUser()+"'"));
         setBd(true);
         if(isSuccess()) {
             output = "Collection successfully cleared!\n";

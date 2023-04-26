@@ -3,6 +3,7 @@ package client;
 import Auth.Session;
 import Command.CommandResponse;
 import Command.CommandFactory;
+import Command.InputData;
 
 
 import java.net.InetAddress;
@@ -29,6 +30,7 @@ public class ClientBase implements Runnable {
         String[] commandArgs;
         Scanner scanner = new Scanner(System.in);
         CommandFactory commandFactory = new CommandFactory();
+        /*
         if (arg.length >= 3){
             if (Objects.equals(arg[1], "-exec")){
                 CommandResponse execute_script = commandFactory.getCommand("execute_script", new String[]{arg[2]}, scanner, false);
@@ -43,7 +45,7 @@ public class ClientBase implements Runnable {
                 }
             }
         }
-
+*/
 
         while (true) {
             List<String> input = Arrays.stream(scanner.nextLine().split(" ")).toList();
@@ -57,13 +59,14 @@ public class ClientBase implements Runnable {
             CommandResponse command = commandFactory.getCommand(commandName, commandArgs, scanner, false);
             if (command != null){
                 try{
-                    command.setSession(this.session);
-                    connection.send(serialize(command));
-                    String response = connection.receive();
-                    if(response.equals("Sign in:true")){
-                        session.setAuthorized(true);
-                    }
-                    if (!response.isEmpty()) System.out.println(response);
+                    InputData inputData = new InputData();
+                    inputData.setCommandResponse(command);
+                    inputData.setSession(session);
+                    connection.send(serialize(inputData));
+                    InputData inputData1 = (InputData) connection.receive();
+                    CommandResponse response = inputData1.getCommandResponse();
+                    session = inputData1.getSession();
+                    if (!response.getResponse().getOutput().isEmpty()) System.out.println(response.getResponse().getOutput());
                 }
                 catch (Exception ex){
                     System.err.println(ex.getMessage());

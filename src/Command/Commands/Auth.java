@@ -24,7 +24,7 @@ public class Auth extends Command_abstract implements CommandResponse {
         try {
             Session t = Sol.getAuthorized(user,pass);
             this.getSession().setAuthorized(t.isAuthorized());
-            output = "Sign in:" + t.isAuthorized();
+            output = "Signed in as: " + t.getUser();
         }
         catch (Exception e){
             this.getSession().setAuthorized(false);

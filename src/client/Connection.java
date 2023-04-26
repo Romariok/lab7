@@ -58,7 +58,7 @@ public class Connection {
         System.out.print("Client send to server "+ creating.getCounting()+" chunks!\n");
     }
 
-    public String receive() throws IOException {
+    public Object receive() throws IOException {
         ChunkReceiving receiving = new ChunkReceiving();
         byte[] buffer = new byte[this.chunkSize+8];
         DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
@@ -71,18 +71,6 @@ public class Connection {
             }
             receiving.addChunk(Arrays.copyOf(packet.getData(), packet.getLength()));
         } while (!receiving.isReceived());
-        return new String(receiving.getChunks());
-//        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-//        byte[] buf = new byte [chunkSize+1];
-//        DatagramPacket packet = new DatagramPacket(buf, buf.length);
-//        datagramSocket.receive(packet);
-//        boolean hasNext = (packet.getData()[packet.getLength() - 1] & 0xFF) == 1;
-//        baos.write(packet.getData(), 0, packet.getLength() - 1);
-//        while (hasNext){
-//            datagramSocket.receive(packet);
-//            hasNext = (packet.getData()[packet.getLength() - 1] & 0xFF) == 1;
-//            baos.write(packet.getData(), 0, packet.getLength() - 1);
-//        }
-//        return baos.toString();
+        return Serializer.deserialize(receiving.getChunks());
     }
 }

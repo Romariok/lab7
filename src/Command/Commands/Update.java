@@ -16,7 +16,6 @@ import static server.ServerMain.clientsDataPath;
  * Class for the update command. Updating element by his index
  */
 public class Update extends Command_abstract implements CommandResponse {
-    private String output;
 
     public Update(){
     }
@@ -34,19 +33,19 @@ public class Update extends Command_abstract implements CommandResponse {
         }
         if (humanBeing != null) {
             HumanBeing humanBeingNew = (HumanBeing) getValue();
-            setSuccess(getCollectionManager().getDBManager().updateCommand(CollectionManager.bdSetColumns,getCollectionManager().getValues(humanBeingNew,false,true),"id = "+id+" and user = '"+getSession().getUser()+"'"));
+            setSuccess(getCollectionManager().getDBManager().updateCommand(CollectionManager.bdSetColumns,getCollectionManager().getValues(humanBeingNew,false,true),"id = "+id+" and login = '"+getSession().getUser()+"'"));
             if(isSuccess()) {
-                output = "Ваш элемент успешно обновлён!\n";
+                setOutput( "Ваш элемент успешно обновлён!\n");
             }
             else {
-                output = getCollectionManager().getDBManager().getLastE();
+                setOutput( getCollectionManager().getDBManager().getLastE());
             }
         } else {
-            output = "Объекта по id - " +id + " не существует в коллекции!\n";
+            setOutput(  "Объекта по id - " +id + " не существует в коллекции!\n");
         }
     }
     @Override
     public Response getResponse(){
-        return new Response("update", output);
+        return new Response("update", getOutput());
     }
 }

@@ -9,7 +9,7 @@ public abstract class Command_abstract implements Command, Serializable {
     private CollectionManager collectionManager;
     private boolean success;
     private boolean bd;
-    private String output;
+    private String output = "";
 
     private Session session;
 
@@ -31,12 +31,11 @@ public abstract class Command_abstract implements Command, Serializable {
         this.collectionManager = collectionManager;
     }
 
-
-    private String[] args;
+    private String[] args = new String[0];
     private Object value;
 
     public Object getValue() {
-        return value;
+      return value;
     }
 
     public void setValue(Object value) {

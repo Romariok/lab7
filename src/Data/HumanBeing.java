@@ -339,6 +339,9 @@ public class HumanBeing implements Comparable<HumanBeing>, Serializable {
         if (!Objects.equals(this.mood.toString(), other.mood.toString())) {
             return false;
         }
+        if (!Objects.equals(this.getUser(), other.getUser())) {
+            return false;
+        }
         return Objects.equals(this.car.getCool(), other.car.getCool());
     }
     /**

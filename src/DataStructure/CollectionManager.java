@@ -13,7 +13,7 @@ import java.time.ZonedDateTime;
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class CollectionManager {
+public class CollectionManager{
     /**
      * LinkedList collection that contains HumanBeing objects
      */
@@ -45,8 +45,8 @@ public class CollectionManager {
 
     private TableManager hbManager = new TableManager("humanbeing");
 
-    public static String bdColumns = "(id, name, x, y, realHero, hasToothpick, impactSpeed, soundtrackName, weaponType, mood, carCool, user)";
-    public static String bdSetColumns = "(name, x, y, realHero, hasToothpick, impactSpeed, soundtrackName, weaponType, mood, carCool, user)";
+    public static String bdColumns = "(id, name, x, y, realHero, hasToothpick, impactSpeed, soundtrackName, weaponType, mood, carCool, login)";
+    public static String bdSetColumns = "(name, x, y, realHero, hasToothpick, impactSpeed, soundtrackName, weaponType, mood, carCool, login)";
 
     public CollectionManager(String path) {
         try {

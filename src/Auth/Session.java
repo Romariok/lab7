@@ -21,4 +21,8 @@ public class Session implements Serializable {
     public String getUser(){
         return this.user;
     }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
 }
