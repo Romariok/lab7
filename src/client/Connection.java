@@ -85,6 +85,4 @@ public class Connection {
 //        }
 //        return baos.toString();
     }
-
-
 }

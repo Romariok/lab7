@@ -19,4 +19,6 @@ public interface Command extends Serializable {
     boolean isSuccess();
     void setBd(boolean bd);
     boolean isBd();
+    void setOutput(String s);
+    String getOutput();
 }

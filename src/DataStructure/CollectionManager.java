@@ -45,8 +45,8 @@ public class CollectionManager {
 
     private TableManager hbManager = new TableManager("humanbeing");
 
-    public static String bdColumns = "(id, name, x, y, realHero, hasToothpick, impactSpeed, soundtrackName, weaponType, mood, carCool)";
-    public static String bdSetColumns = "(name, x, y, realHero, hasToothpick, impactSpeed, soundtrackName, weaponType, mood, carCool)";
+    public static String bdColumns = "(id, name, x, y, realHero, hasToothpick, impactSpeed, soundtrackName, weaponType, mood, carCool, user)";
+    public static String bdSetColumns = "(name, x, y, realHero, hasToothpick, impactSpeed, soundtrackName, weaponType, mood, carCool, user)";
 
     public CollectionManager(String path) {
         try {
@@ -118,7 +118,7 @@ public class CollectionManager {
         }
         result.append(h.getName()).append("',").append(h.getCoordinates().getX()).append(",").append(h.getCoordinates().getY()).append(",");
         result.append(h.isRealHero()).append(",").append(h.getHasToothpick()).append(",").append(h.getImpactSpeed()).append(",'");
-        result.append(h.getSoundtrackName()).append("','").append(h.getWeaponType()).append("','").append(h.getMood()).append("',").append(h.getCar().toString()).append(")");
+        result.append(h.getSoundtrackName()).append("','").append(h.getWeaponType()).append("','").append(h.getMood()).append("',").append(h.getCar().toString()).append(",'").append(h.getUser()).append("')");
         return result.toString();
     }
 }

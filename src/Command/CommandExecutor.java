@@ -3,6 +3,8 @@ package Command;
 
 import ChunkManager.ChunkCreating;
 import Command.Commands.Auth;
+import Command.Commands.Help;
+import Command.Commands.Register;
 import DataStructure.Response;
 import server.FileManagment.ParserXML;
 import server.FileManagment.ParserXMLtoBD;
@@ -22,35 +24,40 @@ import static Command.Serializer.deserialize;
 import static server.Connections.Connection.collection;
 import static server.Connections.Connection.manager;
 import static server.ServerMain.clientsDataPath;
+
 public class CommandExecutor {
     private static DatagramChannel datagramChannel;
 
-    public static void setChannel(DatagramChannel datagramChannel){
+    public static void setChannel(DatagramChannel datagramChannel) {
         CommandExecutor.datagramChannel = datagramChannel;
     }
+
     public static void execute(InetSocketAddress client, byte[] bytes) throws IOException, ClassNotFoundException {
         Object inputObject = deserialize(bytes);
         CommandResponse command = (CommandResponse) inputObject;
         assert command != null;
         command.setCollectionManager(manager);
-        Log.getLogger().log(Level.INFO, "Received command "+ command + " from "+ client);
+        Log.getLogger().log(Level.INFO, "Received command " + command + " from " + client);
         byte[] output;
-        if(command.getSession()!=null || command instanceof Auth) {
+        if (command.getSession().isAuthorized() || command instanceof Auth || command instanceof Help||command instanceof Register) {
             command.execute();
-        }
-        else{
+        } else {
             command.setOutput("You can`t execute commands without logging in!");
         }
-        ChunkCreating chunkCreating = new ChunkCreating(command.getBytes());
+        String out = command.getOutput();
+        if (command.getResponse().getOutput() != null) {
+            out = command.getResponse().getOutput();
+        }
+        ChunkCreating chunkCreating = new ChunkCreating(out.getBytes());
 
-        Log.getLogger().log(Level.INFO, "Sending " + chunkCreating.getCounting() + " chunks to "+ client);
+        Log.getLogger().log(Level.INFO, "Sending " + chunkCreating.getCounting() + " chunks to " + client);
 
-        Iterator<byte[]> keys= chunkCreating.getIterator();
-        while(keys.hasNext()){
+        Iterator<byte[]> keys = chunkCreating.getIterator();
+        while (keys.hasNext()) {
             datagramChannel.send(ByteBuffer.wrap(keys.next()), client);
         }
-        if(command.isSuccess()&&command.isBd()) {
-            new ParserXMLtoBD(clientsDataPath,manager).parseData();
+        if (command.isSuccess() && command.isBd()) {
+            new ParserXMLtoBD(clientsDataPath, manager).parseData();
         }
     }
 }

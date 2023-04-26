@@ -8,11 +8,8 @@ import Auth.*;
 public class Auth extends Command_abstract implements CommandResponse {
     private String user;
     private String output;
-    private boolean authorized;
     private String pass;
-    private Session session = null;
     public Auth(){
-        authorized = false;
     }
 
     @Override
@@ -22,18 +19,16 @@ public class Auth extends Command_abstract implements CommandResponse {
 
     @Override
     public void execute() {
-        setBd(true);
         user = getArgs()[0];
         pass = getArgs()[1];
         try {
-            session = Sol.getAuthorized(user, pass);
+            Session t = Sol.getAuthorized(user,pass);
+            this.getSession().setAuthorized(t.isAuthorized());
+            output = "Sign in:" + t.isAuthorized();
         }
         catch (Exception e){
+            this.getSession().setAuthorized(false);
             output = e.getMessage();
         }
-    }
-
-    public Session getSession() {
-        return session;
     }
 }

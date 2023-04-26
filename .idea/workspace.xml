@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1506b208-d542-4310-8bb0-9e88704996e7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Command/Commands/Register.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs.log.lck" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Auth/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Auth/Session.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Auth/Sol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Auth/Sol.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Command.java" afterDir="false" />
@@ -12,10 +12,17 @@
       <change beforePath="$PROJECT_DIR$/src/Command/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/CommandFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/CommandResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/CommandResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Command_abstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Command_abstract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Add.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Commands/Auth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Auth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Clear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Remove_by_id.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Remove_by_id.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Update.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/HumanBeing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/HumanBeing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataStructure/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataStructure/CollectionManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/ClientBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ClientBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Connection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/files/file.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/files/file.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/files/script2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/files/script2.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -37,7 +44,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2OvRtOjaOeJfV5jFpMaiE1wa5MH" />
   <component name="ProjectViewState">
@@ -46,24 +53,25 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/coding/lab7&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/coding/lab7",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Compound.Unnamed">
-    <configuration name="Client" type="Application" factoryName="Application">
+    <configuration name="Clientexec" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="client.ClientMain" />
       <module name="lab7" />
-      <option name="PROGRAM_PARAMETERS" value="1234" />
+      <option name="PROGRAM_PARAMETERS" value="1234 -exec ./src/files/script1.txt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -76,14 +84,39 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Unnamed" type="CompoundRunConfigurationType">
-      <toRun name="Client" type="Application" />
+    <configuration name="client" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="client.ClientMain" />
+      <module name="lab7" />
+      <option name="PROGRAM_PARAMETERS" value="1234" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="exec" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="client.ClientMain" />
+      <module name="lab7" />
+      <option name="PROGRAM_PARAMETERS" value="1234 -exec ./src/files/script2.txt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="2 clients" type="CompoundRunConfigurationType">
+      <toRun name="Clientexec" type="Application" />
       <toRun name="Server" type="Application" />
+      <toRun name="exec" type="Application" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="CompoundRunConfigurationType">
+      <toRun name="Server" type="Application" />
+      <toRun name="client" type="Application" />
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.client" />
       <item itemvalue="Application.Server" />
-      <item itemvalue="Application.Client" />
+      <item itemvalue="Application.Clientexec" />
+      <item itemvalue="Application.exec" />
+      <item itemvalue="Compound.2 clients" />
       <item itemvalue="Compound.Unnamed" />
     </list>
   </component>
@@ -99,6 +132,7 @@
       <workItem from="1682451120560" duration="1575000" />
       <workItem from="1682452712570" duration="3209000" />
       <workItem from="1682456126297" duration="3000" />
+      <workItem from="1682456557226" duration="17846000" />
     </task>
     <servers />
   </component>
@@ -120,11 +154,20 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/client/Connection.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/src/Command/Commands/Auth.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Auth/Sol.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/lab7$Server.ic" NAME="Server Coverage Results" MODIFIED="1682473877200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/lab7$client.ic" NAME="client Coverage Results" MODIFIED="1682473877938" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

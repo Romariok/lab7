@@ -71,6 +71,7 @@ public class HumanBeing implements Comparable<HumanBeing>, Serializable {
      * @see Car
      */
     private Car car;
+    private String user;
 
     /**
      * Constructor of {@code HumanBeing} class with all parameters
@@ -88,7 +89,7 @@ public class HumanBeing implements Comparable<HumanBeing>, Serializable {
      * @see Mood
      * @see Car
      */
-    public HumanBeing(String name, Coordinates coordinates, boolean realHero, Boolean hasToothpick, long impactSpeed, String soundtrackName, WeaponType weaponType, Mood mood, Car car){
+    public HumanBeing(String name, Coordinates coordinates, boolean realHero, Boolean hasToothpick, long impactSpeed, String soundtrackName, WeaponType weaponType, Mood mood, Car car ){
         this.id = nextId++;
         this.name = name;
         this.coordinates = coordinates;
@@ -338,11 +339,7 @@ public class HumanBeing implements Comparable<HumanBeing>, Serializable {
         if (!Objects.equals(this.mood.toString(), other.mood.toString())) {
             return false;
         }
-        if (!Objects.equals(this.car.getCool(), other.car.getCool())) {
-            return false;
-        }
-
-        return true;
+        return Objects.equals(this.car.getCool(), other.car.getCool());
     }
     /**
      * Used to compare human beings
@@ -350,15 +347,13 @@ public class HumanBeing implements Comparable<HumanBeing>, Serializable {
      */
     @Override
     public int compareTo(HumanBeing humanBeing){
-        if (humanBeing.getId() > this.getId()){
-            return -1;
-        }
-        else if (humanBeing.getId() < this.getId()){
-            return 1;
-        }
-        else
-        {
-            return 0;
-        }
+        return this.getId().compareTo(humanBeing.getId());
+    }
+    public String getUser(){
+        return this.user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
     }
 }
