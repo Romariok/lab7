@@ -1,5 +1,6 @@
 package client;
 
+import Auth.Session;
 import Command.CommandResponse;
 import Command.CommandFactory;
 
@@ -16,6 +17,7 @@ import static client.ClientMain.arg;
 import static Command.Serializer.serialize;
 public class ClientBase implements Runnable {
     private final Connection connection;
+    private Session session = new Session();
 
     public ClientBase(InetAddress address, int port) {
         try {
@@ -34,7 +36,7 @@ public class ClientBase implements Runnable {
             if (Objects.equals(arg[1], "-exec")){
                 CommandResponse execute_script = commandFactory.getCommand("execute_script", new String[]{arg[2]}, scanner, false);
                 try{
-                    connection.send(serialize(execute_script));
+                    connection.send(serialize());
                     String response = connection.recieve();
                     if (!response.isEmpty()) System.out.println(response);
                 }

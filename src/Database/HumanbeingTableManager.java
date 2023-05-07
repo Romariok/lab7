@@ -41,9 +41,9 @@ public class HumanbeingTableManager extends TableManager {
         preparedStatement.setBoolean(10, hb.getCar().getCool());
     }
 
-    public boolean deleteCommand(Long id) {
+    public boolean deleteCommand(Long id, String mode) {
         try {
-            PreparedStatement preparedStatement = ServerConnection.getINSTANCE().prepareStatement("DELETE FROM humnabeing WHERE id = ?");
+            PreparedStatement preparedStatement = ServerConnection.getINSTANCE().prepareStatement("DELETE FROM humnabeing WHERE id" +mode+"?");
             preparedStatement.setLong(1, id);
             int res = preparedStatement.executeUpdate();
             if (res != 0) {
