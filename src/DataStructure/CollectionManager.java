@@ -1,11 +1,10 @@
 package DataStructure;
 
 
+import Database.HumanbeingTableManager;
 import Database.TableManager;
-import server.FileManagment.ParserXML;
 import Data.*;
-import server.FileManagment.ParserXMLtoBD;
-
+import server.FileManagment.ParserfromBD;
 
 import java.io.*;
 
@@ -27,9 +26,9 @@ public class CollectionManager {
     /**
      * ParserXML used for execute and write data to file
      *
-     * @see ParserXMLtoBD
+     * @see ParserfromBD
      */
-    private ParserXMLtoBD parserXMLtoBD;
+    private ParserfromBD parserfromBD;
     /**
      * Initialize {@code Comparator}
      */
@@ -40,12 +39,12 @@ public class CollectionManager {
      * Also checking file and loading data from xml file
      *
      * @param path path to the file
-     * @see ParserXMLtoBD
+     * @see ParserfromBD
      */
 
-    private TableManager hbManager = new TableManager("humanbeing");
+    private HumanbeingTableManager hbManager = new HumanbeingTableManager();
 
-    public static String bdColumns = "(id, name, x, y, realHero, hasToothpick, impactSpeed, soundtrackName, weaponType, mood, carCool)";
+    public static String bdColumns = "(id, name, x, y, realHero, hasToothpick, impactSpeed, soundtrackName, weaponType, mood, carCool, login)";
     public static String bdSetColumns = "(name, x, y, realHero, hasToothpick, impactSpeed, soundtrackName, weaponType, mood, carCool)";
 
     public CollectionManager(String path) {
@@ -56,9 +55,7 @@ public class CollectionManager {
             System.exit(1);
         }
         indate = ZonedDateTime.now();
-
-
-        parserXMLtoBD = new ParserXMLtoBD(path, this);
+        this.parserfromBD = new ParserfromBD(this);
         load();
     }
 
@@ -92,9 +89,9 @@ public class CollectionManager {
      */
     private void load() {
         try {
-            parserXMLtoBD.parseData();
+            parserfromBD.parseData();
         } catch (Exception ex) {
-            System.err.println("Возникла непредвиденная ошибка! Файл не загрузился!");
+            System.err.println("Возникла непредвиденная ошибка! SELECT * не сработал(");
             System.exit(1);
         }
         System.out.println("Файл успешно загружен в коллекцию!");

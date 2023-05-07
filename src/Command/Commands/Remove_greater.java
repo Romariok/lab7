@@ -4,7 +4,7 @@ import Command.*;
 import Data.HumanBeing;
 import DataStructure.CollectionManager;
 import DataStructure.Response;
-import server.FileManagment.ParserXMLtoBD;
+import server.FileManagment.ParserfromBD;
 
 import java.util.LinkedList;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -24,7 +24,7 @@ public class Remove_greater extends Command_abstract implements CommandResponse 
         Long id = Long.parseLong(getArgs()[0]);
         CollectionManager manager = getCollectionManager();
         CopyOnWriteArrayList<HumanBeing> humans = getCollectionManager().getConcurrentCollection();
-        new ParserXMLtoBD(clientsDataPath,manager).parseData();
+        new ParserfromBD(manager).parseData();
         setBd(true);
         int counting = 0;
         StringBuilder sql = new StringBuilder("where id in (0");

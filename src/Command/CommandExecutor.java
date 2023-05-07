@@ -2,23 +2,17 @@ package Command;
 
 
 import ChunkManager.ChunkCreating;
-import DataStructure.Response;
-import server.FileManagment.ParserXML;
-import server.FileManagment.ParserXMLtoBD;
+import server.FileManagment.ParserfromBD;
 import server.Log;
 
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.DatagramChannel;
-import java.text.ParseException;
 import java.util.Iterator;
 import java.util.logging.Level;
 
 import static Command.Serializer.deserialize;
-import static server.Connections.Connection.collection;
 import static server.Connections.Connection.manager;
 import static server.ServerMain.clientsDataPath;
 public class CommandExecutor {
@@ -48,7 +42,7 @@ public class CommandExecutor {
             datagramChannel.send(ByteBuffer.wrap(keys.next()), client);
         }
         if(command.isSuccess()&&command.isBd()) {
-            new ParserXMLtoBD(clientsDataPath,manager).parseData();
+            new ParserfromBD(manager).parseData();
         }
     }
 }

@@ -8,11 +8,13 @@ import java.util.Objects;
  * Class {@code HumanBeing} represents a description of human being which
  * includes itself id, name, coordinates, creation date, status of real hero, status of toothpick,
  * impact speed, soundtrack name, weapon type, mood and status of car
+ *
  * @author Roman Kobelev
  */
 
 public class HumanBeing implements Comparable<HumanBeing>, Serializable {
     private static Long nextId = 1L;
+    private String login = null;
     /**
      * id of human being
      * Generates automatically, can't be null, greater than zero
@@ -26,6 +28,7 @@ public class HumanBeing implements Comparable<HumanBeing>, Serializable {
     /**
      * Coordinates of human being
      * can't be null
+     *
      * @see Coordinates
      */
     private Coordinates coordinates;
@@ -56,24 +59,28 @@ public class HumanBeing implements Comparable<HumanBeing>, Serializable {
     /**
      * Type of weapon that human being have
      * can't be null
+     *
      * @see WeaponType
      */
     private WeaponType weaponType;
     /**
      * Mood of human being
      * can't be null
+     *
      * @see Mood
      */
     private Mood mood;
     /**
      * Human being's car
      * can't be null
+     *
      * @see Car
      */
     private Car car;
 
     /**
      * Constructor of {@code HumanBeing} class with all parameters
+     *
      * @param name
      * @param coordinates
      * @param realHero
@@ -88,7 +95,7 @@ public class HumanBeing implements Comparable<HumanBeing>, Serializable {
      * @see Mood
      * @see Car
      */
-    public HumanBeing(String name, Coordinates coordinates, boolean realHero, Boolean hasToothpick, long impactSpeed, String soundtrackName, WeaponType weaponType, Mood mood, Car car){
+    public HumanBeing(String name, Coordinates coordinates, boolean realHero, Boolean hasToothpick, long impactSpeed, String soundtrackName, WeaponType weaponType, Mood mood, Car car) {
         this.id = nextId++;
         this.name = name;
         this.coordinates = coordinates;
@@ -104,7 +111,7 @@ public class HumanBeing implements Comparable<HumanBeing>, Serializable {
     /**
      * Constructor of {@code HumanBeing} class without parameters
      */
-    public HumanBeing(){
+    public HumanBeing() {
         this.id = nextId++;
     }
 
@@ -124,133 +131,142 @@ public class HumanBeing implements Comparable<HumanBeing>, Serializable {
 
     /**
      * Set particular creation date for human being
+     *
      * @param date
      */
-    public void setCreationDate(ZonedDateTime date){
+    public void setCreationDate(ZonedDateTime date) {
         this.creationDate = date;
     }
 
     /**
      * @return id of human being
      */
-    public Long getId(){
+    public Long getId() {
         return this.id;
     }
 
     /**
      * Set id for human being
+     *
      * @param id
      */
-    public void setId(Long id){
+    public void setId(Long id) {
         this.id = id;
     }
 
     /**
      * @return name of human being
      */
-    public String getName(){
+    public String getName() {
         return this.name;
     }
 
     /**
      * Set name for human being
+     *
      * @param name
      */
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * @see Coordinates
      * @return field {@code Coordinates} of human being
+     * @see Coordinates
      */
-    public Coordinates getCoordinates(){
+    public Coordinates getCoordinates() {
         return this.coordinates;
     }
 
     /**
      * Set field {@code Coordinates} for human being
+     *
      * @param coordinates
      * @see Coordinates
      */
-    public void setCoordinates(Coordinates coordinates){
+    public void setCoordinates(Coordinates coordinates) {
         this.coordinates = coordinates;
     }
 
     /**
      * @return status of realHero of human being
      */
-    public boolean isRealHero(){
+    public boolean isRealHero() {
         return this.realHero;
     }
 
     /**
      * Set status of realHero gor human being
+     *
      * @param realHero
      */
-    public void setRealHero(boolean realHero){
+    public void setRealHero(boolean realHero) {
         this.realHero = realHero;
     }
 
     /**
      * @return status of hasToothpick of human being
      */
-    public Boolean getHasToothpick(){
+    public Boolean getHasToothpick() {
         return this.hasToothpick;
     }
 
     /**
      * Set status of hasToothpick for human being
+     *
      * @param hasToothpick
      */
-    public void setHasToothpick(Boolean hasToothpick){
+    public void setHasToothpick(Boolean hasToothpick) {
         this.hasToothpick = hasToothpick;
     }
 
     /**
      * @return impact speed of human being
      */
-    public long getImpactSpeed(){
+    public long getImpactSpeed() {
         return this.impactSpeed;
     }
 
     /**
      * Set impact speed for human being
+     *
      * @param impactSpeed
      */
-    public void setImpactSpeed(long impactSpeed){
+    public void setImpactSpeed(long impactSpeed) {
         this.impactSpeed = impactSpeed;
     }
 
     /**
      * @return soundtrack name of human being
      */
-    public String getSoundtrackName(){
+    public String getSoundtrackName() {
         return this.soundtrackName;
     }
 
     /**
      * Set soundtrack name for human being
+     *
      * @param soundtrackName
      */
-    public void setSoundtrackName(String soundtrackName){
+    public void setSoundtrackName(String soundtrackName) {
         this.soundtrackName = soundtrackName;
     }
 
     /**
-     * @see WeaponType
      * @return value weaponType of human being
+     * @see WeaponType
      */
-    public WeaponType getWeaponType(){
+    public WeaponType getWeaponType() {
         return this.weaponType;
     }
 
     /**
      * Set weapon type for human being
+     *
      * @param weaponType
      * @see WeaponType
      */
-    public void setWeaponType(WeaponType weaponType){
+    public void setWeaponType(WeaponType weaponType) {
         this.weaponType = weaponType;
     }
 
@@ -258,33 +274,35 @@ public class HumanBeing implements Comparable<HumanBeing>, Serializable {
      * @return mood of human being
      * @see Mood
      */
-    public Mood getMood(){
+    public Mood getMood() {
         return this.mood;
     }
 
     /**
      * Set mood for human being
+     *
      * @param mood
      * @see Mood
      */
-    public void setMood(Mood mood){
+    public void setMood(Mood mood) {
         this.mood = mood;
     }
 
-     /**
+    /**
      * @return field Car of human being
      * @see Car
      */
-    public Car getCar(){
+    public Car getCar() {
         return this.car;
     }
 
     /**
      * Set field Car for human being
+     *
      * @param car
      * @see Car
      */
-    public void setCar(Car car){
+    public void setCar(Car car) {
         this.car = car;
     }
 
@@ -292,15 +310,16 @@ public class HumanBeing implements Comparable<HumanBeing>, Serializable {
      * @return information about human being
      */
     @Override
-    public String toString(){
-        return "-id: "+ id+"\n"+"   -name: "+this.name+"\n"+"   -coordinates: "+this.coordinates+
-                "\n"+"   -Creation date: "+this.creationDate+"\n"
-                +"   -realHero: "+this.realHero+"\n"+"   -hasToothpick: "+this.hasToothpick+"\n"+
-                "   -impact speed: "+this.impactSpeed+"\n"+"   -soundtrack name: "+this.soundtrackName+"\n"+
-                "   -weapon type: "+this.weaponType+"\n"+"   -mood: "+this.mood+"\n"+"   -car: "+this.car+"\n";
+    public String toString() {
+        return "-id: " + id + "\n" + "   -name: " + this.name + "\n" + "   -coordinates: " + this.coordinates +
+                "\n" + "   -Creation date: " + this.creationDate + "\n"
+                + "   -realHero: " + this.realHero + "\n" + "   -hasToothpick: " + this.hasToothpick + "\n" +
+                "   -impact speed: " + this.impactSpeed + "\n" + "   -soundtrack name: " + this.soundtrackName + "\n" +
+                "   -weapon type: " + this.weaponType + "\n" + "   -mood: " + this.mood + "\n" + "   -car: " + this.car + "\n";
     }
+
     @Override
-    public boolean equals(Object obj){
+    public boolean equals(Object obj) {
         if (getClass() != obj.getClass()) {
             return false;
         }
@@ -341,24 +360,24 @@ public class HumanBeing implements Comparable<HumanBeing>, Serializable {
         if (!Objects.equals(this.car.getCool(), other.car.getCool())) {
             return false;
         }
-
-        return true;
+        return Objects.equals(this.login, other.getLogin());
     }
+
     /**
      * Used to compare human beings
+     *
      * @param humanBeing the object to be compared.
      */
     @Override
-    public int compareTo(HumanBeing humanBeing){
-        if (humanBeing.getId() > this.getId()){
-            return -1;
-        }
-        else if (humanBeing.getId() < this.getId()){
-            return 1;
-        }
-        else
-        {
-            return 0;
-        }
+    public int compareTo(HumanBeing humanBeing) {
+        return this.getId().compareTo(humanBeing.getId());
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
     }
 }

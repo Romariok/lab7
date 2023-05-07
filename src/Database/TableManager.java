@@ -10,7 +10,7 @@ public class TableManager {
         this.table = table;
     }
 
-    private Exception lastE;
+    private String lastE;
 
     // Method to execute an update query
     public boolean updateCommand(String columns, String args, String condition) {
@@ -20,7 +20,7 @@ public class TableManager {
             preparedStatement.setString(1, args);
             preparedStatement.executeUpdate();
         } catch (Exception e) {
-            lastE = e;
+            lastE = e.getMessage();
             System.out.println(sql + args);
             return false;
         }
@@ -69,7 +69,7 @@ public class TableManager {
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.executeUpdate();
         } catch (Exception e) {
-            lastE = e;
+            lastE = e.getMessage();
             System.out.println(sql + values);
             return false;
         }
@@ -83,7 +83,7 @@ public class TableManager {
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.executeUpdate();
         } catch (Exception e) {
-            lastE = e;
+            lastE = e.getMessage();
             return false;
         }
         return true;
@@ -101,6 +101,9 @@ public class TableManager {
     }
 
     public String getLastE(){
-        return lastE.getMessage();
+        return lastE;
+    }
+    protected void setLastE(String error){
+        this.lastE = error;
     }
 }

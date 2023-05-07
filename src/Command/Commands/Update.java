@@ -4,7 +4,8 @@ import Command.*;
 import Data.HumanBeing;
 import DataStructure.CollectionManager;
 import DataStructure.Response;
-import server.FileManagment.ParserXMLtoBD;
+import server.FileManagment.ParserfromBD;
+import server.FileManagment.ParserfromBD;
 
 import java.util.Comparator;
 import java.util.LinkedList;
@@ -22,7 +23,7 @@ public class Update extends Command_abstract implements CommandResponse {
     }
     @Override
     public void execute() {
-        new ParserXMLtoBD(clientsDataPath,getCollectionManager()).parseData();
+        new ParserfromBD(getCollectionManager()).parseData();
         CopyOnWriteArrayList<HumanBeing> humans = getCollectionManager().getConcurrentCollection();
         HumanBeing humanBeing = null;
         Long id = Long.parseLong(getArgs()[0]);

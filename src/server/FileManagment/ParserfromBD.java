@@ -6,20 +6,21 @@ import DataStructure.CollectionManager;
 import java.sql.Timestamp;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.util.LinkedList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
-public class ParserfromBD{
+public class ParserfromBD {
     private CollectionManager collectionManager;
 
     public ParserfromBD(CollectionManager collectionManager) {
         this.collectionManager = collectionManager;
     }
 
-    public void parseData(LinkedList<HumanBeing> ls) {
-        String rows = collectionManager.getDBManager().selectAllCommand();
-        ls.clear();
-        for (String row : rows.split("\n")) {
-            try {
+    public void parseData() {
+        try {
+            String rows = collectionManager.getDBManager().selectCommand(CollectionManager.bdColumns);
+            CopyOnWriteArrayList<HumanBeing> ls = collectionManager.getConcurrentCollection();
+            ls.clear();
+            for (String row : rows.split("\n")) {
                 String[] params = row.split(" ");
                 HumanBeing hb = new HumanBeing();
                 Long id = Long.parseLong(params[0]);
@@ -28,7 +29,7 @@ public class ParserfromBD{
                 hb.setName(name);
                 Coordinates coordinates = new Coordinates(Integer.parseInt(params[2]), Long.parseLong(params[3]));
                 hb.setCoordinates(coordinates);
-                ZonedDateTime date = ZonedDateTime.ofInstant(Timestamp.valueOf(params[4]+" "+params[5]).toInstant(),ZoneId.systemDefault());
+                ZonedDateTime date = ZonedDateTime.ofInstant(Timestamp.valueOf(params[4] + " " + params[5]).toInstant(), ZoneId.systemDefault());
                 hb.setCreationDate(date);
                 boolean realHero = Boolean.parseBoolean(params[6]);
                 hb.setRealHero(realHero);
@@ -56,9 +57,8 @@ public class ParserfromBD{
                 hb.setCar(car);
                 ls.add(hb);
             }
-            catch (Exception e){
-                e.printStackTrace();
-            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

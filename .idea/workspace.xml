@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="713d5a2c-e91c-4c39-bb38-6de54a17e15e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Database/AuthTableManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Database/HumanbeingTableManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
@@ -15,10 +17,6 @@
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab7.iml" beforeDir="false" afterPath="$PROJECT_DIR$/lab7.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proga_6/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/files/file.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proga_6/files/file.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/files/script.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proga_6/files/script.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proga_6/files/script2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proga_6/files/script2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serverSettings.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/serverSettings.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ChunkManager/ChunkCreating.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChunkManager/ChunkCreating.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ChunkManager/ChunkReceiving.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChunkManager/ChunkReceiving.java" afterDir="false" />
@@ -50,6 +48,7 @@
       <change beforePath="$PROJECT_DIR$/src/Data/WeaponType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/WeaponType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataStructure/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataStructure/CollectionManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataStructure/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataStructure/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Database/AuthTableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/AuthTableManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Database/ServerConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/ServerConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Database/TableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/TableManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
@@ -72,8 +71,8 @@
       <change beforePath="$PROJECT_DIR$/src/server/Connections/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Connections/Connection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/Connections/SelectorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Connections/SelectorManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/Connections/ServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Connections/ServerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/FileManagment/ParserXML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/FileManagment/ParserXML.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/FileManagment/ParserXMLtoBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/FileManagment/ParserfromBD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/FileManagment/ParserXML.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/FileManagment/ParserfromBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/FileManagment/ParserfromBD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Log.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ServerMain.java" afterDir="false" />
     </list>
@@ -160,6 +159,8 @@
       <workItem from="1682303747755" duration="5046000" />
       <workItem from="1682308849954" duration="68000" />
       <workItem from="1683184756263" duration="1535000" />
+      <workItem from="1683186941611" duration="8582000" />
+      <workItem from="1683479120059" duration="42000" />
     </task>
     <servers />
   </component>
