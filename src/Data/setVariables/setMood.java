@@ -1,4 +1,4 @@
-package client.setVariables;
+package Data.setVariables;
 
 import Data.Mood;
 

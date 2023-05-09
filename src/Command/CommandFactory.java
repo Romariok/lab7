@@ -7,12 +7,14 @@ import java.util.Scanner;
 import Command.Commands.*;
 
 import Data.HumanBeing;
-import client.setVariables.readHumanBeingFromConsole;
+import Data.setVariables.readHumanBeingFromConsole;
+import Data.setVariables.setUser;
 
 public class CommandFactory {
     private Map<String, CommandResponse> commands = new HashMap<>();
     private HashSet<String> commandsWithObject = new HashSet<>();
     private HashSet<String> commandsWithArgs = new HashSet<>();
+    private HashSet<String> commandsWithUser = new HashSet<>();
 
     public CommandFactory() {
         commands.put("add", new Add());
@@ -29,7 +31,8 @@ public class CommandFactory {
         commands.put("show", new Show());
         commands.put("sum_of_impact_speed", new Sum_of_impact_speed());
         commands.put("update", new Update());
-        commands.put("auth", new);
+        commands.put("auth", new Auth());
+        commands.put("register", new Register());
         commandsWithObject.add("add");
         commandsWithArgs.add("update");
         commandsWithObject.add("update");
@@ -41,7 +44,8 @@ public class CommandFactory {
         commandsWithArgs.add("remove_greater");
         commandsWithArgs.add("remove_lower");
         commandsWithArgs.add("insert_at");
-        commandsWithArgs.add("auth");
+        commandsWithUser.add("auth");
+        commandsWithUser.add("register");
     }
 
     public CommandResponse getCommand(String commandName, String[] commandArgs, Scanner scanner, boolean bool) {
@@ -59,6 +63,8 @@ public class CommandFactory {
                     command.setArgs(commandArgs);
                 }
 
+            } else if (commandsWithUser.contains(commandName)) {
+                command.setValue(setUser.initializeUser(scanner,bool));
             }
             return command;
         } else {

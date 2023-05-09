@@ -22,7 +22,9 @@ public class Add extends Command_abstract implements CommandResponse{
     public void execute(){
         CopyOnWriteArrayList<HumanBeing> humans = getCollectionManager().getConcurrentCollection();
         setBd(true);
-        setSuccess(getCollectionManager().getDBManager().insertCommand(CollectionManager.bdColumns,getCollectionManager().getValues((HumanBeing) getValue(),false,false)));
+        HumanBeing h = (HumanBeing)getValue();
+        h.setLogin(getUser());
+        setSuccess(getCollectionManager().getDBManager().insertCommand(h));
         Comparator<HumanBeing> comparator = getCollectionManager().getComparator();
         humans.sort(comparator);
     }

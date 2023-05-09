@@ -5,6 +5,7 @@ import DataStructure.CollectionManager;
 import java.io.Serializable;
 
 public abstract class Command_abstract implements Command, Serializable {
+    private String user;
     private CollectionManager collectionManager;
     private boolean success;
     private boolean bd;
@@ -60,5 +61,13 @@ public abstract class Command_abstract implements Command, Serializable {
     }
     public void setBd(boolean bd){
         this.bd = bd;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
     }
 }

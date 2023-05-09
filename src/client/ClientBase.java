@@ -1,8 +1,10 @@
 package client;
 
+import Auth.AuthResponse;
 import Auth.Session;
 import Command.CommandResponse;
 import Command.CommandFactory;
+import Data.HumanBeing;
 
 
 import java.net.InetAddress;
@@ -36,9 +38,11 @@ public class ClientBase implements Runnable {
             if (Objects.equals(arg[1], "-exec")){
                 CommandResponse execute_script = commandFactory.getCommand("execute_script", new String[]{arg[2]}, scanner, false);
                 try{
-                    connection.send(serialize());
-                    String response = connection.recieve();
-                    if (!response.isEmpty()) System.out.println(response);
+                    connection.send(serialize(execute_script));
+                    AuthResponse response = connection.recieve();
+                    if (!response.getCommand().isEmpty()) System.out.println(response);
+                    session.setUser(response.getUser());
+                    session.setAuthoriazed(response.isAutorized());
                 }
                 catch (Exception ex){
                     System.err.println(ex.getMessage());
@@ -57,11 +61,23 @@ public class ClientBase implements Runnable {
                 System.exit(1);
             }
             CommandResponse command = commandFactory.getCommand(commandName, commandArgs, scanner, false);
+            AuthResponse sending;
             if (command != null){
                 try{
-                    connection.send(serialize(command));
-                    String response = connection.recieve();
-                    if (!response.isEmpty()) System.out.println(response);
+                    if(command.getValue()==null) {
+                        sending = new AuthResponse(commandName + " " + String.join(" ", commandArgs), session.getUser(), session.isAuthoriazed());
+                    }
+                    else if(command.getArgs()==null||command.getArgs().length == 0){
+                        sending = new AuthResponse(commandName + " "+ command.getValue().toString(), session.getUser(), session.isAuthoriazed());
+                    }
+                    else{
+                        sending = new AuthResponse(commandName+" "+String.join(" ", commandArgs)+ " "+ command.getValue().toString());
+                    }
+                    connection.send(serialize(sending));
+                    AuthResponse response = connection.recieve();
+                    if (!response.getCommand().isEmpty()) System.out.println(response.getCommand());
+                    session.setUser(response.getUser());
+                    session.setAuthoriazed(response.isAutorized());
                 }
                 catch (Exception ex){
                     System.err.println(ex.getMessage());

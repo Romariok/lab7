@@ -1,7 +1,6 @@
-package client.setVariables;
+package Data.setVariables;
 
 
-import java.io.InputStream;
 import java.util.Scanner;
 
 /**

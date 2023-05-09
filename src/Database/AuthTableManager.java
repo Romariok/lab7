@@ -27,7 +27,7 @@ public class AuthTableManager extends TableManager {
         }
     }
 
-    public boolean selectCommand(String login, String pass) {
+    public String selectCommand(String login, String pass) {
         ResultSet resultSet;
         try {
             PreparedStatement stat = ServerConnection.getINSTANCE().prepareStatement("SELECT " + columns + " FROM " + " users " + " WHERE login = ? AND pass = ?");
@@ -35,12 +35,12 @@ public class AuthTableManager extends TableManager {
             stat.setString(2, pass);
             resultSet = stat.executeQuery();
             if (resultSet.next()) {
-                return true;
+                return resultSet.getString(1);
             }
             throw new SQLException("Incorrect login or password");
         } catch (Exception e) {
             setLastE(e.getMessage());
-            return false;
+            return "";
         }
     }
 
@@ -51,11 +51,7 @@ public class AuthTableManager extends TableManager {
         if (!resultSet.next()) {
             throw new SQLException("No such user found");
         }
-        return resultSet.getString(0);
-    }
-
-    public String getPepper() throws SQLException{
-        return ServerConnection.getINSTANCE().prepareStatement("SELECT (login) FROM users WHERE id=0").executeQuery().getString(0);
+        return resultSet.getString(1);
     }
 }
 

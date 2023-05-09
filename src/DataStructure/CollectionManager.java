@@ -97,7 +97,7 @@ public class CollectionManager {
         System.out.println("Файл успешно загружен в коллекцию!");
     }
 
-    public TableManager getDBManager() {
+    public HumanbeingTableManager getDBManager() {
         return this.hbManager;
     }
 

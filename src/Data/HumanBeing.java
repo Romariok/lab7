@@ -311,11 +311,9 @@ public class HumanBeing implements Comparable<HumanBeing>, Serializable {
      */
     @Override
     public String toString() {
-        return "-id: " + id + "\n" + "   -name: " + this.name + "\n" + "   -coordinates: " + this.coordinates +
-                "\n" + "   -Creation date: " + this.creationDate + "\n"
-                + "   -realHero: " + this.realHero + "\n" + "   -hasToothpick: " + this.hasToothpick + "\n" +
-                "   -impact speed: " + this.impactSpeed + "\n" + "   -soundtrack name: " + this.soundtrackName + "\n" +
-                "   -weapon type: " + this.weaponType + "\n" + "   -mood: " + this.mood + "\n" + "   -car: " + this.car + "\n";
+        return this.name + "\n"  + this.coordinates.getX()+"\n"+this.coordinates.getY()+"\n" +
+                this.realHero + "\n"  + this.hasToothpick + "\n"  + this.impactSpeed + "\n"  + this.soundtrackName + "\n" +
+                this.weaponType + "\n"  + this.mood + "\n" + this.car + "\n";
     }
 
     @Override
