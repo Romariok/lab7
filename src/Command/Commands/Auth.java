@@ -10,7 +10,7 @@ import Auth.User;
 public class Auth extends Command_abstract implements CommandResponse {
 
     private String output;
-
+    private Session session = new Session();
     public Auth() {
 
     }
@@ -21,7 +21,7 @@ public class Auth extends Command_abstract implements CommandResponse {
         String login = user.getUser();
         String pass = user.getPass();
         try {
-            Session session = AuthController.getAuthorized(login, pass);
+            session = AuthController.getAuthorized(login, pass);
             setSuccess(true);
             output = "Success!";
         } catch (Exception e) {
@@ -33,5 +33,9 @@ public class Auth extends Command_abstract implements CommandResponse {
     @Override
     public Response getResponse() {
         return new Response("auth", output);
+    }
+
+    public Session getSession() {
+        return session;
     }
 }

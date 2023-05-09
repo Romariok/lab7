@@ -312,8 +312,12 @@ public class HumanBeing implements Comparable<HumanBeing>, Serializable {
     @Override
     public String toString() {
         return this.name + "\n"  + this.coordinates.getX()+"\n"+this.coordinates.getY()+"\n" +
-                this.realHero + "\n"  + this.hasToothpick + "\n"  + this.impactSpeed + "\n"  + this.soundtrackName + "\n" +
-                this.weaponType + "\n"  + this.mood + "\n" + this.car + "\n";
+                getRus(this.realHero) + "\n"  + getRus(this.hasToothpick) + "\n"  + this.impactSpeed + "\n"  + this.soundtrackName + "\n" +
+                this.weaponType + "\n"  + this.mood + "\n" + getRus(this.car.getCool()) + "\n";
+    }
+
+    private String getRus(boolean b){
+        return !b ?"Нет":"Да";
     }
 
     @Override
