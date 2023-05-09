@@ -44,7 +44,7 @@ public class HumanbeingTableManager extends TableManager {
 
     public boolean deleteCommand(Long id, String mode, String user) {
         try {
-            PreparedStatement preparedStatement = ServerConnection.getINSTANCE().prepareStatement("DELETE FROM humnabeing WHERE id" +mode+"? and user = ?");
+            PreparedStatement preparedStatement = ServerConnection.getINSTANCE().prepareStatement("DELETE FROM humanbeing WHERE id" +mode+"? and user = ?");
             preparedStatement.setLong(1, id);
             preparedStatement.setString(2,user);
             int res = preparedStatement.executeUpdate();
