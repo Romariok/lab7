@@ -12,11 +12,12 @@ public class HumanbeingTableManager extends TableManager {
         super("humanbeing");
     }
 
-    public boolean updateCommand(HumanBeing hb, long id) {
+    public boolean updateCommand(HumanBeing hb, long id,String user) {
         try {
-            PreparedStatement preparedStatement = ServerConnection.getINSTANCE().prepareStatement("UPDATE humanbeing SET (" + columns + ") (?,?,?,?,?,?,?,?,?,?) WHERE id=?");
+            PreparedStatement preparedStatement = ServerConnection.getINSTANCE().prepareStatement("UPDATE humanbeing SET (" + columns + ") (?,?,?,?,?,?,?,?,?,?) WHERE id=? and user = ?");
             prepare(preparedStatement, hb);
             preparedStatement.setLong(11, id);
+            preparedStatement.setString(12,user);
             int res = preparedStatement.executeUpdate();
             if (res != 0) {
                 return true;
@@ -41,10 +42,11 @@ public class HumanbeingTableManager extends TableManager {
         preparedStatement.setBoolean(10, hb.getCar().getCool());
     }
 
-    public boolean deleteCommand(Long id, String mode) {
+    public boolean deleteCommand(Long id, String mode, String user) {
         try {
-            PreparedStatement preparedStatement = ServerConnection.getINSTANCE().prepareStatement("DELETE FROM humnabeing WHERE id" +mode+"?");
+            PreparedStatement preparedStatement = ServerConnection.getINSTANCE().prepareStatement("DELETE FROM humnabeing WHERE id" +mode+"? and user = ?");
             preparedStatement.setLong(1, id);
+            preparedStatement.setString(2,user);
             int res = preparedStatement.executeUpdate();
             if (res != 0) {
                 return true;

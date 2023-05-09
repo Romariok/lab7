@@ -23,25 +23,14 @@ public class Remove_lower extends Command_abstract implements CommandResponse {
 
     @Override
     public void execute() {
-        Long id = Long.parseLong(getArgs()[0]);
+        long id = Long.parseLong(getArgs()[0]);
         CollectionManager manager = getCollectionManager();
-        CopyOnWriteArrayList<HumanBeing> humans = getCollectionManager().getConcurrentCollection();
-        new ParserfromBD(manager).parseData();
-        setBd(true);
-        int counting = 0;
-        StringBuilder sql = new StringBuilder("where id in (0");
-        for (HumanBeing h : humans) {
-            if (h.getId() < id) {
-                counting++;
-                sql.append(",").append(h.getId());
-            }
+        setSuccess(manager.getDBManager().deleteCommand(id,"<",getUser()));
+        if(isSuccess()) {
+            output = "Удалены элементы, id которых был меньше " + id + "!\n";
         }
-        sql.append(")");
-        setSuccess(manager.getDBManager().deleteCommand(sql.toString()));
-        if (isSuccess()) {
-            output = "Удалено " + counting + " элементов, id которых был меньше " + id + "!\n";
-        } else {
-            output = "Что-то не так!\n" + manager.getDBManager().getLastE();
+        else{
+            output = "Что-то не так!\n"+manager.getDBManager().getLastE();
         }
     }
 

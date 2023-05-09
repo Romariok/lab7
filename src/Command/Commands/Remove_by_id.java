@@ -22,7 +22,7 @@ public class Remove_by_id extends Command_abstract implements CommandResponse {
         output = index + "-й элемент успешно удалён!\n";
         setBd(true);
         CollectionManager manager = getCollectionManager();
-        setSuccess(manager.getDBManager().deleteCommand("WHERE id="+index));
+        setSuccess(manager.getDBManager().deleteCommand(index,"=",getUser()));
         if(!isSuccess()) {
             output = "Возникла непредвиденная ошибка! Элемент не удалён!\n"+getCollectionManager().getDBManager().getLastE()+"\n";
         }

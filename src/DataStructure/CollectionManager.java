@@ -44,7 +44,7 @@ public class CollectionManager {
 
     private HumanbeingTableManager hbManager = new HumanbeingTableManager();
 
-    public static String bdColumns = "(id, name, x, y, realHero, hasToothpick, impactSpeed, soundtrackName, weaponType, mood, carCool, login)";
+    public static String bdColumns = "(id, name, x, y, creationDate, realHero, hasToothpick, impactSpeed, soundtrackName, weaponType, mood, carCool, login)";
     public static String bdSetColumns = "(name, x, y, realHero, hasToothpick, impactSpeed, soundtrackName, weaponType, mood, carCool)";
 
     public CollectionManager(String path) {
