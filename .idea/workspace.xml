@@ -2,39 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="713d5a2c-e91c-4c39-bb38-6de54a17e15e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Auth/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Command/Commands/Auth.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Command/Commands/Register.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Data/setVariables/setUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Auth/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Auth/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Auth/AuthResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Auth/AuthResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs.log.1" beforeDir="false" afterPath="$PROJECT_DIR$/logs.log.1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/CommandExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/CommandExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/CommandFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/CommandResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/CommandResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/Command_abstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Command_abstract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Add.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/Commands/AuthCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Clear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Show.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/HumanBeing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/HumanBeing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataStructure/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataStructure/CollectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Database/AuthTableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/AuthTableManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Execute_script.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Execute_script.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/ScriptExecuter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/ScriptExecuter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Database/HumanbeingTableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/HumanbeingTableManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/ClientBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ClientBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Connection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/setVariables/SetName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/setVariables/SetName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/setVariables/readHumanBeingFromConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/setVariables/readHumanBeingFromConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/setVariables/setCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/setVariables/setCar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/setVariables/setCoordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/setVariables/setCoordinates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/setVariables/setHasToothpick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/setVariables/setHasToothpick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/setVariables/setImpactSpeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/setVariables/setImpactSpeed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/setVariables/setMood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/setVariables/setMood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/setVariables/setRealHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/setVariables/setRealHero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/setVariables/setSoundtrackName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/setVariables/setSoundtrackName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/setVariables/setWeaponType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/setVariables/setWeaponType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/FileManagment/ParserfromBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/FileManagment/ParserfromBD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/files/script2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/files/script2.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,11 +55,11 @@
       <recent name="Data" />
     </key>
   </component>
-  <component name="RunManager" selected="Compound.Unnamed">
+  <component name="RunManager" selected="Compound.execute">
     <configuration name="ServerMain" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="server.ServerMain" />
       <module name="lab7" />
-      <option name="PROGRAM_PARAMETERS" value="./src/files/file.xml 1234" />
+      <option name="PROGRAM_PARAMETERS" value="./src/files/file.xml 1235" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="server.*" />
@@ -94,23 +70,50 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="client" type="Application" factoryName="Application">
+    <configuration name="client execute 2" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="client.ClientMain" />
       <module name="lab7" />
-      <option name="PROGRAM_PARAMETERS" value="1234" />
+      <option name="PROGRAM_PARAMETERS" value="1235 -exec src/files/script2.txt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Unnamed" type="CompoundRunConfigurationType">
+    <configuration name="client execute" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="client.ClientMain" />
+      <module name="lab7" />
+      <option name="PROGRAM_PARAMETERS" value="1235 -exec src/files/script1.txt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="client" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="client.ClientMain" />
+      <module name="lab7" />
+      <option name="PROGRAM_PARAMETERS" value="1235" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="execute" type="CompoundRunConfigurationType">
+      <toRun name="ServerMain" type="Application" />
+      <toRun name="client execute" type="Application" />
+      <toRun name="client execute 2" type="Application" />
+      <method v="2" />
+    </configuration>
+    <configuration name="server+client" type="CompoundRunConfigurationType">
       <toRun name="ServerMain" type="Application" />
       <toRun name="client" type="Application" />
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.client execute" />
+      <item itemvalue="Application.client execute 2" />
       <item itemvalue="Application.client" />
       <item itemvalue="Application.ServerMain" />
-      <item itemvalue="Compound.Unnamed" />
+      <item itemvalue="Compound.execute" />
+      <item itemvalue="Compound.server+client" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -129,7 +132,8 @@
       <workItem from="1683479120059" duration="42000" />
       <workItem from="1683479349977" duration="5164000" />
       <workItem from="1683587281250" duration="1374000" />
-      <workItem from="1683628653723" duration="13872000" />
+      <workItem from="1683628653723" duration="20088000" />
+      <workItem from="1683684245450" duration="3902000" />
     </task>
     <servers />
   </component>
@@ -155,24 +159,29 @@
           <option name="timeStamp" value="5" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/server/FileManagment/ParserfromBD.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="7" />
+          <url>file://$PROJECT_DIR$/src/Command/Commands/Add.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Auth/AuthController.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="23" />
+          <url>file://$PROJECT_DIR$/src/Data/setVariables/readHumanBeingFromConsole.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/client/ClientBase.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="25" />
+          <url>file://$PROJECT_DIR$/src/Database/HumanbeingTableManager.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Command/Commands/Remove_lower.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Command/CommandExecutor.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="27" />
+          <line>32</line>
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
