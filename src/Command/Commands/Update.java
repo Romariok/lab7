@@ -4,7 +4,8 @@ import Command.*;
 import Data.HumanBeing;
 import DataStructure.CollectionManager;
 import DataStructure.Response;
-import server.FileManagment.ParserXMLtoBD;
+import server.FileManagment.ParserfromBD;
+import server.FileManagment.ParserfromBD;
 
 import java.util.Comparator;
 import java.util.LinkedList;
@@ -16,36 +17,26 @@ import static server.ServerMain.clientsDataPath;
  * Class for the update command. Updating element by his index
  */
 public class Update extends Command_abstract implements CommandResponse {
+    private String output;
 
-    public Update(){
+    public Update() {
     }
+
     @Override
     public void execute() {
-        new ParserXMLtoBD(clientsDataPath,getCollectionManager()).parseData();
-        CopyOnWriteArrayList<HumanBeing> humans = getCollectionManager().getConcurrentCollection();
-        HumanBeing humanBeing = null;
-        Long id = Long.parseLong(getArgs()[0]);
+        long id = Long.parseLong(getArgs()[0]);
         setBd(true);
-        for (HumanBeing human : humans) {
-            if (id.equals(human.getId())) {
-                humanBeing = human;
-            }
-        }
-        if (humanBeing != null) {
-            HumanBeing humanBeingNew = (HumanBeing) getValue();
-            setSuccess(getCollectionManager().getDBManager().updateCommand(CollectionManager.bdSetColumns,getCollectionManager().getValues(humanBeingNew,false,true),"id = "+id+" and login = '"+getSession().getUser()+"'"));
-            if(isSuccess()) {
-                setOutput( "Ваш элемент успешно обновлён!\n");
-            }
-            else {
-                setOutput( getCollectionManager().getDBManager().getLastE());
-            }
+        HumanBeing humanBeingNew = (HumanBeing) getValue();
+        setSuccess(getCollectionManager().getDBManager().updateCommand(humanBeingNew, id, getUser()));
+        if (isSuccess()) {
+            output = "Ваш элемент успешно обновлён!\n";
         } else {
-            setOutput(  "Объекта по id - " +id + " не существует в коллекции!\n");
+            output = getCollectionManager().getDBManager().getLastE();
         }
     }
+
     @Override
-    public Response getResponse(){
-        return new Response("update", getOutput());
+    public Response getResponse() {
+        return new Response("update", output);
     }
 }

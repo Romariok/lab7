@@ -1,11 +1,10 @@
 package DataStructure;
 
 
+import Database.HumanbeingTableManager;
 import Database.TableManager;
-import server.FileManagment.ParserXML;
 import Data.*;
-import server.FileManagment.ParserXMLtoBD;
-
+import server.FileManagment.ParserfromBD;
 
 import java.io.*;
 
@@ -13,7 +12,7 @@ import java.time.ZonedDateTime;
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class CollectionManager{
+public class CollectionManager {
     /**
      * LinkedList collection that contains HumanBeing objects
      */
@@ -27,9 +26,9 @@ public class CollectionManager{
     /**
      * ParserXML used for execute and write data to file
      *
-     * @see ParserXMLtoBD
+     * @see ParserfromBD
      */
-    private ParserXMLtoBD parserXMLtoBD;
+    private ParserfromBD parserfromBD;
     /**
      * Initialize {@code Comparator}
      */
@@ -40,13 +39,13 @@ public class CollectionManager{
      * Also checking file and loading data from xml file
      *
      * @param path path to the file
-     * @see ParserXMLtoBD
+     * @see ParserfromBD
      */
 
-    private TableManager hbManager = new TableManager("humanbeing");
+    private HumanbeingTableManager hbManager = new HumanbeingTableManager();
 
-    public static String bdColumns = "(id, name, x, y, realHero, hasToothpick, impactSpeed, soundtrackName, weaponType, mood, carCool, login)";
-    public static String bdSetColumns = "(name, x, y, realHero, hasToothpick, impactSpeed, soundtrackName, weaponType, mood, carCool, login)";
+    public static String bdColumns = "(id, name, x, y, creationDate, realHero, hasToothpick, impactSpeed, soundtrackName, weaponType, mood, carCool, login)";
+    public static String bdSetColumns = "(name, x, y, realHero, hasToothpick, impactSpeed, soundtrackName, weaponType, mood, carCool)";
 
     public CollectionManager(String path) {
         try {
@@ -56,9 +55,7 @@ public class CollectionManager{
             System.exit(1);
         }
         indate = ZonedDateTime.now();
-
-
-        parserXMLtoBD = new ParserXMLtoBD(path, this);
+        this.parserfromBD = new ParserfromBD(this);
         load();
     }
 
@@ -92,15 +89,15 @@ public class CollectionManager{
      */
     private void load() {
         try {
-            parserXMLtoBD.parseData();
+            parserfromBD.parseData();
         } catch (Exception ex) {
-            System.err.println("Возникла непредвиденная ошибка! Файл не загрузился!");
+            System.err.println("Возникла непредвиденная ошибка! SELECT * не сработал(");
             System.exit(1);
         }
         System.out.println("Файл успешно загружен в коллекцию!");
     }
 
-    public TableManager getDBManager() {
+    public HumanbeingTableManager getDBManager() {
         return this.hbManager;
     }
 
@@ -113,12 +110,9 @@ public class CollectionManager{
                 result.append("default,'");
             }
         }
-        else{
-            result.append("'");
-        }
         result.append(h.getName()).append("',").append(h.getCoordinates().getX()).append(",").append(h.getCoordinates().getY()).append(",");
         result.append(h.isRealHero()).append(",").append(h.getHasToothpick()).append(",").append(h.getImpactSpeed()).append(",'");
-        result.append(h.getSoundtrackName()).append("','").append(h.getWeaponType()).append("','").append(h.getMood()).append("',").append(h.getCar().toString()).append(",'").append(h.getUser()).append("')");
+        result.append(h.getSoundtrackName()).append("','").append(h.getWeaponType()).append("','").append(h.getMood()).append("',").append(h.getCar().toString()).append(")");
         return result.toString();
     }
 }

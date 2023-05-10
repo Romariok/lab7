@@ -2,21 +2,21 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2023-04-26T10:10:40.952638800Z</date>
-  <millis>1682503840952</millis>
-  <nanos>638800</nanos>
+  <date>2023-05-09T15:22:22.722708100Z</date>
+  <millis>1683645742722</millis>
+  <nanos>708100</nanos>
   <sequence>0</sequence>
   <logger>server.Log</logger>
   <level>INFO</level>
   <class>server.Connections.Connection</class>
   <method>start</method>
   <thread>1</thread>
-  <message>Server started datagram channel: sun.nio.ch.DatagramChannelImpl@68ceda24</message>
+  <message>Server started datagram channel: sun.nio.ch.DatagramChannelImpl@5a8806ef</message>
 </record>
 <record>
-  <date>2023-04-26T10:10:44.401146800Z</date>
-  <millis>1682503844401</millis>
-  <nanos>146800</nanos>
+  <date>2023-05-09T15:22:36.678673Z</date>
+  <millis>1683645756678</millis>
+  <nanos>673000</nanos>
   <sequence>1</sequence>
   <logger>server.Log</logger>
   <level>INFO</level>
@@ -26,33 +26,33 @@
   <message>Cached Pool got new submit</message>
 </record>
 <record>
-  <date>2023-04-26T10:10:44.432427300Z</date>
-  <millis>1682503844432</millis>
-  <nanos>427300</nanos>
+  <date>2023-05-09T15:22:36.688648700Z</date>
+  <millis>1683645756688</millis>
+  <nanos>648700</nanos>
   <sequence>2</sequence>
   <logger>server.Log</logger>
   <level>INFO</level>
   <class>Command.CommandExecutor</class>
   <method>execute</method>
   <thread>18</thread>
-  <message>Received command Command.Commands.Help@36b2d647 from /172.28.30.61:65234</message>
+  <message>Received command Command.Commands.Register@5c4e2ae1 from /192.168.0.102:64988</message>
 </record>
 <record>
-  <date>2023-04-26T10:10:44.449724100Z</date>
-  <millis>1682503844449</millis>
-  <nanos>724100</nanos>
+  <date>2023-05-09T15:22:36.727523500Z</date>
+  <millis>1683645756727</millis>
+  <nanos>523500</nanos>
   <sequence>3</sequence>
   <logger>server.Log</logger>
   <level>INFO</level>
   <class>Command.CommandExecutor</class>
   <method>execute</method>
   <thread>18</thread>
-  <message>Sending 3 chunks to /172.28.30.61:65234</message>
+  <message>Sending 1 chunks to /192.168.0.102:64988</message>
 </record>
 <record>
-  <date>2023-04-26T10:10:46.651054600Z</date>
-  <millis>1682503846651</millis>
-  <nanos>54600</nanos>
+  <date>2023-05-09T15:22:39.990084400Z</date>
+  <millis>1683645759990</millis>
+  <nanos>84400</nanos>
   <sequence>4</sequence>
   <logger>server.Log</logger>
   <level>INFO</level>
@@ -62,27 +62,87 @@
   <message>Cached Pool got new submit</message>
 </record>
 <record>
-  <date>2023-04-26T10:10:46.653159700Z</date>
-  <millis>1682503846653</millis>
-  <nanos>159700</nanos>
+  <date>2023-05-09T15:22:39.990084400Z</date>
+  <millis>1683645759990</millis>
+  <nanos>84400</nanos>
   <sequence>5</sequence>
   <logger>server.Log</logger>
   <level>INFO</level>
   <class>Command.CommandExecutor</class>
   <method>execute</method>
   <thread>18</thread>
-  <message>Received command Command.Commands.Info@258fd079 from /172.28.30.61:65234</message>
+  <message>Received command Command.Commands.Show@349f67f4 from /192.168.0.102:64988</message>
 </record>
 <record>
-  <date>2023-04-26T10:10:46.653159700Z</date>
-  <millis>1682503846653</millis>
-  <nanos>159700</nanos>
+  <date>2023-05-09T15:22:39.991082500Z</date>
+  <millis>1683645759991</millis>
+  <nanos>82500</nanos>
   <sequence>6</sequence>
   <logger>server.Log</logger>
   <level>INFO</level>
   <class>Command.CommandExecutor</class>
   <method>execute</method>
   <thread>18</thread>
-  <message>Sending 1 chunks to /172.28.30.61:65234</message>
+  <message>Sending 1 chunks to /192.168.0.102:64988</message>
+</record>
+<record>
+  <date>2023-05-09T15:22:42.645623200Z</date>
+  <millis>1683645762645</millis>
+  <nanos>623200</nanos>
+  <sequence>7</sequence>
+  <logger>server.Log</logger>
+  <level>INFO</level>
+  <class>server.Connections.ServerHandler</class>
+  <method>run</method>
+  <thread>18</thread>
+  <message>Cached Pool got new submit</message>
+</record>
+<record>
+  <date>2023-05-09T15:22:42.645623200Z</date>
+  <millis>1683645762645</millis>
+  <nanos>623200</nanos>
+  <sequence>8</sequence>
+  <logger>server.Log</logger>
+  <level>INFO</level>
+  <class>Command.CommandExecutor</class>
+  <method>execute</method>
+  <thread>18</thread>
+  <message>Received command Command.Commands.Info@23ff4701 from /192.168.0.102:64988</message>
+</record>
+<record>
+  <date>2023-05-09T15:22:42.649611400Z</date>
+  <millis>1683645762649</millis>
+  <nanos>611400</nanos>
+  <sequence>9</sequence>
+  <logger>server.Log</logger>
+  <level>INFO</level>
+  <class>Command.CommandExecutor</class>
+  <method>execute</method>
+  <thread>18</thread>
+  <message>Sending 1 chunks to /192.168.0.102:64988</message>
+</record>
+<record>
+  <date>2023-05-09T15:23:05.242242700Z</date>
+  <millis>1683645785242</millis>
+  <nanos>242700</nanos>
+  <sequence>10</sequence>
+  <logger>server.Log</logger>
+  <level>INFO</level>
+  <class>server.Connections.ServerHandler</class>
+  <method>run</method>
+  <thread>18</thread>
+  <message>Cached Pool got new submit</message>
+</record>
+<record>
+  <date>2023-05-09T15:23:05.244238100Z</date>
+  <millis>1683645785244</millis>
+  <nanos>238100</nanos>
+  <sequence>11</sequence>
+  <logger>server.Log</logger>
+  <level>WARNING</level>
+  <class>server.Connections.ServerHandler</class>
+  <method>run</method>
+  <thread>18</thread>
+  <message>ServerHandler: No line found</message>
 </record>
 </log>

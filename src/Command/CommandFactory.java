@@ -5,14 +5,16 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Scanner;
 import Command.Commands.*;
-import Auth.Session;
+
 import Data.HumanBeing;
-import client.setVariables.readHumanBeingFromConsole;
+import Data.setVariables.readHumanBeingFromConsole;
+import Data.setVariables.setUser;
 
 public class CommandFactory {
     private Map<String, CommandResponse> commands = new HashMap<>();
     private HashSet<String> commandsWithObject = new HashSet<>();
     private HashSet<String> commandsWithArgs = new HashSet<>();
+    private HashSet<String> commandsWithUser = new HashSet<>();
 
     public CommandFactory() {
         commands.put("add", new Add());
@@ -42,8 +44,8 @@ public class CommandFactory {
         commandsWithArgs.add("remove_greater");
         commandsWithArgs.add("remove_lower");
         commandsWithArgs.add("insert_at");
-        commandsWithArgs.add("auth");
-        commandsWithArgs.add("register");
+        commandsWithUser.add("auth");
+        commandsWithUser.add("register");
     }
 
     public CommandResponse getCommand(String commandName, String[] commandArgs, Scanner scanner, boolean bool) {
@@ -60,10 +62,16 @@ public class CommandFactory {
                 else{
                     command.setArgs(commandArgs);
                 }
+
+            } else if (commandsWithUser.contains(commandName)) {
+                command.setValue(setUser.initializeUser(scanner,bool));
             }
             return command;
         } else {
             return null;
         }
+
     }
+
+
 }

@@ -1,28 +1,24 @@
 package Auth;
 
-import java.io.Serializable;
-
-public class Session implements Serializable {
+public class Session {
     private String user;
     private boolean authorized;
-    public Session(String user){
-        this.user = user;
-        authorized = false;
+    public Session(){
     }
 
-    public boolean isAuthorized() {
-        return authorized;
-    }
-
-    public void setAuthorized(boolean authorized) {
-        this.authorized = authorized;
-    }
-
-    public String getUser(){
-        return this.user;
+    public String getUser() {
+        return user;
     }
 
     public void setUser(String user) {
         this.user = user;
+    }
+
+    public boolean isAuthoriazed() {
+        return authorized;
+    }
+
+    public void setAuthoriazed(boolean authorized) {
+        this.authorized = authorized;
     }
 }

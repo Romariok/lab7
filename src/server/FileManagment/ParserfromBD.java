@@ -6,24 +6,25 @@ import DataStructure.CollectionManager;
 import java.sql.Timestamp;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.util.concurrent.CopyOnWriteArrayList;
 
-public class ParserXMLtoBD extends ParserXML {
+public class ParserfromBD {
     private CollectionManager collectionManager;
 
-    public ParserXMLtoBD(String path, CollectionManager collectionManager) {
-        super(path);
+    public ParserfromBD(CollectionManager collectionManager) {
         this.collectionManager = collectionManager;
     }
 
     public void parseData() {
         try {
-            String rows = collectionManager.getDBManager().selectCommand("*","");
-            collectionManager.getConcurrentCollection().clear();
+            String rows = collectionManager.getDBManager().selectCommand(CollectionManager.bdColumns);
+            CopyOnWriteArrayList<HumanBeing> ls = collectionManager.getConcurrentCollection();
+            ls.clear();
             for (String row : rows.split("\n\n")) {
-                try {
-                    if (row.equals(""))
-                        break;
-                    String[] params = row.split("\n");
+                row = row.replace("(", "");
+                row = row.replace(")", "");
+                if (!rows.equals("")) {
+                    String[] params = row.split(",");
                     HumanBeing hb = new HumanBeing();
                     Long id = Long.parseLong(params[0]);
                     hb.setId(id);
@@ -31,7 +32,8 @@ public class ParserXMLtoBD extends ParserXML {
                     hb.setName(name);
                     Coordinates coordinates = new Coordinates(Integer.parseInt(params[2]), Long.parseLong(params[3]));
                     hb.setCoordinates(coordinates);
-                    ZonedDateTime date = ZonedDateTime.ofInstant(Timestamp.valueOf(params[4]).toInstant(), ZoneId.systemDefault());
+                    String time = params[4].substring(1, 20);
+                    ZonedDateTime date = ZonedDateTime.ofInstant(Timestamp.valueOf(time).toInstant(), ZoneId.systemDefault());
                     hb.setCreationDate(date);
                     boolean realHero = Boolean.parseBoolean(params[5]);
                     hb.setRealHero(realHero);
@@ -57,15 +59,11 @@ public class ParserXMLtoBD extends ParserXML {
                     boolean cool = Boolean.parseBoolean(params[11]);
                     Car car = new Car(cool);
                     hb.setCar(car);
-                    collectionManager.getConcurrentCollection().add(hb);
-                } catch (Exception e) {
-                    e.printStackTrace();
+                    hb.setLogin(params[12]);
+                    ls.add(hb);
                 }
             }
-            writeData(collectionManager.getConcurrentCollection());
-            collectionManager.getConcurrentCollection().sort(HumanBeing::compareTo);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

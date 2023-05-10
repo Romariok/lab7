@@ -16,16 +16,15 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public class Add extends Command_abstract implements CommandResponse{
     public Add(){
-        setSuccess(false);
     }
 
     @Override
     public void execute(){
         CopyOnWriteArrayList<HumanBeing> humans = getCollectionManager().getConcurrentCollection();
         setBd(true);
-        HumanBeing h = (HumanBeing) getValue();
-        h.setUser(getSession().getUser());
-        setSuccess(getCollectionManager().getDBManager().insertCommand(CollectionManager.bdColumns,getCollectionManager().getValues(h,false,false)));
+        HumanBeing h = (HumanBeing)getValue();
+        h.setLogin(getUser());
+        setSuccess(getCollectionManager().getDBManager().insertCommand(h));
         Comparator<HumanBeing> comparator = getCollectionManager().getComparator();
         humans.sort(comparator);
     }

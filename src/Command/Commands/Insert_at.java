@@ -23,7 +23,7 @@ public class Insert_at extends Command_abstract implements CommandResponse {
         HumanBeing humanBeing = (HumanBeing) getValue();
         output = "Ваш элемент успешно добавлен в коллекцию на " + index + " позицию!\n";
         humanBeing.setId(index);
-        setSuccess(getCollectionManager().getDBManager().insertCommand(CollectionManager.bdColumns,getCollectionManager().getValues(humanBeing,true,false)));
+        setSuccess(getCollectionManager().getDBManager().insertCommand(humanBeing));
         setBd(true);
         if(!isSuccess()) {
             output = "Возникла ошибка при добавлении элемента на " + index + "-ю позицию!\n"+getCollectionManager().getDBManager().getLastE()+"\n";

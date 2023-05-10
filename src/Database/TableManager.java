@@ -10,16 +10,17 @@ public class TableManager {
         this.table = table;
     }
 
-    private Exception lastE;
+    private String lastE;
 
     // Method to execute an update query
     public boolean updateCommand(String columns, String args, String condition) {
-        String sql = new StringBuilder().append("UPDATE ").append(table).append(" SET ").append(columns).append(" = ").append(args).append("where ").append(condition).toString();
+        String sql = new StringBuilder().append("UPDATE ").append(table).append(" SET ").append(columns).append(" = ? ").append(condition).toString();
         try (Connection connection = ServerConnection.getINSTANCE();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, args);
             preparedStatement.executeUpdate();
         } catch (Exception e) {
-            lastE = e;
+            lastE = e.getMessage();
             System.out.println(sql + args);
             return false;
         }
@@ -27,9 +28,9 @@ public class TableManager {
     }
 
     // Method to execute a select query
-    public String selectCommand(String columns, String condition) throws Exception {
+    public String selectCommand(String columns) throws Exception{
         StringBuilder result = new StringBuilder();
-        String sql = new StringBuilder().append("SELECT ").append(columns).append(" FROM ").append(table).append(" ").append(condition).toString();
+        String sql = new StringBuilder().append("SELECT ").append(columns).append(" FROM ").append(table).toString();
         Connection connection = ServerConnection.getINSTANCE();
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         ResultSet resultSet = preparedStatement.executeQuery();
@@ -68,7 +69,7 @@ public class TableManager {
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.executeUpdate();
         } catch (Exception e) {
-            lastE = e;
+            lastE = e.getMessage();
             System.out.println(sql + values);
             return false;
         }
@@ -82,7 +83,7 @@ public class TableManager {
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.executeUpdate();
         } catch (Exception e) {
-            lastE = e;
+            lastE = e.getMessage();
             return false;
         }
         return true;
@@ -99,7 +100,10 @@ public class TableManager {
         return b.toString();
     }
 
-    public String getLastE() {
-        return lastE.getMessage();
+    public String getLastE(){
+        return lastE;
+    }
+    protected void setLastE(String error){
+        this.lastE = error;
     }
 }

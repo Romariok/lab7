@@ -4,7 +4,7 @@ import Command.*;
 import Data.HumanBeing;
 import DataStructure.CollectionManager;
 import DataStructure.Response;
-import server.FileManagment.ParserXMLtoBD;
+import server.FileManagment.ParserfromBD;
 
 import java.util.LinkedList;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -21,23 +21,12 @@ public class Remove_greater extends Command_abstract implements CommandResponse 
     }
     @Override
     public void execute() {
-        Long id = Long.parseLong(getArgs()[0]);
+        long id = Long.parseLong(getArgs()[0]);
         CollectionManager manager = getCollectionManager();
-        CopyOnWriteArrayList<HumanBeing> humans = getCollectionManager().getConcurrentCollection();
-        new ParserXMLtoBD(clientsDataPath,manager).parseData();
+        setSuccess(manager.getDBManager().deleteCommand(id,">",getUser()));
         setBd(true);
-        int counting = 0;
-        StringBuilder sql = new StringBuilder("where id in (0");
-        for (HumanBeing h:humans) {
-            if (h.getId() > id) {
-                counting++;
-                sql.append(",").append(h.getId());
-            }
-        }
-        sql.append(")");
-        setSuccess(manager.getDBManager().deleteCommand(sql.toString()));
         if(isSuccess()) {
-            output = "Удалено " + counting + " элементов, id которых был больше " + id + "!\n";
+            output = "Удалены элементы, id которых был больше " + id + "!\n";
         }
         else{
             output = "Что-то не так!\n"+manager.getDBManager().getLastE();

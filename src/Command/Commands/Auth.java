@@ -1,34 +1,41 @@
 package Command.Commands;
 
+import Auth.AuthController;
+import Auth.Session;
 import Command.CommandResponse;
 import Command.Command_abstract;
 import DataStructure.Response;
-import Auth.*;
+import Auth.User;
 
 public class Auth extends Command_abstract implements CommandResponse {
-    private String user;
-    private String output;
-    private String pass;
-    public Auth(){
-    }
 
-    @Override
-    public Response getResponse() {
-        return new Response("auth",output);
+    private String output;
+    private Session session = new Session();
+    public Auth() {
+
     }
 
     @Override
     public void execute() {
-        user = getArgs()[0];
-        pass = getArgs()[1];
+        User user = (User) getValue();
+        String login = user.getUser();
+        String pass = user.getPass();
         try {
-            Session t = Sol.getAuthorized(user,pass);
-            this.getSession().setAuthorized(t.isAuthorized());
-            output = "Signed in as: " + t.getUser();
-        }
-        catch (Exception e){
-            this.getSession().setAuthorized(false);
+            session = AuthController.getAuthorized(login, pass);
+            setSuccess(true);
+            output = "Success!";
+        } catch (Exception e) {
+            setSuccess(false);
             output = e.getMessage();
         }
+    }
+
+    @Override
+    public Response getResponse() {
+        return new Response("auth", output);
+    }
+
+    public Session getSession() {
+        return session;
     }
 }
