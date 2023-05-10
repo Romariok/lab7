@@ -14,7 +14,7 @@ public class HumanbeingTableManager extends TableManager {
 
     public boolean updateCommand(HumanBeing hb, long id,String user) {
         try {
-            PreparedStatement preparedStatement = ServerConnection.getINSTANCE().prepareStatement("UPDATE humanbeing SET (" + columns + ") (?,?,?,?,?,?,?,?,?,?) WHERE id=? and user = ?");
+            PreparedStatement preparedStatement = ServerConnection.getINSTANCE().prepareStatement("UPDATE humanbeing SET (" + columns + ") (?,?,?,?,?,?,?,?,?,?) WHERE id=? and login = ?");
             prepare(preparedStatement, hb);
             preparedStatement.setLong(11, id);
             preparedStatement.setString(12,user);
@@ -44,7 +44,7 @@ public class HumanbeingTableManager extends TableManager {
 
     public boolean deleteCommand(Long id, String mode, String user) {
         try {
-            PreparedStatement preparedStatement = ServerConnection.getINSTANCE().prepareStatement("DELETE FROM humanbeing WHERE id" +mode+"? and user = ?");
+            PreparedStatement preparedStatement = ServerConnection.getINSTANCE().prepareStatement("DELETE FROM humanbeing WHERE id" +mode+"? and login = ?");
             preparedStatement.setLong(1, id);
             preparedStatement.setString(2,user);
             int res = preparedStatement.executeUpdate();

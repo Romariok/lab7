@@ -38,7 +38,7 @@ public class ClientBase implements Runnable {
             if (Objects.equals(arg[1], "-exec")){
                 CommandResponse execute_script = commandFactory.getCommand("execute_script", new String[]{arg[2]}, scanner, false);
                 try{
-                    connection.send(serialize(execute_script));
+                    connection.send(serialize(new AuthResponse("execute_script "+arg[2])));
                     AuthResponse response = connection.recieve();
                     if (!response.getCommand().isEmpty()) System.out.println(response);
                     session.setUser(response.getUser());

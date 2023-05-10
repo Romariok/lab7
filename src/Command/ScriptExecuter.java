@@ -1,5 +1,9 @@
 package Command;
 
+import Auth.AuthResponse;
+import Auth.Session;
+import Command.Commands.*;
+import server.FileManagment.ParserfromBD;
 import server.Log;
 
 import java.io.File;
@@ -14,9 +18,11 @@ public class ScriptExecuter {
     private final ArrayDeque<File> scriptsDeque = new ArrayDeque<>();
     private File script;
     private StringBuilder output = new StringBuilder();
+    private Session session = new Session();
 
-    public ScriptExecuter(File script) {
+    public ScriptExecuter(File script, String user) {
         this.script = script;
+        session.setUser(user);
     }
 
     public ArrayList<CommandResponse> getCommandlist() {
@@ -43,8 +49,18 @@ public class ScriptExecuter {
                     if (command != null) {
                         commandlist.add(command);
                         command.setCollectionManager(manager);
-                        command.execute();
-                        output.append(command.getResponse().getOutput());
+                        command.setUser(session.getUser());
+                        if (session.isAuthoriazed() || command instanceof Auth || command instanceof Register || command instanceof Info || command instanceof Show ||command instanceof Execute_script) {
+                            command.execute();
+                            if (command instanceof Auth) {
+                                session.setAuthoriazed(((Auth) command).getSession().isAuthoriazed());
+                                session.setUser(((Auth) command).getSession().getUser());
+                            }
+                            output.append(command.getResponse().getOutput());
+                        }
+                        else {
+                            output.append("Cannot done this command without getting authorized");
+                        }
                     }
                 }
                 scriptsDeque.pop();

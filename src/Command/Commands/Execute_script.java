@@ -2,6 +2,7 @@ package Command.Commands;
 
 import Command.*;
 import DataStructure.Response;
+import server.FileManagment.ParserfromBD;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ public class Execute_script extends Command_abstract implements CommandResponse 
 
     @Override
     public void execute() {
-        ScriptExecuter executer = new ScriptExecuter(new File(getArgs()[0]));
+        ScriptExecuter executer = new ScriptExecuter(new File(getArgs()[0]),getUser());
         executer.execute();
         sb =executer.getOutput();
 //        this.commandList = executer.getCommandlist();
@@ -40,6 +41,8 @@ public class Execute_script extends Command_abstract implements CommandResponse 
 
         sb.append("\n");
         output = sb.toString();
+        ParserfromBD parser = new ParserfromBD(this.getCollectionManager());
+        parser.parseData();
     }
 
     @Override

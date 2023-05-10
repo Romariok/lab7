@@ -3,10 +3,7 @@ package Command;
 
 import Auth.AuthResponse;
 import ChunkManager.ChunkCreating;
-import Command.Commands.Auth;
-import Command.Commands.Info;
-import Command.Commands.Register;
-import Command.Commands.Show;
+import Command.Commands.*;
 import server.FileManagment.ParserfromBD;
 import server.Log;
 
@@ -52,7 +49,7 @@ public class CommandExecutor {
         assert command != null;
         command.setCollectionManager(manager);
         AuthResponse response;
-        if (authResponse.isAutorized() || command instanceof Auth || command instanceof Register || command instanceof Info || command instanceof Show) {
+        if (authResponse.isAutorized() || command instanceof Auth || command instanceof Register || command instanceof Info || command instanceof Show||command instanceof Execute_script) {
             Log.getLogger().log(Level.INFO, "Received command " + command + " from " + client);
             if (authResponse.isAutorized()) {
                 command.setUser(authResponse.getUser());
