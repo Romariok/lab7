@@ -38,7 +38,7 @@ public class ClientBase implements Runnable {
             if (Objects.equals(arg[1], "-exec")){
                 CommandResponse execute_script = commandFactory.getCommand("execute_script", new String[]{arg[2]}, scanner, false);
                 try{
-                    connection.send(serialize(new AuthResponse("execute_script "+arg[2])));
+                    connection.send(serialize(new AuthResponse("execute_script",session.getUser(),session.isAuthoriazed(),arg[2],"")));
                     AuthResponse response = connection.recieve();
                     if (!response.getCommand().isEmpty()) System.out.println(response);
                     session.setUser(response.getUser());
@@ -64,15 +64,17 @@ public class ClientBase implements Runnable {
             AuthResponse sending;
             if (command != null){
                 try{
-                    if(command.getValue()==null) {
-                        sending = new AuthResponse(commandName + " " + String.join(" ", commandArgs), session.getUser(), session.isAuthoriazed());
+                    if(command.getArgs() != null && command.getValue()!=null) {
+                        sending = new AuthResponse(commandName, session.getUser(), session.isAuthoriazed(), command.getArgs()[0], command.getValue().toString());
+                    } else if (command.getArgs() == null && command.getValue()!=null) {
+                        sending = new AuthResponse(commandName, session.getUser(), session.isAuthoriazed(), "", command.getValue().toString());
+                    } else if (command.getArgs() != null && command.getValue()==null) {
+                        sending = new AuthResponse(commandName, session.getUser(), session.isAuthoriazed(), command.getArgs()[0], "");
                     }
-                    else if(command.getArgs()==null||command.getArgs().length == 0){
-                        sending = new AuthResponse(commandName + " "+ command.getValue().toString(), session.getUser(), session.isAuthoriazed());
+                    else {
+                        sending = new AuthResponse(commandName, session.getUser(), session.isAuthoriazed(), "", "");
                     }
-                    else{
-                        sending = new AuthResponse(commandName+" "+String.join(" ", commandArgs)+ " "+ command.getValue().toString());
-                    }
+
                     connection.send(serialize(sending));
                     AuthResponse response = connection.recieve();
                     if (!response.getCommand().isEmpty()) System.out.println(response.getCommand());

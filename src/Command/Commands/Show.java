@@ -18,6 +18,7 @@ public class Show extends Command_abstract implements CommandResponse {
     }
     @Override
     public void execute() {
+        output = "";
         CopyOnWriteArrayList<HumanBeing> humans = getCollectionManager().getConcurrentCollection();
         if (humans.size() != 0) humans.forEach(humanBeing -> {
             HumanBeing h = new HumanBeing(){
@@ -27,7 +28,7 @@ public class Show extends Command_abstract implements CommandResponse {
                             "\n" + "   -Creation date: " + this.getCreationDate() + "\n"
                             + "   -realHero: " + this.isRealHero() + "\n" + "   -hasToothpick: " + this.getHasToothpick() + "\n" +
                             "   -impact speed: " + this.getImpactSpeed() + "\n" + "   -soundtrack name: " + this.getSoundtrackName() + "\n" +
-                            "   -weapon type: " + this.getWeaponType() + "\n" + "   -mood: " + this.getMood() + "\n" + "   -car: " + this.getCar() + "\n"+"   -user: "+this.getLogin();
+                            "   -weapon type: " + this.getWeaponType() + "\n" + "   -mood: " + this.getMood() + "\n" + "   -car: " + this.getCar() + "\n";
                 }
             };
             h.setId(humanBeing.getId());

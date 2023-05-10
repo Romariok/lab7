@@ -32,33 +32,33 @@ public class CommandExecutor {
     public static void execute(InetSocketAddress client, byte[] bytes) throws IOException, ClassNotFoundException {
         Object inputObject = deserialize(bytes);
         AuthResponse authResponse = (AuthResponse) inputObject;
+        assert authResponse != null;
         List<String> tempCommand = Arrays.stream(authResponse.getCommand().split(" ")).toList();
         CommandResponse command;
-        if (tempCommand.size() == 2) {
-            if (tempCommand.get(1).contains("\n")) {
-                command = factory.getCommand(tempCommand.get(0), null, new Scanner(tempCommand.get(1)), true);
-            } else {
-                command = factory.getCommand(tempCommand.get(0), tempCommand.subList(1, tempCommand.size()).toArray(new String[0]), null, true);
-            }
-        } else if(tempCommand.size()==3){
-            command = factory.getCommand(tempCommand.get(0), new String[]{tempCommand.get(1)}, new Scanner(tempCommand.get(2)), false);
+        if(authResponse.getArgs().equals("")&&!authResponse.getObject().equals("")) {
+            command = factory.getCommand(authResponse.getCommand(), new String[]{""}, new Scanner(authResponse.getObject()), true);
+        } else if (authResponse.getObject().equals("")&&!authResponse.getArgs().equals("")) {
+            command = factory.getCommand(authResponse.getCommand(), new String[]{authResponse.getArgs()},new Scanner(""), true);
         }
-        else {
-            command = factory.getCommand(tempCommand.get(0),null,null, true);
+        else if(authResponse.getArgs().equals("") && authResponse.getObject().equals("")){
+            command = factory.getCommand(authResponse.getCommand(), new String[]{""},new Scanner(""),true);
         }
-        assert command != null;
+        else{
+            command = factory.getCommand(authResponse.getCommand(), new String[]{authResponse.getArgs()},new Scanner(authResponse.getObject()), true);
+        }
+        assert command!=null;
         command.setCollectionManager(manager);
         AuthResponse response;
-        if (authResponse.isAutorized() || command instanceof Auth || command instanceof Register || command instanceof Info || command instanceof Show||command instanceof Execute_script) {
+        if (authResponse.isAutorized() || command instanceof Auth || command instanceof Register || command instanceof Info || command instanceof Help||command instanceof Execute_script) {
             Log.getLogger().log(Level.INFO, "Received command " + command + " from " + client);
             if (authResponse.isAutorized()) {
                 command.setUser(authResponse.getUser());
             }
             command.execute();
             String output = command.getResponse().getOutput();
-            response = new AuthResponse(output, authResponse.getUser(), authResponse.isAutorized());
+            response = new AuthResponse(output, authResponse.getUser(), authResponse.isAutorized(),"","");
             if (command instanceof Auth) {
-                response = new AuthResponse(output, ((Auth) command).getSession().getUser(), ((Auth) command).getSession().isAuthoriazed());
+                response = new AuthResponse(output, ((Auth) command).getSession().getUser(), ((Auth) command).getSession().isAuthoriazed(),"","");
             }
 
             if (command.isSuccess() && command.isBd()) {
@@ -66,7 +66,7 @@ public class CommandExecutor {
             }
         }
         else{
-            response = new AuthResponse("Cannot execute this command without getting authorized!",authResponse.getUser(), authResponse.isAutorized());
+            response = new AuthResponse("Cannot execute this command without getting authorized!",authResponse.getUser(), authResponse.isAutorized(),"","");
         }
         ChunkCreating chunkCreating = new ChunkCreating(Serializer.serialize(response));
         Log.getLogger().log(Level.INFO, "Sending " + chunkCreating.getCounting() + " chunks to " + client);

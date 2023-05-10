@@ -24,6 +24,7 @@ public class Remove_greater extends Command_abstract implements CommandResponse 
         long id = Long.parseLong(getArgs()[0]);
         CollectionManager manager = getCollectionManager();
         setSuccess(manager.getDBManager().deleteCommand(id,">",getUser()));
+        setBd(true);
         if(isSuccess()) {
             output = "Удалены элементы, id которых был больше " + id + "!\n";
         }
