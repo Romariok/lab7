@@ -24,8 +24,6 @@
       <change beforePath="$PROJECT_DIR$/lab7.iml" beforeDir="false" afterPath="$PROJECT_DIR$/lab7.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs.log.1" beforeDir="false" afterPath="$PROJECT_DIR$/logs.log.1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/client/client.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/client/client.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/server/server.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/server/server.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serverSettings.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/serverSettings.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Auth/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Auth/AuthController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Auth/AuthResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Auth/AuthResponse.java" afterDir="false" />
@@ -33,26 +31,18 @@
       <change beforePath="$PROJECT_DIR$/src/Auth/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Auth/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ChunkManager/ChunkCreating.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChunkManager/ChunkCreating.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ChunkManager/ChunkReceiving.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChunkManager/ChunkReceiving.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/CommandExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/CommandExecutor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/CommandFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/CommandResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/CommandResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/Command_abstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Command_abstract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Add.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Commands/Auth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Auth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Clear.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Commands/Count_greater_than_car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Count_greater_than_car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Execute_script.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Execute_script.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Commands/Filter_starts_with_soundtrack_name.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Filter_starts_with_soundtrack_name.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Commands/Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Help.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Commands/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Commands/Insert_at.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Insert_at.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Commands/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Remove_by_id.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Remove_by_id.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Commands/Remove_greater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Remove_greater.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Commands/Remove_lower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Remove_lower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Commands/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Show.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/Commands/Sum_of_impact_speed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Sum_of_impact_speed.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Commands/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Commands/Update.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/ScriptExecuter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/ScriptExecuter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/Serializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/Serializer.java" afterDir="false" />
@@ -130,11 +120,14 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ronya\lab7" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="Data" />
     </key>
   </component>
-  <component name="RunManager" selected="Compound.execute">
+  <component name="RunManager" selected="Application.client">
     <configuration name="ServerMain" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="server.ServerMain" />
       <module name="lab7" />
@@ -237,7 +230,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="badBD" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
