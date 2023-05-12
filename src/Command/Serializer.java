@@ -32,12 +32,10 @@ public class Serializer {
         try{
             ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(data);
             ObjectInputStream ois = new ObjectInputStream(byteArrayInputStream);
-    //        while(ois.readObject() != null)
             return ois.readObject();
         }
         catch (IOException | ClassNotFoundException ex){
             Log.getLogger().warning(ex.getMessage());
-            System.out.println(ex.getClass().getSimpleName());
             return null;
         }
 
